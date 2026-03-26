@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Fund Calculator — How Much to Save | MyFinCalc</title>
+<meta name="description" content="Free emergency fund calculator. Calculate your ideal emergency fund size based on your monthly expenses, job stability, and risk factors.">
+<meta name="keywords" content="emergency fund calculator, emergency savings calculator, how much emergency fund, 3 month expenses calculator, 6 month emergency fund">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/calcfi-emergency-fund-calculator.html">
+<meta property="og:title" content="Emergency Fund Calculator — How Much to Save">
+<meta property="og:description" content="Calculate your ideal emergency fund size based on expenses and risk.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://myfincalc.org/calcfi-emergency-fund-calculator.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Emergency Fund Calculator","description":"Free emergency fund calculator based on expenses and risk factors","url":"https://myfincalc.org/calcfi-emergency-fund-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"MyFinCalc","url":"https://myfincalc.org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I have in an emergency fund?","acceptedAnswer":{"@type":"Answer","text":"Most experts recommend 3-6 months of essential expenses. If you are self-employed, have variable income, or are the sole earner, aim for 6-12 months."}},{"@type":"Question","name":"What counts as an emergency expense?","acceptedAnswer":{"@type":"Answer","text":"True emergencies include job loss, medical emergencies, urgent home or car repairs, and unexpected travel for family emergencies. Regular bills and planned expenses are not emergencies."}},{"@type":"Question","name":"Where should I keep my emergency fund?","acceptedAnswer":{"@type":"Answer","text":"Keep your emergency fund in a high-yield savings account. It should be easily accessible but separate from your everyday spending account."}},{"@type":"Question","name":"Should I invest my emergency fund?","acceptedAnswer":{"@type":"Answer","text":"No. Your emergency fund should be in cash or cash equivalents. The goal is safety and liquidity, not growth. Invest separately for long-term goals."}}]}</script>
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.hero{padding:48px 24px 32px;max-width:800px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}.hero h1 .green{color:var(--accent);}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:480px;margin:0 auto;}
+.main{max-width:960px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;}
+.card-title{font-family:var(--font-title);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;}
+.field{margin-bottom:16px;}
+label{display:block;font-family:var(--font-title);font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:6px;}
+.input-wrap{position:relative;}
+.input-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+input[type="number"],select{width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:15px;padding:11px 14px;outline:none;appearance:none;-moz-appearance:textfield;}
+input.has-prefix{padding-left:28px;}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,107,60,0.08);}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer;}
+.field-hint{font-size:12px;color:var(--text-muted);margin-top:4px;}
+.btn-calc{width:100%;margin-top:12px;padding:15px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-title);font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;}.btn-calc:hover{background:var(--accent2);transform:translateY(-1px);}
+.results-panel{display:flex;flex-direction:column;gap:12px;}
+.result-empty{background:var(--bg-card);border:1px dashed var(--border);border-radius:20px;padding:60px 28px;text-align:center;color:var(--text-muted);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.result-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);border-radius:18px;padding:24px;color:#fff;text-align:center;}
+.rh-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:8px;font-family:var(--font-title);}
+.rh-value{font-family:var(--font-title);font-size:38px;font-weight:700;letter-spacing:-1.5px;margin-bottom:4px;}
+.rh-sub{font-size:13px;opacity:0.75;}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;}
+.metric-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--font-title);margin-bottom:5px;}
+.metric-value{font-family:var(--font-title);font-size:20px;font-weight:700;color:var(--accent);}
+.metric-sub{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.tier-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.tier-title{font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:10px;}
+.tier-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);}.tier-row:last-child{border:none;}
+.tier-name{font-weight:500;font-size:14px;}.tier-amount{font-family:var(--font-title);font-weight:700;color:var(--accent);font-size:14px;}
+.tier-bar{height:6px;background:var(--bg-input);border-radius:3px;margin-top:4px;overflow:hidden;}
+.tier-fill{height:100%;background:var(--accent);border-radius:3px;transition:width 0.5s;}
+.progress-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;}
+.prog-pct{font-family:var(--font-title);font-size:36px;font-weight:700;color:var(--accent);}
+.prog-label{font-size:13px;color:var(--text-secondary);margin-top:4px;}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.disclaimer{font-size:11px;color:var(--text-muted);text-align:center;padding:0 24px 32px;max-width:900px;margin:0 auto;}
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:960px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:15px;}.footer-logo .fi{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:700px){.main{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
+<header class="hero">
+  <div class="hero-badge">🛡️ Calculator</div>
+  <h1><span class="green">Emergency fund calculator</span></h1>
+  <p>Calculate exactly how much emergency savings you need.</p>
+</header>
+<main class="main">
+  <div class="card">
+    <p class="card-title">Your situation</p>
+    <div class="field"><label>Monthly essential expenses</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="expenses" class="has-prefix" value="3500" min="0" step="100"></div><div class="field-hint">Rent, food, utilities, insurance, transport, minimum debt payments</div></div>
+    <div class="field"><label>Current emergency savings</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="currentSavings" class="has-prefix" value="5000" min="0" step="100"></div></div>
+    <div class="field"><label>Monthly amount you can save</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="monthlySave" class="has-prefix" value="500" min="0" step="50"></div></div>
+    <div class="field"><label>Employment type</label><select id="employment"><option value="stable">Stable employment (single earner)</option><option value="dual">Dual income household</option><option value="variable">Variable/commission income</option><option value="self">Self-employed / freelance</option><option value="contract">Contract / gig work</option></select></div>
+    <div class="field"><label>Dependents</label><select id="dependents"><option value="0">No dependents</option><option value="1">1 dependent</option><option value="2">2 dependents</option><option value="3">3+ dependents</option></select></div>
+    <button class="btn-calc" onclick="calculate()">Calculate emergency fund</button>
+  </div>
+  <div class="results-panel" id="resultsPanel">
+    <div class="result-empty" id="emptyState"><div style="font-size:40px;opacity:0.3;">🛡️</div><span>Enter your details and click Calculate.</span></div>
+  </div>
+</main>
+<div class="disclaimer">⚠️ For educational purposes only. Not financial advice. Consult a qualified financial advisor.</div>
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
+
+function calculate(){
+  const expenses=parseFloat(document.getElementById('expenses').value)||0;
+  const currentSavings=parseFloat(document.getElementById('currentSavings').value)||0;
+  const monthlySave=parseFloat(document.getElementById('monthlySave').value)||0;
+  const employment=document.getElementById('employment').value;
+  const dependents=parseInt(document.getElementById('dependents').value)||0;
+  if(!expenses) return;
+
+  // Calculate recommended months based on risk factors
+  let baseMonths=3;
+  const riskFactors=[];
+  if(employment==='dual'){baseMonths=3;riskFactors.push('Dual income provides a safety net');}
+  else if(employment==='stable'){baseMonths=4;riskFactors.push('Single income — moderate risk');}
+  else if(employment==='variable'){baseMonths=6;riskFactors.push('Variable income needs larger buffer');}
+  else if(employment==='self'){baseMonths=8;riskFactors.push('Self-employed — higher income risk');}
+  else if(employment==='contract'){baseMonths=9;riskFactors.push('Contract work — high income volatility');}
+
+  if(dependents>=3){baseMonths+=3;riskFactors.push('3+ dependents — higher expenses risk');}
+  else if(dependents>=2){baseMonths+=2;riskFactors.push('2 dependents — moderate family risk');}
+  else if(dependents>=1){baseMonths+=1;riskFactors.push('1 dependent — slightly higher need');}
+
+  const minMonths=Math.max(3,baseMonths-1);
+  const maxMonths=baseMonths+2;
+  const targetAmount=expenses*baseMonths;
+  const minAmount=expenses*minMonths;
+  const maxAmount=expenses*maxMonths;
+  const gap=Math.max(0,targetAmount-currentSavings);
+  const monthsToGoal=monthlySave>0?Math.ceil(gap/monthlySave):Infinity;
+  const progress=Math.min(100,(currentSavings/targetAmount)*100);
+
+  const panel=document.getElementById('resultsPanel');
+  panel.innerHTML='';
+
+  const hero=document.createElement('div');hero.className='result-hero';
+  hero.innerHTML=`<div class="rh-label">Recommended emergency fund</div><div class="rh-value">${fmt(targetAmount)}</div><div class="rh-sub">${baseMonths} months of essential expenses (${fmt(expenses)}/mo)</div>`;
+  panel.appendChild(hero);
+
+  const mg=document.createElement('div');mg.className='metrics-grid';
+  mg.innerHTML=`
+    <div class="metric-card"><div class="metric-label">Gap to fill</div><div class="metric-value">${fmt(gap)}</div><div class="metric-sub">${gap<=0?'You\'re fully funded!':'Still needed'}</div></div>
+    <div class="metric-card"><div class="metric-label">Months to goal</div><div class="metric-value">${gap<=0?'Done!':monthsToGoal===Infinity?'—':monthsToGoal+' mo'}</div><div class="metric-sub">${gap>0&&monthlySave>0?'At '+fmt(monthlySave)+'/month':''}</div></div>`;
+  panel.appendChild(mg);
+
+  const pc=document.createElement('div');pc.className='progress-card';
+  pc.innerHTML=`<div class="prog-pct">${Math.round(progress)}%</div><div class="prog-label">of your emergency fund target</div><div class="tier-bar" style="margin-top:12px;"><div class="tier-fill" style="width:${progress}%;background:${progress>=100?'var(--accent)':progress>=50?'#f59e0b':'#ef4444'}"></div></div>`;
+  panel.appendChild(pc);
+
+  const tc=document.createElement('div');tc.className='tier-card';
+  tc.innerHTML=`<div class="tier-title">Emergency fund tiers</div>
+    <div class="tier-row"><span class="tier-name">🟡 Minimum (${minMonths} mo)</span><span class="tier-amount">${fmt(minAmount)}</span></div>
+    <div class="tier-row"><span class="tier-name">🟢 Recommended (${baseMonths} mo)</span><span class="tier-amount">${fmt(targetAmount)}</span></div>
+    <div class="tier-row"><span class="tier-name">🔵 Comfortable (${maxMonths} mo)</span><span class="tier-amount">${fmt(maxAmount)}</span></div>`;
+  panel.appendChild(tc);
+
+  if(riskFactors.length){
+    const rf=document.createElement('div');rf.className='tier-card';
+    rf.innerHTML=`<div class="tier-title">Your risk factors</div>`+riskFactors.map(f=>`<div class="tier-row"><span class="tier-name">${f}</span></div>`).join('');
+    panel.appendChild(rf);
+  }
+  createAffiliateBanner('savings').then(b=>panel.appendChild(b));
+}
+calculate();
+</script>
+</body></html>

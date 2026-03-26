@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Startup Valuation Calculator — Pre-Money Valuation | MyFinCalc</title>
+<meta name="description" content="Free startup valuation calculator. Estimate your startup's pre-money valuation using the Berkus method, revenue multiples, and comparable analysis.">
+<meta name="keywords" content="startup valuation calculator, pre-money valuation, startup worth calculator, company valuation calculator, startup valuation methods">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/calcfi-startup-valuation-calculator.html">
+<meta property="og:title" content="Startup Valuation Calculator — Pre-Money Valuation">
+<meta property="og:description" content="Estimate your startup's value using proven valuation methods.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Startup Valuation Calculator","description":"Estimate startup pre-money valuation using multiple methods","url":"https://myfincalc.org/calcfi-startup-valuation-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"MyFinCalc","url":"https://myfincalc.org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Berkus Method?","acceptedAnswer":{"@type":"Answer","text":"The Berkus Method values pre-revenue startups by assigning up to $500K for each of five risk factors: sound idea, prototype, quality team, strategic relationships, and product rollout/sales. Maximum pre-money valuation is $2.5M."}},{"@type":"Question","name":"What revenue multiple should I use?","acceptedAnswer":{"@type":"Answer","text":"Revenue multiples vary by industry: SaaS companies typically trade at 5-15x annual revenue, e-commerce at 1-3x, marketplaces at 3-8x, and fintech at 5-12x. High-growth startups can command higher multiples."}},{"@type":"Question","name":"What is pre-money vs post-money valuation?","acceptedAnswer":{"@type":"Answer","text":"Pre-money valuation is your company's value before receiving investment. Post-money valuation equals pre-money plus the investment amount. For example, a $2M pre-money with $500K investment gives $2.5M post-money."}},{"@type":"Question","name":"How do investors actually value startups?","acceptedAnswer":{"@type":"Answer","text":"Investors use multiple methods: comparable companies, revenue multiples, DCF (discounted cash flow), and the Berkus method for pre-revenue startups. The final valuation is often a negotiation based on market conditions, traction, and team quality."}}]}</script>
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.hero{padding:48px 24px 32px;max-width:800px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}.hero h1 .green{color:var(--accent);}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:480px;margin:0 auto;}
+.main{max-width:960px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;}.card.scroll{max-height:80vh;overflow-y:auto;}
+.card-title{font-family:var(--font-title);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;}
+.field{margin-bottom:14px;}
+label{display:block;font-family:var(--font-title);font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:6px;}
+.input-wrap{position:relative;}
+.input-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+input[type="number"],select{width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:15px;padding:11px 14px;outline:none;appearance:none;-moz-appearance:textfield;}
+input[type="range"]{width:100%;accent-color:var(--accent);margin:8px 0;}
+input.has-prefix{padding-left:28px;}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,107,60,0.08);}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer;}
+.range-val{font-family:var(--font-title);font-size:14px;font-weight:700;color:var(--accent);float:right;}
+.divider{height:1px;background:var(--border);margin:16px 0;}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;font-family:var(--font-title);}
+.field-hint{font-size:12px;color:var(--text-muted);margin-top:4px;}
+.btn-calc{width:100%;margin-top:12px;padding:15px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-title);font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;}.btn-calc:hover{background:var(--accent2);transform:translateY(-1px);}
+.results-panel{display:flex;flex-direction:column;gap:12px;}
+.result-empty{background:var(--bg-card);border:1px dashed var(--border);border-radius:20px;padding:60px 28px;text-align:center;color:var(--text-muted);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.result-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);border-radius:18px;padding:24px;color:#fff;text-align:center;}
+.rh-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:8px;font-family:var(--font-title);}
+.rh-value{font-family:var(--font-title);font-size:36px;font-weight:700;letter-spacing:-1.5px;margin-bottom:4px;}
+.rh-sub{font-size:13px;opacity:0.75;}
+.method-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.mc-title{font-family:var(--font-title);font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:4px;}
+.mc-desc{font-size:12px;color:var(--text-muted);margin-bottom:10px;}
+.mc-value{font-family:var(--font-title);font-size:24px;font-weight:700;color:var(--accent);margin-bottom:6px;}
+.mc-row{display:flex;justify-content:space-between;padding:4px 0;font-size:12px;border-bottom:1px solid var(--border);}.mc-row:last-child{border:none;}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;}
+.metric-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--font-title);margin-bottom:5px;}
+.metric-value{font-family:var(--font-title);font-size:20px;font-weight:700;color:var(--accent);}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.disclaimer{font-size:11px;color:var(--text-muted);text-align:center;padding:0 24px 32px;max-width:900px;margin:0 auto;}
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:960px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:15px;}.footer-logo .fi{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:700px){.main{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
+<header class="hero">
+  <div class="hero-badge">🦄 Calculator</div>
+  <h1><span class="green">Startup valuation calculator</span></h1>
+  <p>Estimate your startup's value using proven valuation methods.</p>
+</header>
+<main class="main">
+  <div class="card scroll">
+    <p class="card-title">Your startup</p>
+    <div class="section-label">📊 Revenue (if any)</div>
+    <div class="field"><label>Annual revenue (ARR)</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="revenue" class="has-prefix" value="500000" min="0" step="10000"></div><div class="field-hint">Enter 0 if pre-revenue</div></div>
+    <div class="field"><label>Annual growth rate <span class="range-val" id="growthVal">100%</span></label><input type="range" id="growth" min="0" max="500" value="100" step="10" oninput="document.getElementById('growthVal').textContent=this.value+'%'"></div>
+    <div class="field"><label>Industry</label><select id="industry">
+      <option value="saas">SaaS / Software</option>
+      <option value="ecommerce">E-commerce / DTC</option>
+      <option value="marketplace">Marketplace</option>
+      <option value="fintech">Fintech</option>
+      <option value="health">Health / Biotech</option>
+      <option value="ai">AI / Machine Learning</option>
+      <option value="other">Other</option>
+    </select></div>
+    <div class="divider"></div>
+    <div class="section-label">🏆 Berkus Factors (pre-revenue)</div>
+    <div class="field"><label>Sound idea / large market <span class="range-val" id="b1Val">$400K</span></label><input type="range" id="b1" min="0" max="500000" value="400000" step="50000" oninput="document.getElementById('b1Val').textContent='$'+(this.value/1000)+'K'"></div>
+    <div class="field"><label>Prototype / technology <span class="range-val" id="b2Val">$300K</span></label><input type="range" id="b2" min="0" max="500000" value="300000" step="50000" oninput="document.getElementById('b2Val').textContent='$'+(this.value/1000)+'K'"></div>
+    <div class="field"><label>Quality management team <span class="range-val" id="b3Val">$350K</span></label><input type="range" id="b3" min="0" max="500000" value="350000" step="50000" oninput="document.getElementById('b3Val').textContent='$'+(this.value/1000)+'K'"></div>
+    <div class="field"><label>Strategic relationships <span class="range-val" id="b4Val">$200K</span></label><input type="range" id="b4" min="0" max="500000" value="200000" step="50000" oninput="document.getElementById('b4Val').textContent='$'+(this.value/1000)+'K'"></div>
+    <div class="field"><label>Product rollout / sales <span class="range-val" id="b5Val">$250K</span></label><input type="range" id="b5" min="0" max="500000" value="250000" step="50000" oninput="document.getElementById('b5Val').textContent='$'+(this.value/1000)+'K'"></div>
+    <div class="divider"></div>
+    <div class="section-label">💰 Investment round</div>
+    <div class="field"><label>Investment amount sought</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="investment" class="has-prefix" value="500000" min="0" step="50000"></div></div>
+    <button class="btn-calc" onclick="calculate()">Calculate valuation</button>
+  </div>
+  <div class="results-panel" id="resultsPanel">
+    <div class="result-empty" id="emptyState"><div style="font-size:40px;opacity:0.3;">🦄</div><span>Enter your startup details and click Calculate.</span></div>
+  </div>
+</main>
+<div class="disclaimer">⚠️ These are rough estimates for educational purposes. Actual valuations depend on market conditions, negotiation, and many other factors.</div>
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+<script>
+const multiples={saas:[8,15],ecommerce:[1.5,3],marketplace:[4,8],fintech:[6,12],health:[5,10],ai:[10,20],other:[3,6]};
+
+function fmtVal(n){
+  if(n>=1e9) return '$'+(n/1e9).toFixed(1)+'B';
+  if(n>=1e6) return '$'+(n/1e6).toFixed(1)+'M';
+  if(n>=1e3) return '$'+(n/1e3).toFixed(0)+'K';
+  return '$'+n;
+}
+function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
+
+function calculate(){
+  const revenue=parseFloat(document.getElementById('revenue').value)||0;
+  const growth=parseFloat(document.getElementById('growth').value)||0;
+  const industry=document.getElementById('industry').value;
+  const b1=parseFloat(document.getElementById('b1').value)||0;
+  const b2=parseFloat(document.getElementById('b2').value)||0;
+  const b3=parseFloat(document.getElementById('b3').value)||0;
+  const b4=parseFloat(document.getElementById('b4').value)||0;
+  const b5=parseFloat(document.getElementById('b5').value)||0;
+  const investment=parseFloat(document.getElementById('investment').value)||0;
+
+  const berkusVal=b1+b2+b3+b4+b5;
+  const [lowMult,highMult]=multiples[industry]||[3,6];
+  const growthAdj=growth>200?1.5:growth>100?1.2:growth>50?1.0:0.8;
+  const adjLow=lowMult*growthAdj;
+  const adjHigh=highMult*growthAdj;
+  const revValLow=revenue*adjLow;
+  const revValHigh=revenue*adjHigh;
+  const revValMid=(revValLow+revValHigh)/2;
+
+  let bestEstimate=revenue>0?revValMid:berkusVal;
+  if(revenue>0&&berkusVal>0) bestEstimate=(revValMid+berkusVal)/2;
+
+  const postMoney=bestEstimate+investment;
+  const dilution=investment>0?(investment/postMoney*100):0;
+
+  const panel=document.getElementById('resultsPanel');
+  panel.innerHTML='';
+
+  const hero=document.createElement('div');hero.className='result-hero';
+  hero.innerHTML=`<div class="rh-label">Estimated pre-money valuation</div><div class="rh-value">${fmtVal(bestEstimate)}</div><div class="rh-sub">Blended estimate · ${revenue>0?'Revenue + Berkus':'Berkus method'}</div>`;
+  panel.appendChild(hero);
+
+  if(investment>0){
+    const mg=document.createElement('div');mg.className='metrics-grid';
+    mg.innerHTML=`
+      <div class="metric-card"><div class="metric-label">Post-money</div><div class="metric-value">${fmtVal(postMoney)}</div></div>
+      <div class="metric-card"><div class="metric-label">Dilution</div><div class="metric-value">${dilution.toFixed(1)}%</div></div>`;
+    panel.appendChild(mg);
+  }
+
+  // Berkus card
+  const bc=document.createElement('div');bc.className='method-card';
+  bc.innerHTML=`<div class="mc-title">🏆 Berkus Method</div><div class="mc-desc">For early-stage / pre-revenue startups (max $2.5M)</div><div class="mc-value">${fmtVal(berkusVal)}</div>
+    <div class="mc-row"><span>Sound idea / market</span><span>${fmtVal(b1)}</span></div>
+    <div class="mc-row"><span>Prototype / tech</span><span>${fmtVal(b2)}</span></div>
+    <div class="mc-row"><span>Management team</span><span>${fmtVal(b3)}</span></div>
+    <div class="mc-row"><span>Strategic relationships</span><span>${fmtVal(b4)}</span></div>
+    <div class="mc-row"><span>Product / sales</span><span>${fmtVal(b5)}</span></div>`;
+  panel.appendChild(bc);
+
+  if(revenue>0){
+    const rc=document.createElement('div');rc.className='method-card';
+    rc.innerHTML=`<div class="mc-title">📊 Revenue Multiple</div><div class="mc-desc">${industry.toUpperCase()} · ${adjLow.toFixed(1)}x — ${adjHigh.toFixed(1)}x adjusted for ${growth}% growth</div><div class="mc-value">${fmtVal(revValLow)} — ${fmtVal(revValHigh)}</div>
+      <div class="mc-row"><span>Annual revenue</span><span>${fmt(revenue)}</span></div>
+      <div class="mc-row"><span>Growth rate</span><span>${growth}%</span></div>
+      <div class="mc-row"><span>Growth adjustment</span><span>${growthAdj}x</span></div>
+      <div class="mc-row"><span>Midpoint valuation</span><span>${fmtVal(revValMid)}</span></div>`;
+    panel.appendChild(rc);
+  }
+  createAffiliateBanner('invest').then(b=>panel.appendChild(b));
+}
+calculate();
+</script>
+</body></html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salary After Tax Calculator — NZ, AU, UK, US, CA | MyFinCalc</title>
+<meta name="description" content="Free salary after tax calculator for New Zealand, Australia, UK, USA, and Canada. Calculate your exact take-home pay including income tax, ACC, KiwiSaver, and more.">
+<meta name="keywords" content="salary after tax calculator NZ, take home pay calculator New Zealand, salary calculator Australia, UK salary calculator, income tax calculator">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f1ed;--bg-white:#ffffff;--border:#e2e0d8;--border-dark:#c8c5bc;
+  --accent:#2563eb;--accent-light:#eff3ff;
+  --text-primary:#0d0c0b;--text-secondary:#6b6860;--text-muted:#a8a59d;
+  --red:#dc2626;--green:#16a34a;
+  --font-serif:'Instrument Serif',serif;--font-body:'DM Sans',sans-serif;--font-mono:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:var(--font-serif);font-size:20px;color:var(--text-primary);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--text-primary);}
+.nav-cta{background:var(--text-primary);color:#fff;font-size:13px;font-weight:500;padding:7px 18px;border-radius:100px;text-decoration:none;}
+
+.hero{padding:64px 40px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.hero-eyebrow{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--text-muted);}
+.hero h1{font-family:var(--font-serif);font-size:clamp(40px,5vw,60px);font-weight:400;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:15px;color:var(--text-secondary);line-height:1.7;max-width:420px;}
+.hero-right{display:flex;flex-direction:column;gap:12px;}
+.hero-stat{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:20px 24px;}
+.hs-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
+.hs-val{font-family:var(--font-serif);font-size:26px;color:var(--text-primary);}
+.hs-val span{color:var(--accent);}
+.hero-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+.country-section{max-width:1100px;margin:0 auto;padding:0 40px 32px;}
+.section-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;}
+.country-tabs{display:flex;gap:0;background:var(--bg-white);border:1px solid var(--border);border-radius:12px;padding:4px;width:fit-content;flex-wrap:wrap;}
+.ctab{padding:8px 16px;border-radius:9px;border:none;background:transparent;color:var(--text-secondary);font-family:var(--font-body);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;gap:6px;}
+.ctab:hover{color:var(--text-primary);}
+.ctab.active{background:var(--text-primary);color:#fff;}
+
+.calc-wrap{max-width:1100px;margin:0 auto;padding:0 40px 80px;display:grid;grid-template-columns:400px 1fr;gap:24px;align-items:start;}
+.input-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
+.input-header{padding:24px 28px 20px;border-bottom:1px solid var(--border);}
+.input-title{font-family:var(--font-serif);font-size:20px;}
+.input-body{padding:24px 28px;}
+.field{margin-bottom:20px;}
+.field-label{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;display:block;}
+.salary-wrap{display:flex;align-items:center;background:var(--bg);border:2px solid var(--border-dark);border-radius:12px;transition:border-color 0.2s;overflow:hidden;}
+.salary-wrap:focus-within{border-color:var(--accent);}
+.salary-sym{padding:0 14px;font-family:var(--font-serif);font-size:20px;color:var(--text-muted);flex-shrink:0;border-right:1px solid var(--border);}
+.salary-input{flex:1;background:transparent;border:none;outline:none;font-family:var(--font-serif);font-size:24px;color:var(--text-primary);padding:12px 16px;letter-spacing:-0.5px;width:0;}
+.salary-input::placeholder{color:var(--text-muted);}
+.freq-row{display:flex;gap:6px;}
+.ftab{flex:1;padding:8px 4px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text-secondary);font-family:var(--font-body);font-size:12px;font-weight:500;cursor:pointer;text-align:center;transition:all 0.15s;}
+.ftab.active{background:var(--text-primary);color:#fff;border-color:var(--text-primary);}
+.opts{display:flex;flex-direction:column;gap:8px;}
+.opt{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.18s;}
+.opt:hover{border-color:var(--border-dark);}
+.opt.on{border-color:var(--accent);background:var(--accent-light);}
+.opt-l{display:flex;align-items:center;gap:10px;}
+.chk{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border-dark);background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.15s;}
+.opt.on .chk{background:var(--accent);border-color:var(--accent);}
+.chk-svg{display:none;}
+.opt.on .chk-svg{display:block;}
+.opt-name{font-size:13px;font-weight:500;}
+.opt.on .opt-name{color:var(--accent);}
+.opt-detail{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);}
+select{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:14px;padding:10px 14px;outline:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6860' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px;cursor:pointer;}
+select option{background:#fff;}
+.btn-calc{width:100%;margin-top:4px;padding:14px;background:var(--text-primary);color:#fff;border:none;border-radius:12px;font-family:var(--font-body);font-size:14px;font-weight:500;cursor:pointer;transition:opacity 0.2s,transform 0.15s;letter-spacing:0.01em;}
+.btn-calc:hover{opacity:0.85;transform:translateY(-1px);}
+
+.result-empty{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:80px 40px;text-align:center;}
+.empty-text{font-family:var(--font-serif);font-size:22px;color:var(--text-muted);font-style:italic;line-height:1.5;}
+.result-panel{display:flex;flex-direction:column;gap:16px;animation:fadeUp 0.3s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+.th-card{background:var(--text-primary);border-radius:20px;padding:32px;color:#fff;}
+.th-eye{font-family:var(--font-mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:12px;}
+.th-amount{font-family:var(--font-serif);font-size:52px;color:#fff;letter-spacing:-2px;line-height:1;margin-bottom:6px;}
+.th-freq{font-size:13px;color:rgba(255,255,255,0.45);}
+.th-pills{display:flex;gap:6px;margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap;}
+.th-pill{background:rgba(255,255,255,0.1);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:500;cursor:pointer;transition:background 0.15s;border:none;color:#fff;font-family:var(--font-body);}
+.th-pill:hover,.th-pill.on{background:rgba(255,255,255,0.22);}
+
+.bc-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:24px 28px;}
+.bc-title{font-family:var(--font-serif);font-size:18px;margin-bottom:18px;}
+.bc-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
+.bc-row:last-child{border-bottom:none;padding-top:14px;}
+.bc-label{font-size:13px;color:var(--text-secondary);}
+.bc-val{font-family:var(--font-mono);font-size:13px;font-weight:500;}
+.bc-val.pos{color:var(--green);}
+.bc-val.neg{color:var(--red);}
+.bc-val.tot{color:var(--text-primary);font-size:15px;}
+.bc-note{margin-top:12px;padding:10px 14px;background:var(--accent-light);border-radius:8px;font-size:12px;color:var(--accent);}
+
+.rate-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:24px 28px;}
+.rate-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:16px;}
+.rate-title{font-family:var(--font-serif);font-size:18px;}
+.rate-pct{font-family:var(--font-serif);font-size:44px;color:var(--accent);letter-spacing:-2px;line-height:1;}
+.rate-track{height:8px;background:var(--bg);border-radius:4px;overflow:hidden;}
+.rate-fill{height:8px;background:linear-gradient(90deg,var(--accent),#1d4ed8);border-radius:4px;transition:width 0.8s cubic-bezier(0.34,1.56,0.64,1);}
+.rate-note{font-size:12px;color:var(--text-muted);margin-top:10px;}
+
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-logo{font-family:var(--font-serif);font-size:16px;}
+.footer-logo span{color:var(--accent);}
+.footer-disc{font-size:11px;color:var(--text-muted);max-width:520px;}
+
+@media(max-width:860px){
+  .hero,.country-section,.calc-wrap{padding-left:20px;padding-right:20px;}
+  .hero{grid-template-columns:1fr;padding-top:40px;}
+  .calc-wrap{grid-template-columns:1fr;}
+  .nav-links,.nav-cta{display:none;}
+  footer{padding:20px;}
+}
+
+/* BREAKDOWN TABLE */
+.bc-table-wrap{overflow-x:auto;margin-top:4px;}
+.bc-table{width:100%;border-collapse:collapse;font-size:13px;}
+.bc-table th{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);font-weight:500;padding:8px 16px;text-align:right;border-bottom:1px solid var(--border);}
+.bc-table th:first-child{text-align:left;}
+.bc-table td{padding:10px 16px;text-align:right;border-bottom:1px solid var(--border);color:var(--text-secondary);font-family:var(--font-mono);}
+.bc-table td:first-child{text-align:left;font-family:var(--font-body);display:flex;align-items:center;gap:8px;}
+.bc-table tr:last-child td{border-bottom:none;font-weight:500;color:var(--text-primary);background:rgba(37,99,235,0.04);}
+.bc-table tr:first-child td{color:var(--text-primary);}
+.bc-table td.zero{color:var(--border-dark);}
+.row-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+
+.ks-wrap{margin-top:4px;}
+.ks-pills{display:flex;gap:6px;flex-wrap:wrap;}
+.ks-pill{padding:7px 14px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text-secondary);font-family:var(--font-body);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s;}
+.ks-pill:hover{border-color:var(--border-dark);color:var(--text-primary);}
+.ks-pill.active{background:var(--text-primary);color:#fff;border-color:var(--text-primary);}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Calc<span>FI</span></a>
+  <ul class="nav-links">
+    <li><a href="calcfi-salary-calculator.html" class="active">Salary</a></li>
+    <li><a href="calcfi-fire-calculator.html">FIRE</a></li>
+    <li><a href="calcfi-investment-calculator.html">Invest</a></li>
+    <li><a href="calcfi-rent-vs-buy.html">Rent vs Buy</a></li>
+  </ul>
+  <a href="#" class="nav-cta">All calculators →</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="hero-eyebrow">Free Calculator</div>
+    <h1>Salary <em>after</em><br>tax calculator</h1>
+    <p class="hero-sub">Find out exactly what lands in your bank account. Accurate take-home pay for NZ, AU, UK, US, and Canada — updated for 2025.</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <div class="hs-label">Countries</div>
+        <div class="hs-val"><span>5</span> supported</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hs-label">Updated</div>
+        <div class="hs-val">2024<span>/25</span></div>
+      </div>
+    </div>
+    <div class="hero-stat">
+      <div class="hs-label">Includes</div>
+      <div class="hs-val" style="font-size:16px;line-height:1.5;">KiwiSaver · ACC · Medicare<br>NI · FICA · CPP · EI</div>
+    </div>
+  </div>
+</header>
+
+<div class="country-section">
+  <p class="section-label">Select country</p>
+  <div class="country-tabs" id="countryTabs">
+    <button class="ctab active" data-c="NZ">🇳🇿 New Zealand</button>
+    <button class="ctab" data-c="AU">🇦🇺 Australia</button>
+    <button class="ctab" data-c="UK">🇬🇧 United Kingdom</button>
+    <button class="ctab" data-c="US">🇺🇸 United States</button>
+    <button class="ctab" data-c="CA">🇨🇦 Canada</button>
+  </div>
+</div>
+
+<div class="calc-wrap">
+  <div class="input-card">
+    <div class="input-header"><div class="input-title">Your income</div></div>
+    <div class="input-body">
+
+      <div class="field">
+        <span class="field-label">Gross salary</span>
+        <div class="salary-wrap">
+          <span class="salary-sym" id="symLabel">$</span>
+          <input type="number" class="salary-input" id="salary" placeholder="75,000" oninput="calculate()">
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Pay period</span>
+        <div class="freq-row" id="freqRow">
+          <button class="ftab active" data-f="annual">Annual</button>
+          <button class="ftab" data-f="monthly">Monthly</button>
+          <button class="ftab" data-f="fortnightly">Fortnight</button>
+          <button class="ftab" data-f="weekly">Weekly</button>
+        </div>
+      </div>
+
+      <div id="nzOpts">
+        <div class="field">
+          <span class="field-label">Deductions</span>
+          <div class="opts">
+            <div class="opt on" id="opt-acc" onclick="tog('acc')">
+              <div class="opt-l"><div class="chk"><svg class="chk-svg" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="opt-name">ACC Levy</span></div>
+              <span class="opt-detail">1.60%</span>
+            </div>
+            <div class="opt" id="opt-sl" onclick="tog('sl')">
+              <div class="opt-l"><div class="chk"><svg class="chk-svg" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="opt-name">Student Loan</span></div>
+              <span class="opt-detail">12% repayment</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="field-label">KiwiSaver rate</span>
+          <div class="ks-wrap">
+            <div class="ks-pills" id="ksPills">
+              <button class="ks-pill" data-r="0" onclick="setKS(this,0)">Off</button>
+              <button class="ks-pill active" data-r="3" onclick="setKS(this,3)">3%</button>
+              <button class="ks-pill" data-r="4" onclick="setKS(this,4)">4%</button>
+              <button class="ks-pill" data-r="6" onclick="setKS(this,6)">6%</button>
+              <button class="ks-pill" data-r="8" onclick="setKS(this,8)">8%</button>
+              <button class="ks-pill" data-r="10" onclick="setKS(this,10)">10%</button>
+              <button class="ks-pill" data-r="custom" onclick="setKS(this,'custom')">Custom</button>
+            </div>
+            <div id="ksCustomWrap" style="display:none;margin-top:8px;display:none;">
+              <div style="display:flex;align-items:center;gap:8px;">
+                <input type="number" id="ksCustomInput" min="0" max="100" placeholder="e.g. 5" oninput="setKSCustom(this.value)" style="width:90px;font-size:14px;padding:8px 12px;background:var(--bg);border:1px solid var(--border-dark);border-radius:8px;color:var(--text-primary);outline:none;">
+                <span style="font-size:13px;color:var(--text-secondary);">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="opt" id="opt-second" onclick="tog('second')">
+            <div class="opt-l"><div class="chk"><svg class="chk-svg" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="opt-name">Secondary Income</span></div>
+            <span class="opt-detail">Extra job / side income</span>
+          </div>
+          <div id="secondIncomeWrap" style="display:none;margin-top:10px;">
+            <div class="salary-wrap">
+              <span class="salary-sym" id="sym2Label">$</span>
+              <input type="number" class="salary-input" id="salary2" placeholder="20,000" oninput="calculate()" style="font-size:18px;padding:10px 14px;">
+            </div>
+            <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">Secondary income is taxed at 17.5%+ (no-primary-income tax code)</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="usOpts" style="display:none;">
+        <div class="field">
+          <span class="field-label">State</span>
+          <select id="usState" onchange="calculate()">
+            <option value="none">No state income tax</option>
+            <option value="CA">California (~9.3%)</option>
+            <option value="NY">New York (~6.8%)</option>
+            <option value="TX">Texas (no state tax)</option>
+            <option value="FL">Florida (no state tax)</option>
+            <option value="WA">Washington (no state tax)</option>
+            <option value="IL">Illinois (~4.95%)</option>
+            <option value="PA">Pennsylvania (~3.07%)</option>
+          </select>
+        </div>
+        <div class="field">
+          <span class="field-label">401(k) Contribution</span>
+          <div class="ks-pills" id="us401kPills">
+            <button class="ks-pill active" data-r="0" onclick="set401k(this,0)">None</button>
+            <button class="ks-pill" data-r="3" onclick="set401k(this,3)">3%</button>
+            <button class="ks-pill" data-r="5" onclick="set401k(this,5)">5%</button>
+            <button class="ks-pill" data-r="10" onclick="set401k(this,10)">10%</button>
+            <button class="ks-pill" data-r="15" onclick="set401k(this,15)">15%</button>
+            <button class="ks-pill" data-r="custom" onclick="set401k(this,'custom')">Custom</button>
+          </div>
+          <div id="us401kCustomWrap" style="display:none;margin-top:8px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <input type="number" id="us401kCustom" min="0" max="100" placeholder="e.g. 6" oninput="set401kCustom(this.value)" style="width:90px;font-size:14px;padding:8px 12px;background:var(--bg);border:1px solid var(--border-dark);border-radius:8px;color:var(--text-primary);outline:none;">
+              <span style="font-size:13px;color:var(--text-secondary);">%</span>
+            </div>
+          </div>
+          <div style="margin-top:6px;font-size:11px;color:var(--text-muted);">Pre-tax — reduces your taxable income</div>
+        </div>
+        <div class="field">
+          <div class="opt" id="opt-us-second" onclick="togUS('second')">
+            <div class="opt-l"><div class="chk"><svg class="chk-svg" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="opt-name">Secondary Income</span></div>
+            <span class="opt-detail">Extra job / side income</span>
+          </div>
+          <div id="usSecondWrap" style="display:none;margin-top:10px;">
+            <div class="salary-wrap">
+              <span class="salary-sym">$</span>
+              <input type="number" class="salary-input" id="usSalary2" placeholder="20,000" oninput="calculate()" style="font-size:18px;padding:10px 14px;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">Calculate take-home pay →</button>
+    </div>
+  </div>
+
+  <div id="resultPanel">
+    <div class="result-empty" id="emptyState">
+      <div class="empty-text">Enter your salary<br>to see your<br>take-home pay.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Calc<span>FI</span></div>
+  <p class="footer-disc">Estimates based on 2024/25 tax rates. For informational purposes only. Tax rules change — consult a tax professional for personalised advice.</p>
+</footer>
+
+<script>
+let country='NZ', freq='annual';
+document.addEventListener('DOMContentLoaded', async () => {
+  // Auto-detect country from IP
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    const countryMap = { 'NZ':'NZ','AU':'AU','GB':'UK','US':'US','CA':'CA' };
+    const detected = countryMap[data.country_code] || 'NZ';
+    
+    // Set country and activate tab
+    country = detected;
+    document.querySelectorAll('.ctab').forEach(b => {
+      b.classList.toggle('active', b.dataset.c === detected);
+    });
+    document.getElementById('symLabel').textContent = syms[detected];
+    document.getElementById('sym2Label').textContent = syms[detected];
+    showCountryOpts(detected);
+  } catch(e) {
+    // Fallback to NZ if detection fails
+    showCountryOpts('NZ');
+  }
+});
+let opts={ks:true,acc:true,sl:false,second:false};
+let ksRate=3;
+const syms={NZ:'$',AU:'A$',UK:'£',US:'$',CA:'C$'};
+const curs={NZ:'NZD',AU:'AUD',UK:'GBP',US:'USD',CA:'CAD'};
+
+document.querySelectorAll('.ctab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.ctab').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');country=b.dataset.c;
+  document.getElementById('symLabel').textContent=syms[country];
+  document.getElementById('sym2Label').textContent=syms[country];
+  document.getElementById('nzOpts').style.display=country==='NZ'?'':'none';
+  document.getElementById('usOpts').style.display=country==='US'?'':'none';
+  calculate();
+}));
+
+document.querySelectorAll('.ftab').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.ftab').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');freq=b.dataset.f;
+  window._freqManual=true;
+  calculate();
+}));
+
+document.getElementById('salary').addEventListener('input',function(){
+  if(!this.value) window._freqManual=false;
+});
+
+function setKS(el,rate){
+  document.querySelectorAll('.ks-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  const customWrap=document.getElementById('ksCustomWrap');
+  if(rate==='custom'){
+    customWrap.style.display='block';
+    const v=parseFloat(document.getElementById('ksCustomInput').value)||3;
+    ksRate=v;opts.ks=v>0;
+  } else {
+    customWrap.style.display='none';
+    ksRate=rate;opts.ks=rate>0;
+  }
+  calculate();
+}
+
+function setKSCustom(val){
+  const v=parseFloat(val)||0;
+  ksRate=v;opts.ks=v>0;
+  calculate();
+}
+
+function tog(k){
+  opts[k]=!opts[k];
+  document.getElementById('opt-'+k).classList.toggle('on',opts[k]);
+  if(k==='second'){
+    document.getElementById('secondIncomeWrap').style.display=opts[k]?'':'none';
+    document.getElementById('sym2Label').textContent=syms[country];
+  }
+  calculate();
+}
+
+function annual(v,f){return f==='monthly'?v*12:f==='fortnightly'?v*26:f==='weekly'?v*52:v;}
+function fmt(n){return Math.round(n).toLocaleString();}
+
+function calcNZ(g){
+  // Secondary income
+  const g2=opts.second?(parseFloat(document.getElementById('salary2')?.value)||0):0;
+  const g2annual=annual(g2,freq);
+
+  let t=0;
+  if(g<=14000)t=g*0.105;
+  else if(g<=48000)t=1470+(g-14000)*0.175;
+  else if(g<=70000)t=7420+(g-48000)*0.30;
+  else if(g<=180000)t=14020+(g-70000)*0.33;
+  else t=50320+(g-180000)*0.39;
+
+  // Secondary income tax (no-primary-income code — flat rates)
+  let t2=0;
+  if(g2annual>0){
+    if(g2annual<=14000)t2=g2annual*0.105;
+    else if(g2annual<=48000)t2=g2annual*0.175;
+    else if(g2annual<=70000)t2=g2annual*0.30;
+    else t2=g2annual*0.33;
+  }
+
+  const acc=opts.acc?Math.min(g+g2annual,142283)*0.016:0;
+  const ks=opts.ks?(g+g2annual)*(ksRate/100):0;
+  const sl=opts.sl?Math.max(0,(g+g2annual)-22828)*0.12:0;
+
+  const totalGross=g+g2annual;
+  const d=[{l:'Income tax (PAYE)',a:t+t2},{l:'ACC levy (1.60%)',a:acc}];
+  if(opts.ks)d.push({l:`KiwiSaver (${ksRate}%)`,a:ks});
+  if(opts.sl)d.push({l:'Student loan repayment',a:sl});
+  if(g2annual>0)d.push({l:'Secondary income',a:-g2annual,isIncome:true});
+
+  const tot=(t+t2)+acc+ks+sl;
+  return{gross:totalGross,primaryGross:g,secondaryGross:g2annual,net:totalGross-tot,tot,d,rate:(tot/totalGross)*100};
+}
+function calcAU(g){
+  const g2=auOpts.second?(parseFloat(document.getElementById('auSalary2')?.value)||0):0;
+  const g2a=annual(g2,freq);
+  const totalG=g+g2a;
+
+  function auTax(inc){
+    let t=0;
+    if(inc<=18200)t=0;
+    else if(inc<=45000)t=(inc-18200)*0.19;
+    else if(inc<=120000)t=5092+(inc-45000)*0.325;
+    else if(inc<=180000)t=29467+(inc-120000)*0.37;
+    else t=51667+(inc-180000)*0.45;
+    let lito=0;
+    if(inc<=37500)lito=700;
+    else if(inc<=45000)lito=700-(inc-37500)*0.05;
+    else if(inc<=66667)lito=325-(inc-45000)*0.015;
+    return Math.max(0,t-lito);
+  }
+
+  const t=auTax(totalG);
+  const med=totalG>26000?totalG*0.02:0;
+  const mls=auOpts.mls&&totalG>93000?totalG*0.01:0;
+
+  // HELP/HECS repayment
+  let hecs=0;
+  if(auOpts.hecs){
+    if(totalG>=54435)hecs=totalG*0.01;
+    if(totalG>=62899)hecs=totalG*0.02;
+    if(totalG>=66456)hecs=totalG*0.025;
+    if(totalG>=70000)hecs=totalG*0.03;
+    if(totalG>=80000)hecs=totalG*0.04;
+    if(totalG>=94000)hecs=totalG*0.045;
+    if(totalG>=110000)hecs=totalG*0.05;
+    if(totalG>=128000)hecs=totalG*0.055;
+    if(totalG>=151000)hecs=totalG*0.06;
+  }
+
+  const d=[{l:'Income tax',a:t},{l:'Medicare levy (2%)',a:med}];
+  if(mls>0)d.push({l:'Medicare Levy Surcharge',a:mls});
+  if(hecs>0)d.push({l:'HELP / HECS repayment',a:hecs});
+  const tot=t+med+mls+hecs;
+  return{gross:totalG,net:totalG-tot,tot,d,rate:(tot/totalG)*100,note:`Super (11.5%): A$${fmt(totalG*0.115)} paid by employer on top`};
+}
+function calcUK(g){
+  const g2=ukOpts.second?(parseFloat(document.getElementById('ukSalary2')?.value)||0):0;
+  const g2a=annual(g2,freq);
+  const totalG=g+g2a;
+
+  const pension=totalG*(ukPensionRate/100);
+  const pa=12570,taxable=Math.max(0,totalG-pa-pension);
+  let t=0;
+  if(taxable<=37700)t=taxable*0.20;
+  else if(taxable<=125140)t=7540+(taxable-37700)*0.40;
+  else t=42540+(taxable-125140)*0.45;
+
+  let ni=0;
+  if(totalG>12570){const b=totalG-12570;ni=b<=37700?b*0.08:3016+(b-37700)*0.02;}
+
+  // Student loan
+  const plan=document.getElementById('ukStudentPlan')?.value||'none';
+  let sl=0;
+  if(plan==='plan1')sl=Math.max(0,totalG-22015)*0.09;
+  else if(plan==='plan2')sl=Math.max(0,totalG-27295)*0.09;
+  else if(plan==='plan4')sl=Math.max(0,totalG-27660)*0.09;
+  else if(plan==='postgrad')sl=Math.max(0,totalG-21000)*0.06;
+
+  const d=[{l:'Income tax',a:t},{l:'National Insurance',a:ni}];
+  if(pension>0)d.push({l:`Pension (${ukPensionRate}%)`,a:pension});
+  if(sl>0)d.push({l:'Student loan repayment',a:sl});
+
+  const tot=t+ni+pension+sl;
+  return{gross:totalG,net:totalG-tot,tot,d,rate:(tot/totalG)*100};
+}
+function calcUS(g){
+  const sd=14600,taxable=Math.max(0,g-sd);
+  let fed=0;
+  if(taxable<=11600)fed=taxable*0.10;
+  else if(taxable<=47150)fed=1160+(taxable-11600)*0.12;
+  else if(taxable<=100525)fed=5426+(taxable-47150)*0.22;
+  else if(taxable<=191950)fed=17168+(taxable-100525)*0.24;
+  else fed=39110+(taxable-191950)*0.32;
+  const fica=Math.min(g,168600)*0.062+g*0.0145;
+  const st=document.getElementById('usState')?.value||'none';
+  const stax=st==='CA'?g*0.093:st==='NY'?g*0.068:0;
+  const d=[{l:'Federal income tax',a:fed},{l:'FICA (SS + Medicare)',a:fica}];
+  if(stax>0)d.push({l:'State income tax',a:stax});
+  const tot=fed+fica+stax;
+  return{gross:g,net:g-tot,tot,d,rate:(tot/g)*100};
+}
+function calcCA(g){
+  const g2=caOpts.second?(parseFloat(document.getElementById('caSalary2')?.value)||0):0;
+  const g2a=annual(g2,freq);
+  const totalG=g+g2a;
+
+  const rrsp=totalG*(Math.min(caRRSPRate,18)/100);
+  const bp=15705,taxable=Math.max(0,totalG-bp-rrsp);
+  let fed=0;
+  if(taxable<=55867)fed=taxable*0.15;
+  else if(taxable<=111733)fed=8380+(taxable-55867)*0.205;
+  else if(taxable<=154906)fed=19832+(taxable-111733)*0.26;
+  else fed=31049+(taxable-154906)*0.29;
+
+  const prov=document.getElementById('caProvince')?.value||'ON';
+  const provRates={ON:0.0915,BC:0.0870,AB:0.10,QC:0.14,NS:0.1750};
+  const provTax=taxable*(provRates[prov]||0.0915);
+
+  const cpp=Math.min(Math.max(0,totalG-3500),68500)*0.0595;
+  const ei=Math.min(totalG,63200)*0.0166;
+
+  const d=[{l:'Federal income tax',a:fed},{l:`Provincial tax (${prov})`,a:provTax},{l:'CPP contributions',a:cpp},{l:'EI premiums',a:ei}];
+  if(rrsp>0)d.push({l:`RRSP contribution (${caRRSPRate}%)`,a:rrsp});
+
+  const tot=fed+provTax+cpp+ei+rrsp;
+  return{gross:totalG,net:totalG-tot,tot,d,rate:(tot/totalG)*100};
+}
+
+function detectFreq(v){
+  // Smart detection based on amount ranges
+  if(v>=10000) return 'annual';
+  if(v>=2500) return 'monthly';
+  if(v>=1000) return 'fortnightly';
+  return 'weekly';
+}
+
+function calculate(){
+  const raw=parseFloat(document.getElementById('salary').value);
+  if(!raw||raw<=0)return;
+
+  // Auto-detect pay period if user hasn't manually changed it
+  const detected=detectFreq(raw);
+  if(!window._freqManual){
+    freq=detected;
+    document.querySelectorAll('.ftab').forEach(b=>{
+      b.classList.toggle('active',b.dataset.f===detected);
+    });
+  }
+
+  const g=annual(raw,freq);
+  let r;
+  if(country==='NZ')r=calcNZ(g);
+  else if(country==='AU')r=calcAU(g);
+  else if(country==='UK')r=calcUK(g);
+  else if(country==='US')r=calcUS(g);
+  else r=calcCA(g);
+  render(r);
+}
+
+function fmtCell(n){
+  if(n===0) return '<span class="zero">0.00</span>';
+  return (Math.round(n*100)/100).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+function render(r){
+  const sym=syms[country];
+  const panel=document.getElementById('resultPanel');
+  panel.querySelectorAll('.result-panel').forEach(e=>e.remove());
+  document.getElementById('emptyState')?.remove();
+
+  const wrap=document.createElement('div');
+  wrap.className='result-panel';
+
+  // Take-home hero card
+  const th=document.createElement('div');
+  th.className='th-card';
+  th.innerHTML=`
+    <div class="th-eye">Take-home pay · ${curs[country]}</div>
+    <div class="th-amount" id="thAmt">${sym}${fmt(r.net)}</div>
+    <div class="th-freq" id="thLbl">per year</div>
+    <div class="th-pills">
+      <button class="th-pill on" onclick="swFreq(this,${r.net},'per year')">Annual</button>
+      <button class="th-pill" onclick="swFreq(this,${r.net/12},'per month')">Monthly</button>
+      <button class="th-pill" onclick="swFreq(this,${r.net/26},'per fortnight')">Fortnightly</button>
+      <button class="th-pill" onclick="swFreq(this,${r.net/52},'per week')">Weekly</button>
+    </div>`;
+  wrap.appendChild(th);
+
+  // Full breakdown TABLE like paye.net.nz
+  const hrs = r.gross / 2080; // ~40hrs/wk 52wks
+  const rows = [
+    { label:'Gross Pay', dot:'#0d0c0b', annual:r.gross },
+    ...r.d.map((d,i)=>{
+      const colors=['#f59e0b','#ef4444','#3b82f6','#a855f7','#10b981'];
+      return { label:d.l, dot:colors[i]||'#888', annual:d.a };
+    }),
+    { label:'Take Home Pay', dot:'#16a34a', annual:r.net, isTotal:true },
+  ];
+
+  const bc=document.createElement('div');
+  bc.className='bc-card';
+  bc.innerHTML=`
+    <div class="bc-title">Full breakdown</div>
+    <div class="bc-table-wrap">
+      <table class="bc-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Hour</th>
+            <th>Week</th>
+            <th>Fortnight</th>
+            <th>Month</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map(row=>`
+          <tr>
+            <td><span class="row-dot" style="background:${row.dot}"></span>${row.label}</td>
+            <td>${fmtCell(row.annual/2080)}</td>
+            <td>${fmtCell(row.annual/52)}</td>
+            <td>${fmtCell(row.annual/26)}</td>
+            <td>${fmtCell(row.annual/12)}</td>
+            <td>${fmtCell(row.annual)}</td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+    ${r.note?`<div class="bc-note" style="margin-top:14px;">${r.note}</div>`:''}`;
+  wrap.appendChild(bc);
+
+  // Rate card
+  const rc=document.createElement('div');
+  rc.className='rate-card';
+  rc.innerHTML=`
+    <div class="rate-top">
+      <div class="rate-title">Effective tax rate</div>
+      <div class="rate-pct">${r.rate.toFixed(1)}%</div>
+    </div>
+    <div class="rate-track"><div class="rate-fill" style="width:${Math.min(r.rate,60)}%"></div></div>
+    <div class="rate-note">You keep ${(100-r.rate).toFixed(1)}% of every dollar earned · Based on 40hrs/week, 52 weeks</div>`;
+  wrap.appendChild(rc);
+
+  panel.appendChild(wrap);
+
+  // Geo-targeted affiliate
+  createAffiliateBanner('salary').then(b=>panel.appendChild(b));
+}
+
+function swFreq(el,amount,lbl){
+  document.querySelectorAll('.th-pill').forEach(p=>p.classList.remove('on'));
+  el.classList.add('on');
+  document.getElementById('thAmt').textContent=syms[country]+fmt(amount);
+  document.getElementById('thLbl').textContent=lbl;
+}
+
+// ── PER-COUNTRY OPTION STATE ─────────────────────────────────
+let auOpts={hecs:false,mls:false,second:false};
+let ukOpts={second:false};let ukPensionRate=0;
+let caOpts={second:false};let caRRSPRate=0;
+let us401kRate=0; let usOpts2={second:false};
+
+function togAU(k){auOpts[k]=!auOpts[k];document.getElementById('opt-au-'+k).classList.toggle('on',auOpts[k]);if(k==='second')document.getElementById('auSecondWrap').style.display=auOpts[k]?'block':'none';calculate();}
+function togUK(k){ukOpts[k]=!ukOpts[k];document.getElementById('opt-uk-'+k).classList.toggle('on',ukOpts[k]);if(k==='second')document.getElementById('ukSecondWrap').style.display=ukOpts[k]?'block':'none';calculate();}
+function togCA(k){caOpts[k]=!caOpts[k];document.getElementById('opt-ca-'+k).classList.toggle('on',caOpts[k]);if(k==='second')document.getElementById('caSecondWrap').style.display=caOpts[k]?'block':'none';calculate();}
+function togUS(k){usOpts2[k]=!usOpts2[k];document.getElementById('opt-us-'+k).classList.toggle('on',usOpts2[k]);if(k==='second')document.getElementById('usSecondWrap').style.display=usOpts2[k]?'block':'none';calculate();}
+
+function set401k(el,rate){document.querySelectorAll('#us401kPills .ks-pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');document.getElementById('us401kCustomWrap').style.display=rate==='custom'?'block':'none';us401kRate=rate==='custom'?(parseFloat(document.getElementById('us401kCustom')?.value)||0):rate;calculate();}
+function set401kCustom(v){us401kRate=parseFloat(v)||0;calculate();}
+
+function setUKPension(el,rate){document.querySelectorAll('#ukPensionPills .ks-pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');document.getElementById('ukPensionCustomWrap').style.display=rate==='custom'?'block':'none';ukPensionRate=rate==='custom'?(parseFloat(document.getElementById('ukPensionCustom')?.value)||0):rate;calculate();}
+function setUKPensionCustom(v){ukPensionRate=parseFloat(v)||0;calculate();}
+
+function setRRSP(el,rate){document.querySelectorAll('#caRRSPPills .ks-pill').forEach(p=>p.classList.remove('active'));el.classList.add('active');document.getElementById('caRRSPCustomWrap').style.display=rate==='custom'?'block':'none';caRRSPRate=rate==='custom'?(parseFloat(document.getElementById('caRRSPCustom')?.value)||0):rate;calculate();}
+function setRRSPCustom(v){caRRSPRate=parseFloat(v)||0;calculate();}
+
+// Show/hide country-specific option panels
+function showCountryOpts(c){
+  ['nzOpts','auOpts','ukOpts','usOpts','caOpts'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.style.display='none';
+  });
+  const map={NZ:'nzOpts',AU:'auOpts',UK:'ukOpts',US:'usOpts',CA:'caOpts'};
+  const el=document.getElementById(map[c]);
+  if(el) el.style.display='';
+}
+</script>
+</body>
+</html>

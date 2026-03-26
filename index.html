@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyFinCalc — Money Math Made Easy | Free Financial Calculators</title>
+<meta name="description" content="Free financial calculators for everyone. FIRE calculator, salary after tax for NZ, AU, UK, US & CA, compound interest, investment returns, retirement savings, and more.">
+<meta name="keywords" content="FIRE calculator, salary calculator, financial independence calculator, compound interest calculator, retirement calculator, investment calculator, salary after tax NZ AU UK US CA">
+<link rel="canonical" href="https://myfincalc.org/">
+<meta property="og:title" content="MyFinCalc — Money Math Made Easy">
+<meta property="og:description" content="Free financial calculators. FIRE, salary after tax (NZ, AU, UK, US, CA), compound interest, retirement savings, and more.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MyFinCalc","url":"https://myfincalc.org","description":"Free financial calculators — money math made easy"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f7f4;--bg-card:#ffffff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;
+  --accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;
+  --text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;
+  --font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden;position:relative;}
+
+/* Animated gradient orbs background — inspired by Salt Level aesthetic */
+.bg-glow{position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;overflow:hidden;pointer-events:none;}
+.bg-orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.18;mix-blend-mode:normal;}
+.bg-orb-1{width:600px;height:600px;background:radial-gradient(circle,#2d9e5f 0%,transparent 70%);top:-10%;left:-10%;animation:orbDrift1 20s ease-in-out infinite;}
+.bg-orb-2{width:500px;height:500px;background:radial-gradient(circle,#16a34a 0%,transparent 70%);bottom:-5%;right:-10%;animation:orbDrift2 25s ease-in-out infinite;}
+.bg-orb-3{width:400px;height:400px;background:radial-gradient(circle,#a3e635 0%,transparent 70%);top:40%;left:50%;transform:translate(-50%,-50%);animation:orbDrift3 18s ease-in-out infinite;opacity:0.1;}
+.bg-orb-4{width:350px;height:350px;background:radial-gradient(circle,#34d399 0%,transparent 70%);top:10%;right:20%;animation:orbDrift4 22s ease-in-out infinite;opacity:0.12;}
+@keyframes orbDrift1{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(80px,40px) scale(1.1);}50%{transform:translate(40px,80px) scale(0.95);}75%{transform:translate(-30px,50px) scale(1.05);}  }
+@keyframes orbDrift2{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(-60px,-30px) scale(1.05);}50%{transform:translate(-30px,-70px) scale(1.1);}75%{transform:translate(40px,-40px) scale(0.95);}}
+@keyframes orbDrift3{0%,100%{transform:translate(-50%,-50%) scale(1);}33%{transform:translate(-40%,-60%) scale(1.15);}66%{transform:translate(-60%,-40%) scale(0.9);}}
+@keyframes orbDrift4{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-50px,60px) scale(1.1);}}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:20px;color:var(--text-primary);text-decoration:none;display:flex;align-items:center;gap:2px;}
+.nav-logo .fi{color:var(--accent);}
+.nav-tag{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px;}
+.nav-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+.hero{padding:80px 24px 48px;text-align:center;max-width:860px;margin:0 auto;position:relative;}
+.floaters{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;overflow:hidden;}
+.float-el{position:absolute;font-size:24px;opacity:0.07;animation:floatUp 22s linear infinite;}
+@keyframes floatUp{0%{transform:translateY(100px) rotate(0deg);opacity:0;}10%{opacity:0.07;}90%{opacity:0.07;}100%{transform:translateY(-400px) rotate(360deg);opacity:0;}}
+
+.hero-eyebrow{font-family:var(--font-title);font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:inline-flex;align-items:center;gap:8px;background:var(--accent-light);padding:6px 18px;border-radius:100px;}
+.hero-eyebrow .coin{display:inline-block;animation:bounce 2s ease infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
+
+.hero h1{font-family:var(--font-title);font-size:clamp(42px,7.5vw,76px);font-weight:700;line-height:0.95;letter-spacing:-2.5px;margin-bottom:24px;color:var(--text-primary);}
+.hero h1 .green{color:var(--accent);position:relative;}
+.hero h1 .green::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:8px;background:var(--accent-light);border-radius:4px;z-index:-1;}
+.hero h1 .wave{display:inline-block;animation:wave 3s ease-in-out infinite;}
+@keyframes wave{0%,100%{transform:rotate(0deg);}25%{transform:rotate(8deg);}75%{transform:rotate(-5deg);}}
+
+.hero-sub{font-size:18px;color:var(--text-secondary);max-width:520px;margin:0 auto 40px;line-height:1.7;}
+.hero-sub strong{color:var(--text-primary);font-weight:500;}
+
+.trust-row{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;margin-bottom:48px;}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);}
+.trust-icon{width:32px;height:32px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.trust-item strong{color:var(--text-primary);font-weight:600;}
+
+.marquee-wrap{overflow:hidden;padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:60px;}
+.marquee{display:flex;gap:48px;animation:scroll 30s linear infinite;width:max-content;}
+.marquee span{font-family:var(--font-title);font-size:14px;font-weight:600;color:var(--text-muted);white-space:nowrap;letter-spacing:0.05em;text-transform:uppercase;}
+.marquee .dot{color:var(--accent);}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+.calcs-section{max-width:1100px;margin:0 auto;padding:0 24px 80px;}
+.sec-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:8px;}
+.sec-title{font-family:var(--font-title);font-size:28px;font-weight:700;letter-spacing:-1px;color:var(--text-primary);}
+.sec-title span{color:var(--accent);}
+.sec-count{font-size:13px;color:var(--text-muted);background:var(--bg-input);padding:4px 12px;border-radius:100px;}
+
+.calcs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.calc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:24px;text-decoration:none;display:flex;flex-direction:column;gap:10px;transition:all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);position:relative;overflow:hidden;}
+.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease;}
+.calc-card:hover::before{transform:scaleX(1);}
+.calc-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 12px 40px rgba(26,107,60,0.1);}
+.calc-card.featured{border-color:var(--accent2);background:linear-gradient(135deg,#fff 0%,var(--accent-light) 100%);}
+.calc-card.featured::before{background:linear-gradient(90deg,var(--accent),var(--accent2));}
+.calc-emoji{font-size:28px;line-height:1;}
+.calc-name{font-family:var(--font-title);font-size:16px;font-weight:700;color:var(--text-primary);}
+.calc-desc{font-size:13px;color:var(--text-secondary);line-height:1.5;flex:1;}
+.calc-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:2px;}
+.calc-badge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:6px;font-family:var(--font-title);letter-spacing:0.03em;}
+.b-featured{background:var(--accent-light);color:var(--accent);}
+.b-new{background:#e8f0fe;color:#1967d2;}
+.calc-flags{display:flex;gap:3px;font-size:13px;}
+.calc-arrow{color:var(--text-muted);font-size:14px;transition:all 0.2s;margin-left:auto;}
+.calc-card:hover .calc-arrow{transform:translateX(4px);color:var(--accent);}
+
+.why-section{max-width:1100px;margin:0 auto;padding:0 24px 80px;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.why-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px;text-align:center;transition:transform 0.2s;}
+.why-card:hover{transform:translateY(-2px);}
+.why-icon{font-size:32px;margin-bottom:12px;}
+.why-title{font-family:var(--font-title);font-size:16px;font-weight:700;margin-bottom:8px;}
+.why-desc{font-size:13px;color:var(--text-secondary);line-height:1.6;}
+
+.disclaimer{max-width:900px;margin:0 auto;padding:0 24px 40px;text-align:center;font-size:12px;color:var(--text-muted);line-height:1.6;}
+
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;display:flex;align-items:center;gap:2px;}
+.footer-logo .fi{color:var(--accent);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+.footer-tagline{font-size:11px;color:var(--text-muted);font-style:italic;margin-top:2px;}
+
+.fade-up{opacity:0;transform:translateY(20px);animation:fadeUp 0.6s ease forwards;}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+.delay-1{animation-delay:0.1s;}.delay-2{animation-delay:0.2s;}.delay-3{animation-delay:0.3s;}
+
+@media(max-width:700px){
+  .calcs-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;text-align:center;}
+  .trust-row{gap:16px;}
+  .hero h1{letter-spacing:-1.5px;}
+}
+@media(max-width:480px){.calcs-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- Animated gradient background -->
+<div class="bg-glow">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+  <div class="bg-orb bg-orb-3"></div>
+  <div class="bg-orb bg-orb-4"></div>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <span class="nav-tag"><span class="nav-dot"></span> Money math, made easy</span>
+</nav>
+
+<section class="hero">
+  <div class="floaters">
+    <div class="float-el" style="left:8%;top:20%;animation-delay:0s;">💰</div>
+    <div class="float-el" style="left:85%;top:40%;animation-delay:4s;">📈</div>
+    <div class="float-el" style="left:15%;top:60%;animation-delay:8s;">🏠</div>
+    <div class="float-el" style="left:78%;top:15%;animation-delay:12s;">🔥</div>
+    <div class="float-el" style="left:50%;top:80%;animation-delay:6s;">💳</div>
+  </div>
+  <div class="hero-eyebrow fade-up"><span class="coin">💲</span> Money math, made easy</div>
+  <h1 class="fade-up delay-1">Your money,<br><span class="green">calculated</span> <span class="wave">→</span></h1>
+  <p class="hero-sub fade-up delay-2"><strong>12 free calculators</strong> for real-life money decisions. From your salary after tax to your FIRE number — no jargon, just the numbers you need.</p>
+  <div class="trust-row fade-up delay-3">
+    <div class="trust-item"><div class="trust-icon">🔒</div><span><strong>Private</strong> — runs locally</span></div>
+    <div class="trust-item"><div class="trust-icon">⚡</div><span><strong>Instant</strong> — no loading</span></div>
+    <div class="trust-item"><div class="trust-icon">🌍</div><span><strong>5 countries</strong> supported</span></div>
+    <div class="trust-item"><div class="trust-icon">📱</div><span><strong>Mobile-friendly</strong> — works anywhere</span></div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>FIRE Calculator</span><span class="dot">·</span><span>Salary After Tax</span><span class="dot">·</span><span>Compound Interest</span><span class="dot">·</span><span>Investment Returns</span><span class="dot">·</span><span>Retirement Savings</span><span class="dot">·</span><span>Rent vs Buy</span><span class="dot">·</span><span>How Much to Invest</span><span class="dot">·</span><span>Emergency Fund</span><span class="dot">·</span><span>Debt Payoff</span><span class="dot">·</span><span>Savings Goal</span><span class="dot">·</span><span>Solar Panels ROI</span><span class="dot">·</span><span>Startup Valuation</span><span class="dot">·</span>
+    <span>FIRE Calculator</span><span class="dot">·</span><span>Salary After Tax</span><span class="dot">·</span><span>Compound Interest</span><span class="dot">·</span><span>Investment Returns</span><span class="dot">·</span><span>Retirement Savings</span><span class="dot">·</span><span>Rent vs Buy</span><span class="dot">·</span><span>How Much to Invest</span><span class="dot">·</span><span>Emergency Fund</span><span class="dot">·</span><span>Debt Payoff</span><span class="dot">·</span><span>Savings Goal</span><span class="dot">·</span><span>Solar Panels ROI</span><span class="dot">·</span><span>Startup Valuation</span><span class="dot">·</span>
+  </div>
+</div>
+
+<section class="calcs-section">
+  <div class="sec-header">
+    <h2 class="sec-title">All <span>calculators</span></h2>
+    <span class="sec-count">12 tools</span>
+  </div>
+  <div class="calcs-grid">
+    <a href="calcfi-fire-calculator.html" class="calc-card featured">
+      <div class="calc-emoji">🔥</div>
+      <div class="calc-name">FIRE Calculator</div>
+      <div class="calc-desc">Find your Financial Independence number and retirement date using the 4% rule.</div>
+      <div class="calc-meta"><span class="calc-badge b-featured">Most popular</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-salary-after-tax.html" class="calc-card featured">
+      <div class="calc-emoji">💰</div>
+      <div class="calc-name">Salary After Tax</div>
+      <div class="calc-desc">Your real take-home pay after taxes and deductions. Auto-detects your country.</div>
+      <div class="calc-meta">
+        <span class="calc-flags" title="New Zealand, Australia, United Kingdom, United States, Canada">🇳🇿 🇦🇺 🇬🇧 🇺🇸 🇨🇦</span>
+        <span class="calc-badge b-featured">5 countries</span>
+        <span class="calc-arrow">→</span>
+      </div>
+    </a>
+    <a href="calcfi-compound-interest-calculator.html" class="calc-card">
+      <div class="calc-emoji">📈</div>
+      <div class="calc-name">Compound Interest</div>
+      <div class="calc-desc">See how your investments grow over time with the power of compounding.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-investment-returns-calculator.html" class="calc-card">
+      <div class="calc-emoji">💹</div>
+      <div class="calc-name">Investment Returns</div>
+      <div class="calc-desc">Calculate ROI, CAGR, and total returns on any investment.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-retirement-savings-calculator.html" class="calc-card">
+      <div class="calc-emoji">🏖️</div>
+      <div class="calc-name">Retirement Savings</div>
+      <div class="calc-desc">How much do you need to save each month to retire comfortably?</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-rent-vs-buy-calculator.html" class="calc-card">
+      <div class="calc-emoji">🏠</div>
+      <div class="calc-name">Rent vs Buy</div>
+      <div class="calc-desc">Should you rent or buy? The honest financial comparison for your situation.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-how-much-to-invest-calculator.html" class="calc-card">
+      <div class="calc-emoji">🎯</div>
+      <div class="calc-name">How Much to Invest</div>
+      <div class="calc-desc">Calculate how much to invest monthly to reach your financial goal.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-emergency-fund-calculator.html" class="calc-card">
+      <div class="calc-emoji">🛡️</div>
+      <div class="calc-name">Emergency Fund</div>
+      <div class="calc-desc">Calculate your ideal emergency fund size based on expenses and risk.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-debt-payoff-calculator.html" class="calc-card">
+      <div class="calc-emoji">💳</div>
+      <div class="calc-name">Debt Payoff</div>
+      <div class="calc-desc">Snowball vs avalanche — find the fastest way to get out of debt.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-savings-goal-calculator.html" class="calc-card">
+      <div class="calc-emoji">🏆</div>
+      <div class="calc-name">Savings Goal</div>
+      <div class="calc-desc">How long until you reach your savings target? Plan your timeline.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-solar-panels-roi-calculator.html" class="calc-card">
+      <div class="calc-emoji">☀️</div>
+      <div class="calc-name">Solar Panels ROI</div>
+      <div class="calc-desc">Calculate the payback period and lifetime savings for solar panels.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+    <a href="calcfi-startup-valuation-calculator.html" class="calc-card">
+      <div class="calc-emoji">🦄</div>
+      <div class="calc-name">Startup Valuation</div>
+      <div class="calc-desc">Estimate your startup's pre-money valuation using proven methods.</div>
+      <div class="calc-meta"><span class="calc-badge b-new">New</span><span class="calc-arrow">→</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="why-section">
+  <h2 class="sec-title" style="text-align:center;margin-bottom:32px;">Why <span>MyFinCalc</span>?</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🧮</div>
+      <div class="why-title">No fluff, just math</div>
+      <div class="why-desc">Every calculator uses real formulas and current tax rates. No vague estimates — you get the actual numbers.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔐</div>
+      <div class="why-title">Your data stays with you</div>
+      <div class="why-desc">All calculations run in your browser. We never see your numbers, never store your data, never sell anything.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🌏</div>
+      <div class="why-title">Built for the real world</div>
+      <div class="why-desc">Salary calculator with real tax brackets for NZ, AU, UK, US and Canada. KiwiSaver, 401k, HECS — we've got it.</div>
+    </div>
+  </div>
+</section>
+
+<div class="disclaimer">
+  ⚠️ MyFinCalc provides educational calculators only. Results are estimates and not financial advice. Always consult a qualified financial advisor before making investment decisions.
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+    <div class="footer-tagline">Money math, made easy.</div>
+  </div>
+  <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div>
+  <p class="footer-copy">© 2026 MyFinCalc.org</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Much to Invest Calculator — Reach Your Goal | MyFinCalc</title>
+<meta name="description" content="Free investment goal calculator. Calculate exactly how much to invest each month to reach your financial target based on expected returns and timeline.">
+<meta name="keywords" content="how much to invest calculator, investment goal calculator, monthly investment calculator, savings goal calculator, investment target calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/calcfi-how-much-to-invest-calculator.html">
+<meta property="og:title" content="How Much to Invest Calculator — Reach Your Goal">
+<meta property="og:description" content="Calculate how much to invest monthly to hit your financial target.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"How Much to Invest Calculator","description":"Calculate monthly investment needed to reach your financial goal","url":"https://myfincalc.org/calcfi-how-much-to-invest-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"MyFinCalc","url":"https://myfincalc.org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I invest each month?","acceptedAnswer":{"@type":"Answer","text":"A common guideline is to invest 15-20% of your gross income. However, the right amount depends on your financial goals, timeline, and current obligations. Use this calculator to find your specific number."}},{"@type":"Question","name":"What return rate should I assume?","acceptedAnswer":{"@type":"Answer","text":"For long-term stock market investing, 7-10% nominal return is historically reasonable. For a more conservative estimate, use 6-7% which accounts for a diversified portfolio. Always use a lower rate for shorter time horizons."}},{"@type":"Question","name":"Should I invest a lump sum or monthly?","acceptedAnswer":{"@type":"Answer","text":"Historically, lump sum investing outperforms dollar-cost averaging about 67% of the time. However, regular monthly investing is more practical for most people and reduces the risk of investing at a market peak."}},{"@type":"Question","name":"Does inflation affect my investment goal?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your goal is 20 years away, you need to account for inflation. A million dollars today will only buy about $550,000 worth of goods in 20 years at 3% inflation. Use inflation-adjusted returns for accuracy."}}]}</script>
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.hero{padding:48px 24px 32px;max-width:800px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}.hero h1 .green{color:var(--accent);}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:480px;margin:0 auto;}
+.main{max-width:960px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;}
+.card-title{font-family:var(--font-title);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;}
+.field{margin-bottom:16px;}
+label{display:block;font-family:var(--font-title);font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:6px;}
+.input-wrap{position:relative;}
+.input-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+input[type="number"]{width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:15px;padding:11px 14px;outline:none;appearance:none;-moz-appearance:textfield;}
+input[type="range"]{width:100%;accent-color:var(--accent);margin:8px 0;}
+input.has-prefix{padding-left:28px;}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,107,60,0.08);}
+.range-val{font-family:var(--font-title);font-size:14px;font-weight:700;color:var(--accent);float:right;}
+.field-hint{font-size:12px;color:var(--text-muted);margin-top:4px;}
+.btn-calc{width:100%;margin-top:12px;padding:15px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-title);font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;}.btn-calc:hover{background:var(--accent2);transform:translateY(-1px);}
+.results-panel{display:flex;flex-direction:column;gap:12px;}
+.result-empty{background:var(--bg-card);border:1px dashed var(--border);border-radius:20px;padding:60px 28px;text-align:center;color:var(--text-muted);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.result-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);border-radius:18px;padding:24px;color:#fff;text-align:center;}
+.rh-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:8px;font-family:var(--font-title);}
+.rh-value{font-family:var(--font-title);font-size:38px;font-weight:700;letter-spacing:-1.5px;margin-bottom:4px;}
+.rh-sub{font-size:13px;opacity:0.75;}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;}
+.metric-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--font-title);margin-bottom:5px;}
+.metric-value{font-family:var(--font-title);font-size:20px;font-weight:700;color:var(--accent);}
+.metric-sub{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.scenario-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.scenario-title{font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:10px;}
+.scenario-row{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}.scenario-row:last-child{border:none;}
+.scenario-row.active{color:var(--accent);font-weight:700;}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.disclaimer{font-size:11px;color:var(--text-muted);text-align:center;padding:0 24px 32px;max-width:900px;margin:0 auto;}
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:960px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:15px;}.footer-logo .fi{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:700px){.main{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
+<header class="hero">
+  <div class="hero-badge">🎯 Calculator</div>
+  <h1><span class="green">How much to invest</span></h1>
+  <p>Calculate the exact monthly amount needed to reach your investment goal.</p>
+</header>
+<main class="main">
+  <div class="card">
+    <p class="card-title">Your goal</p>
+    <div class="field"><label>Target amount</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="target" class="has-prefix" value="500000" min="0" step="10000"></div></div>
+    <div class="field"><label>Current savings</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="current" class="has-prefix" value="20000" min="0" step="1000"></div></div>
+    <div class="field"><label>Time horizon (years) <span class="range-val" id="yearsVal">20</span></label><input type="range" id="years" min="1" max="40" value="20" step="1" oninput="document.getElementById('yearsVal').textContent=this.value"></div>
+    <div class="field"><label>Expected annual return <span class="range-val" id="rateVal">7%</span></label><input type="range" id="rate" min="2" max="15" value="7" step="0.5" oninput="document.getElementById('rateVal').textContent=this.value+'%'"></div>
+    <div class="field"><label>Expected inflation <span class="range-val" id="inflVal">3%</span></label><input type="range" id="inflation" min="0" max="8" value="3" step="0.5" oninput="document.getElementById('inflVal').textContent=this.value+'%'"></div>
+    <button class="btn-calc" onclick="calculate()">Calculate monthly investment</button>
+  </div>
+  <div class="results-panel" id="resultsPanel">
+    <div class="result-empty" id="emptyState"><div style="font-size:40px;opacity:0.3;">🎯</div><span>Enter your goal and click Calculate.</span></div>
+  </div>
+</main>
+<div class="disclaimer">⚠️ For educational purposes only. Not financial advice. Consult a qualified financial advisor.</div>
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
+
+function calcMonthly(target,current,years,annualRate){
+  const r=annualRate/100/12;
+  const n=years*12;
+  if(r===0) return Math.max(0,(target-current)/n);
+  const fvCurrent=current*Math.pow(1+r,n);
+  const remaining=Math.max(0,target-fvCurrent);
+  if(remaining<=0) return 0;
+  return remaining*r/(Math.pow(1+r,n)-1);
+}
+
+function calculate(){
+  const target=parseFloat(document.getElementById('target').value)||0;
+  const current=parseFloat(document.getElementById('current').value)||0;
+  const years=parseFloat(document.getElementById('years').value)||1;
+  const rate=parseFloat(document.getElementById('rate').value)||0;
+  const inflation=parseFloat(document.getElementById('inflation').value)||0;
+  if(!target) return;
+
+  const realRate=rate-inflation;
+  const monthly=calcMonthly(target,current,years,rate);
+  const monthlyReal=calcMonthly(target,current,years,realRate);
+  const totalContrib=current+monthly*years*12;
+  const interestEarned=target-totalContrib;
+  const dailyAmount=monthly/30;
+  const weeklyAmount=monthly/4.33;
+
+  const panel=document.getElementById('resultsPanel');
+  panel.innerHTML='';
+
+  const hero=document.createElement('div');hero.className='result-hero';
+  hero.innerHTML=`<div class="rh-label">Invest monthly</div><div class="rh-value">${fmt(monthly)}</div><div class="rh-sub">To reach ${fmt(target)} in ${years} years at ${rate}% return</div>`;
+  panel.appendChild(hero);
+
+  const mg=document.createElement('div');mg.className='metrics-grid';
+  mg.innerHTML=`
+    <div class="metric-card"><div class="metric-label">Daily amount</div><div class="metric-value">${fmt(dailyAmount)}</div><div class="metric-sub">Per day</div></div>
+    <div class="metric-card"><div class="metric-label">Weekly amount</div><div class="metric-value">${fmt(weeklyAmount)}</div><div class="metric-sub">Per week</div></div>
+    <div class="metric-card"><div class="metric-label">Total you invest</div><div class="metric-value">${fmt(totalContrib)}</div><div class="metric-sub">Your money in</div></div>
+    <div class="metric-card"><div class="metric-label">Interest earned</div><div class="metric-value">${fmt(interestEarned)}</div><div class="metric-sub">Market does the rest</div></div>`;
+  panel.appendChild(mg);
+
+  // Scenarios at different timelines
+  const sc=document.createElement('div');sc.className='scenario-card';
+  const timelines=[5,10,15,20,25,30];
+  sc.innerHTML=`<div class="scenario-title">Monthly needed by timeline</div>`+timelines.map(y=>{
+    const m=calcMonthly(target,current,y,rate);
+    return `<div class="scenario-row${y===years?' active':''}"><span>${y} years</span><span>${fmt(m)}/mo</span></div>`;
+  }).join('');
+  panel.appendChild(sc);
+
+  // Inflation note
+  if(inflation>0){
+    const inf=document.createElement('div');inf.className='scenario-card';
+    inf.innerHTML=`<div class="scenario-title">Inflation-adjusted view</div>
+      <div class="scenario-row"><span>Nominal monthly</span><span>${fmt(monthly)}/mo</span></div>
+      <div class="scenario-row"><span>Real return (${realRate.toFixed(1)}%)</span><span>${fmt(monthlyReal)}/mo</span></div>
+      <div class="scenario-row"><span>Today's purchasing power of ${fmt(target)}</span><span>${fmt(target/Math.pow(1+inflation/100,years))}</span></div>`;
+    panel.appendChild(inf);
+  }
+
+  
+  createAffiliateBanner('invest').then(b=>panel.appendChild(b));
+}
+calculate();
+</script>
+</body></html>

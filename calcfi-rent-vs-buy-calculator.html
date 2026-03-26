@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rent vs Buy Calculator — Should You Buy a Home? | MyFinCalc</title>
+<meta name="description" content="Free rent vs buy calculator. Compare the true financial cost of renting versus buying over any time horizon. Includes mortgage, maintenance, opportunity cost, and appreciation.">
+<meta name="keywords" content="rent vs buy calculator, should I rent or buy, rent vs buy comparison, home buying calculator, rent or buy NZ">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/calcfi-rent-vs-buy-calculator.html">
+<meta property="og:title" content="Rent vs Buy Calculator — Should You Buy a Home?">
+<meta property="og:description" content="The honest financial comparison between renting and buying.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Rent vs Buy Calculator","description":"Compare the financial cost of renting versus buying a home","url":"https://myfincalc.org/calcfi-rent-vs-buy-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"MyFinCalc","url":"https://myfincalc.org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is it cheaper to rent or buy?","acceptedAnswer":{"@type":"Answer","text":"It depends on your location, timeline, and financial situation. Generally, buying becomes cheaper than renting after 5-7 years due to equity building and fixed mortgage payments, but this varies significantly by market."}},{"@type":"Question","name":"What is the 5% rule for rent vs buy?","acceptedAnswer":{"@type":"Answer","text":"The 5% rule states that the annual unrecoverable cost of owning a home is roughly 5% of the home's value (mortgage interest, property taxes, maintenance). If your annual rent is less than 5% of what you'd pay for a comparable home, renting may be the better financial choice."}},{"@type":"Question","name":"How long should I plan to stay before buying makes sense?","acceptedAnswer":{"@type":"Answer","text":"Most financial advisors recommend planning to stay at least 5 years before buying. Transaction costs (agent fees, legal fees, stamp duty) typically require several years of appreciation to break even."}},{"@type":"Question","name":"What costs of homeownership are people most likely to overlook?","acceptedAnswer":{"@type":"Answer","text":"Common overlooked costs include: maintenance and repairs (1-2% of home value annually), insurance, property taxes, opportunity cost of the deposit, and transaction costs when selling."}}]}</script>
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;--blue:#2563eb;--blue-light:#eff3ff;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.hero{padding:48px 24px 32px;max-width:800px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}.hero h1 .green{color:var(--accent);}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:480px;margin:0 auto;}
+.main{max-width:960px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;}
+.card-title{font-family:var(--font-title);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;}
+.field{margin-bottom:14px;}
+label{display:block;font-family:var(--font-title);font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:6px;}
+.input-wrap{position:relative;}
+.input-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+.input-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+input[type="number"]{width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:15px;padding:11px 14px;outline:none;appearance:none;-moz-appearance:textfield;}
+input[type="range"]{width:100%;accent-color:var(--accent);margin:8px 0;}
+input.has-prefix{padding-left:28px;}
+input.has-suffix{padding-right:36px;}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,107,60,0.08);}
+.range-val{font-family:var(--font-title);font-size:14px;font-weight:700;color:var(--accent);float:right;}
+.divider{height:1px;background:var(--border);margin:16px 0;}
+.section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:12px;font-family:var(--font-title);}
+.btn-calc{width:100%;margin-top:12px;padding:15px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-title);font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;}.btn-calc:hover{background:var(--accent2);transform:translateY(-1px);}
+.results-panel{display:flex;flex-direction:column;gap:12px;}
+.result-empty{background:var(--bg-card);border:1px dashed var(--border);border-radius:20px;padding:60px 28px;text-align:center;color:var(--text-muted);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.verdict-card{border-radius:18px;padding:28px;text-align:center;}
+.verdict-card.buy{background:var(--accent-light);border:2px solid var(--accent);}
+.verdict-card.rent{background:var(--blue-light);border:2px solid var(--blue);}
+.verdict-emoji{font-size:48px;margin-bottom:8px;}
+.verdict-title{font-family:var(--font-title);font-size:28px;font-weight:700;letter-spacing:-1px;margin-bottom:4px;}
+.verdict-sub{font-size:14px;color:var(--text-secondary);}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.compare-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;text-align:center;}
+.compare-card.winner{border-color:var(--accent);background:var(--accent-light);}
+.cc-label{font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:8px;}
+.cc-value{font-family:var(--font-title);font-size:22px;font-weight:700;color:var(--accent);}
+.cc-sub{font-size:12px;color:var(--text-secondary);margin-top:4px;}
+.breakdown-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.bd-title{font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:10px;}
+.bd-row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px;border-bottom:1px solid var(--border);}.bd-row:last-child{border:none;}
+.bd-row.total{font-weight:700;color:var(--accent);border-top:2px solid var(--border);padding-top:8px;margin-top:4px;}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.disclaimer{font-size:11px;color:var(--text-muted);text-align:center;padding:0 24px 32px;max-width:900px;margin:0 auto;}
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:960px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:15px;}.footer-logo .fi{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:700px){.main{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
+<header class="hero">
+  <div class="hero-badge">🏠 Calculator</div>
+  <h1><span class="green">Rent vs buy calculator</span></h1>
+  <p>The honest financial comparison between renting and buying.</p>
+</header>
+<main class="main">
+  <div class="card">
+    <p class="card-title">Compare your options</p>
+    <div class="section-label">🏠 Buying</div>
+    <div class="field"><label>Home price</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="homePrice" class="has-prefix" value="650000" min="0" step="10000"></div></div>
+    <div class="field"><label>Down payment (%)</label><div class="input-wrap"><input type="number" id="downPct" value="20" min="0" max="100" step="1"><span class="input-suffix">%</span></div></div>
+    <div class="field"><label>Mortgage rate <span class="range-val" id="mortVal">6.5%</span></label><input type="range" id="mortRate" min="2" max="12" value="6.5" step="0.1" oninput="document.getElementById('mortVal').textContent=this.value+'%'"></div>
+    <div class="field"><label>Mortgage term (years)</label><input type="number" id="mortTerm" value="30" min="5" max="30" step="5"></div>
+    <div class="divider"></div>
+    <div class="section-label">🏢 Renting</div>
+    <div class="field"><label>Monthly rent</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="rent" class="has-prefix" value="2200" min="0" step="50"></div></div>
+    <div class="field"><label>Annual rent increase <span class="range-val" id="rentIncVal">3%</span></label><input type="range" id="rentIncrease" min="0" max="8" value="3" step="0.5" oninput="document.getElementById('rentIncVal').textContent=this.value+'%'"></div>
+    <div class="divider"></div>
+    <div class="section-label">📊 Assumptions</div>
+    <div class="field"><label>Time horizon (years) <span class="range-val" id="horizonVal">7</span></label><input type="range" id="horizon" min="1" max="30" value="7" step="1" oninput="document.getElementById('horizonVal').textContent=this.value"></div>
+    <div class="field"><label>Home appreciation <span class="range-val" id="apprVal">3%</span></label><input type="range" id="appreciation" min="0" max="8" value="3" step="0.5" oninput="document.getElementById('apprVal').textContent=this.value+'%'"></div>
+    <div class="field"><label>Investment return (if renting & investing) <span class="range-val" id="invVal">7%</span></label><input type="range" id="investReturn" min="0" max="15" value="7" step="0.5" oninput="document.getElementById('invVal').textContent=this.value+'%'"></div>
+    <button class="btn-calc" onclick="calculate()">Compare rent vs buy</button>
+  </div>
+  <div class="results-panel" id="resultsPanel">
+    <div class="result-empty" id="emptyState"><div style="font-size:40px;opacity:0.3;">🏠</div><span>Enter your numbers and click Compare.</span></div>
+  </div>
+</main>
+<div class="disclaimer">⚠️ Simplified estimate. Does not include tax benefits, insurance variations, or local regulations. Not financial advice.</div>
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
+
+function calculate(){
+  const homePrice=parseFloat(document.getElementById('homePrice').value)||0;
+  const downPct=parseFloat(document.getElementById('downPct').value)||0;
+  const mortRate=parseFloat(document.getElementById('mortRate').value)/100;
+  const mortTerm=parseInt(document.getElementById('mortTerm').value)||30;
+  const rent=parseFloat(document.getElementById('rent').value)||0;
+  const rentInc=parseFloat(document.getElementById('rentIncrease').value)/100;
+  const horizon=parseInt(document.getElementById('horizon').value)||7;
+  const appr=parseFloat(document.getElementById('appreciation').value)/100;
+  const investReturn=parseFloat(document.getElementById('investReturn').value)/100;
+  if(!homePrice||!rent) return;
+
+  const downPayment=homePrice*downPct/100;
+  const loanAmount=homePrice-downPayment;
+  const monthlyRate=mortRate/12;
+  const numPayments=mortTerm*12;
+  const monthlyMortgage=loanAmount*monthlyRate*Math.pow(1+monthlyRate,numPayments)/(Math.pow(1+monthlyRate,numPayments)-1);
+
+  // Buy costs over horizon
+  const maintenanceRate=0.01;
+  const insuranceRate=0.005;
+  const propertyTaxRate=0.01;
+  let totalBuyCost=downPayment;
+  let totalMortgagePaid=0;
+  let totalInterestPaid=0;
+  let remainingLoan=loanAmount;
+  let totalMaintenance=0;
+  let totalInsurance=0;
+  let totalPropTax=0;
+
+  for(let yr=0;yr<horizon;yr++){
+    const currentHomeVal=homePrice*Math.pow(1+appr,yr);
+    totalMaintenance+=currentHomeVal*maintenanceRate;
+    totalInsurance+=currentHomeVal*insuranceRate;
+    totalPropTax+=currentHomeVal*propertyTaxRate;
+    for(let m=0;m<12;m++){
+      if(remainingLoan>0){
+        const interest=remainingLoan*monthlyRate;
+        const principal=Math.min(remainingLoan,monthlyMortgage-interest);
+        totalInterestPaid+=interest;
+        remainingLoan-=principal;
+        totalMortgagePaid+=monthlyMortgage;
+      }
+    }
+  }
+
+  const futureHomeValue=homePrice*Math.pow(1+appr,horizon);
+  const sellingCosts=futureHomeValue*0.04;
+  const equity=futureHomeValue-remainingLoan-sellingCosts;
+  const totalBuyOutflow=totalMortgagePaid+totalMaintenance+totalInsurance+totalPropTax+downPayment;
+  const netBuyCost=totalBuyOutflow-equity+sellingCosts;
+
+  // Rent costs over horizon
+  let totalRentPaid=0;
+  let investmentPortfolio=downPayment;
+  for(let yr=0;yr<horizon;yr++){
+    const yearlyRent=rent*12*Math.pow(1+rentInc,yr);
+    totalRentPaid+=yearlyRent;
+    const monthlySaving=monthlyMortgage+(homePrice*Math.pow(1+appr,yr)*(maintenanceRate+insuranceRate+propertyTaxRate)/12)-rent*Math.pow(1+rentInc,yr);
+    if(monthlySaving>0){
+      for(let m=0;m<12;m++){
+        investmentPortfolio=investmentPortfolio*(1+investReturn/12)+monthlySaving;
+      }
+    } else {
+      investmentPortfolio=investmentPortfolio*Math.pow(1+investReturn,1);
+    }
+  }
+  const netRentCost=totalRentPaid-investmentPortfolio+downPayment;
+
+  const buyWins=netBuyCost<netRentCost;
+  const savings=Math.abs(netBuyCost-netRentCost);
+
+  const panel=document.getElementById('resultsPanel');
+  panel.innerHTML='';
+
+  const verdict=document.createElement('div');
+  verdict.className='verdict-card '+(buyWins?'buy':'rent');
+  verdict.innerHTML=`
+    <div class="verdict-emoji">${buyWins?'🏠':'🏢'}</div>
+    <div class="verdict-title" style="color:${buyWins?'var(--accent)':'var(--blue)'}">${buyWins?'Buying wins':'Renting wins'}</div>
+    <div class="verdict-sub">You'd save about ${fmt(savings)} over ${horizon} years by ${buyWins?'buying':'renting'}</div>`;
+  panel.appendChild(verdict);
+
+  const cg=document.createElement('div');cg.className='compare-grid';
+  cg.innerHTML=`
+    <div class="compare-card${buyWins?' winner':''}"><div class="cc-label">🏠 Net cost to buy</div><div class="cc-value">${fmt(netBuyCost)}</div><div class="cc-sub">After equity & selling</div></div>
+    <div class="compare-card${!buyWins?' winner':''}"><div class="cc-label">🏢 Net cost to rent</div><div class="cc-value">${fmt(netRentCost)}</div><div class="cc-sub">After investments</div></div>`;
+  panel.appendChild(cg);
+
+  // Buy breakdown
+  const bb=document.createElement('div');bb.className='breakdown-card';
+  bb.innerHTML=`<div class="bd-title">🏠 Buying breakdown</div>
+    <div class="bd-row"><span>Down payment</span><span>${fmt(downPayment)}</span></div>
+    <div class="bd-row"><span>Monthly mortgage</span><span>${fmt(monthlyMortgage)}/mo</span></div>
+    <div class="bd-row"><span>Total mortgage payments</span><span>${fmt(totalMortgagePaid)}</span></div>
+    <div class="bd-row"><span>Total interest paid</span><span>${fmt(totalInterestPaid)}</span></div>
+    <div class="bd-row"><span>Maintenance (${horizon}yr)</span><span>${fmt(totalMaintenance)}</span></div>
+    <div class="bd-row"><span>Insurance + tax (${horizon}yr)</span><span>${fmt(totalInsurance+totalPropTax)}</span></div>
+    <div class="bd-row"><span>Home value at year ${horizon}</span><span>${fmt(futureHomeValue)}</span></div>
+    <div class="bd-row"><span>Equity built</span><span>${fmt(equity)}</span></div>
+    <div class="bd-row total"><span>Net cost of buying</span><span>${fmt(netBuyCost)}</span></div>`;
+  panel.appendChild(bb);
+
+  const rb=document.createElement('div');rb.className='breakdown-card';
+  rb.innerHTML=`<div class="bd-title">🏢 Renting breakdown</div>
+    <div class="bd-row"><span>Total rent paid (${horizon}yr)</span><span>${fmt(totalRentPaid)}</span></div>
+    <div class="bd-row"><span>Investment portfolio</span><span>${fmt(investmentPortfolio)}</span></div>
+    <div class="bd-row total"><span>Net cost of renting</span><span>${fmt(netRentCost)}</span></div>`;
+  panel.appendChild(rb);
+  createAffiliateBanner('property').then(b=>panel.appendChild(b));
+}
+calculate();
+</script>
+</body></html>

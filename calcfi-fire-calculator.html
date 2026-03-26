@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO PRIMARY -->
+<title>FIRE Calculator — Financial Independence Retire Early | MyFinCalc</title>
+<meta name="description" content="Free FIRE calculator. Find out exactly when you can retire early using the 4% rule and Rule of 25. Enter your savings, income, and expenses to get your FIRE number and retirement age.">
+<meta name="keywords" content="FIRE calculator, financial independence calculator, retire early calculator, FIRE number calculator, 4% rule calculator, rule of 25 calculator, how much to retire, early retirement calculator NZ, FIRE calculator New Zealand">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/calcfi-fire-calculator.html">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="FIRE Calculator — Financial Independence Retire Early">
+<meta property="og:description" content="Calculate your FIRE number and retirement age. Free financial independence calculator using the 4% rule.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://myfincalc.org/calcfi-fire-calculator.html">
+<meta property="og:site_name" content="MyFinCalc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FIRE Calculator — Financial Independence Retire Early">
+<meta name="twitter:description" content="Find your FIRE number and retirement age. Free calculator using the 4% rule and Rule of 25.">
+
+<!-- SCHEMA MARKUP -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "FIRE Calculator",
+  "description": "Free financial independence and retire early calculator using the 4% rule",
+  "url": "https://myfincalc.org/calcfi-fire-calculator.html",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "provider": { "@type": "Organization", "name": "MyFinCalc", "url": "https://myfincalc.org" }
+}
+</script>
+
+<!-- FAQ SCHEMA for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the FIRE number?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your FIRE number is the total amount you need saved and invested to retire early. It is calculated by multiplying your annual expenses by 25 (the Rule of 25), which is derived from the 4% safe withdrawal rate." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 4% rule?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The 4% rule states that you can withdraw 4% of your investment portfolio each year in retirement without running out of money. This is based on historical stock market returns and is the foundation of FIRE planning." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do I need to retire early?",
+      "acceptedAnswer": { "@type": "Answer", "text": "To retire early, multiply your expected annual expenses in retirement by 25. For example, if you plan to spend $40,000 per year, you need $1,000,000 invested. This is your FIRE number." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the types of FIRE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The main types of FIRE are: Lean FIRE (minimal expenses, under $40k/year), Regular FIRE (moderate lifestyle), Fat FIRE (comfortable lifestyle, $100k+/year), and Barista FIRE (partial retirement with part-time work)." }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f2f1ed;--bg-white:#ffffff;--border:#e2e0d8;--border-dark:#c8c5bc;
+  --accent:#2563eb;--accent-light:#eff3ff;--accent2:#16a34a;--accent2-light:#f0fdf4;
+  --orange:#ea580c;--orange-light:#fff7ed;
+  --text-primary:#0d0c0b;--text-secondary:#6b6860;--text-muted:#a8a59d;
+  --font-serif:'Instrument Serif',serif;--font-body:'DM Sans',sans-serif;--font-mono:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+
+nav{background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{font-family:var(--font-serif);font-size:20px;color:var(--text-primary);text-decoration:none;}
+.nav-logo span{color:var(--accent);}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--text-primary);}
+.nav-cta{background:var(--text-primary);color:#fff;font-size:13px;font-weight:500;padding:7px 18px;border-radius:100px;text-decoration:none;}
+
+/* HERO */
+.hero{padding:64px 40px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.hero-eyebrow{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;display:flex;align-items:center;gap:8px;}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--text-muted);}
+.hero h1{font-family:var(--font-serif);font-size:clamp(40px,5vw,60px);font-weight:400;line-height:1.1;letter-spacing:-1px;margin-bottom:16px;}
+.hero h1 em{font-style:italic;color:var(--accent);}
+.hero-sub{font-size:15px;color:var(--text-secondary);line-height:1.7;margin-bottom:24px;}
+.fire-types{display:flex;flex-direction:column;gap:8px;}
+.fire-type{background:var(--bg-white);border:1px solid var(--border);border-radius:12px;padding:12px 16px;display:flex;align-items:center;justify-content:space-between;}
+.ft-name{font-size:13px;font-weight:500;}
+.ft-desc{font-size:12px;color:var(--text-secondary);}
+.ft-badge{font-family:var(--font-mono);font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;}
+.fb-lean{background:#fef3c7;color:#92400e;}
+.fb-regular{background:var(--accent-light);color:var(--accent);}
+.fb-fat{background:var(--accent2-light);color:var(--accent2);}
+.fb-barista{background:var(--orange-light);color:var(--orange);}
+
+/* CALC LAYOUT */
+.calc-section{max-width:1100px;margin:0 auto;padding:0 40px 60px;display:grid;grid-template-columns:400px 1fr;gap:24px;align-items:start;}
+
+/* INPUT CARD */
+.input-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;overflow:hidden;position:sticky;top:72px;}
+.input-header{padding:22px 26px 18px;border-bottom:1px solid var(--border);}
+.input-title{font-family:var(--font-serif);font-size:19px;}
+.input-body{padding:22px 26px;}
+.field{margin-bottom:18px;}
+.field-label{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:7px;display:flex;align-items:center;justify-content:space-between;}
+.field-hint{font-size:10px;color:var(--text-muted);font-style:normal;letter-spacing:0;}
+
+/* INPUT WITH PREFIX */
+.input-wrap{display:flex;align-items:center;background:var(--bg);border:1.5px solid var(--border-dark);border-radius:10px;transition:border-color 0.2s;overflow:hidden;}
+.input-wrap:focus-within{border-color:var(--accent);}
+.input-prefix{padding:0 12px;font-family:var(--font-serif);font-size:17px;color:var(--text-muted);flex-shrink:0;border-right:1px solid var(--border);height:44px;display:flex;align-items:center;}
+.input-suffix{padding:0 12px;font-size:13px;color:var(--text-muted);flex-shrink:0;border-left:1px solid var(--border);height:44px;display:flex;align-items:center;}
+.calc-input{flex:1;background:transparent;border:none;outline:none;font-family:var(--font-serif);font-size:18px;color:var(--text-primary);padding:10px 14px;width:0;}
+.calc-input::placeholder{color:var(--text-muted);}
+
+/* SLIDER */
+.slider-wrap{margin-top:8px;}
+input[type=range]{width:100%;-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:var(--border-dark);outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,0.2);}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid #fff;}
+.slider-labels{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-top:4px;}
+
+/* WITHDRAWAL RATE PILLS */
+.rate-pills{display:flex;gap:6px;flex-wrap:wrap;}
+.rate-pill{padding:6px 12px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text-secondary);font-family:var(--font-body);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s;}
+.rate-pill:hover{border-color:var(--border-dark);color:var(--text-primary);}
+.rate-pill.active{background:var(--text-primary);color:#fff;border-color:var(--text-primary);}
+
+.divider{height:1px;background:var(--border);margin:16px 0;}
+.section-title-sm{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;}
+
+.btn-calc{width:100%;padding:14px;background:var(--text-primary);color:#fff;border:none;border-radius:12px;font-family:var(--font-body);font-size:14px;font-weight:500;cursor:pointer;transition:opacity 0.2s,transform 0.15s;margin-top:4px;}
+.btn-calc:hover{opacity:0.85;transform:translateY(-1px);}
+
+/* RESULTS */
+.results-wrap{display:flex;flex-direction:column;gap:16px;}
+.result-empty{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:80px 40px;text-align:center;}
+.empty-text{font-family:var(--font-serif);font-size:22px;color:var(--text-muted);font-style:italic;line-height:1.5;}
+
+/* FIRE NUMBER HERO */
+.fire-hero{background:var(--text-primary);border-radius:20px;padding:32px;color:#fff;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.fh-item{}
+.fh-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:8px;}
+.fh-value{font-family:var(--font-serif);font-size:36px;color:#fff;letter-spacing:-1.5px;line-height:1;}
+.fh-value.highlight{color:#a5f3c8;}
+.fh-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;}
+
+/* FIRE TYPE RESULT */
+.fire-type-result{border-radius:14px;padding:18px 22px;border:1px solid var(--border);}
+.ftr-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
+.ftr-title{font-family:var(--font-serif);font-size:20px;margin-bottom:4px;}
+.ftr-desc{font-size:13px;color:var(--text-secondary);}
+
+/* PROJECTION CHART */
+.chart-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:24px 28px;}
+.chart-title{font-family:var(--font-serif);font-size:18px;margin-bottom:6px;}
+.chart-sub{font-size:13px;color:var(--text-secondary);margin-bottom:20px;}
+.chart-wrap{position:relative;height:220px;}
+canvas{width:100%!important;}
+
+/* MILESTONES */
+.milestones-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:24px 28px;}
+.ms-title{font-family:var(--font-serif);font-size:18px;margin-bottom:16px;}
+.ms-row{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px solid var(--border);}
+.ms-row:last-child{border-bottom:none;}
+.ms-year{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);width:50px;flex-shrink:0;}
+.ms-bar-wrap{flex:1;height:6px;background:var(--bg);border-radius:3px;overflow:hidden;}
+.ms-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent),#1d4ed8);transition:width 0.8s ease;}
+.ms-amount{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--text-primary);width:90px;text-align:right;flex-shrink:0;}
+.ms-pct{font-size:11px;color:var(--text-muted);width:36px;text-align:right;flex-shrink:0;}
+
+/* TIPS CARD */
+.tips-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:24px 28px;}
+.tips-title{font-family:var(--font-serif);font-size:18px;margin-bottom:16px;}
+.tip-item{display:flex;gap:12px;margin-bottom:14px;font-size:13px;color:var(--text-secondary);line-height:1.6;}
+.tip-item:last-child{margin-bottom:0;}
+.tip-num{font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--accent);width:20px;flex-shrink:0;margin-top:1px;}
+
+/* FAQ SECTION */
+.faq-section{max-width:1100px;margin:0 auto;padding:0 40px 80px;}
+.faq-title{font-family:var(--font-serif);font-size:32px;margin-bottom:32px;letter-spacing:-0.5px;}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.faq-item{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:22px;}
+.faq-q{font-family:var(--font-serif);font-size:16px;margin-bottom:8px;}
+.faq-a{font-size:13px;color:var(--text-secondary);line-height:1.7;}
+
+footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1100px;margin:0 auto;}
+.footer-logo{font-family:var(--font-serif);font-size:16px;}
+.footer-logo span{color:var(--accent);}
+.footer-disc{font-size:11px;color:var(--text-muted);max-width:520px;}
+
+@media(max-width:900px){
+  .hero,.calc-section,.faq-section{padding-left:20px;padding-right:20px;}
+  .hero{grid-template-columns:1fr;padding-top:40px;}
+  .calc-section{grid-template-columns:1fr;}
+  .fire-hero{grid-template-columns:1fr 1fr;}
+  .faq-grid{grid-template-columns:1fr;}
+  .input-card{position:static;}
+  nav{padding:0 20px;}
+  .nav-links,.nav-cta{display:none;}
+  footer{padding:20px;}
+}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Calc<span>FI</span></a>
+  <ul class="nav-links">
+    <li><a href="calcfi-salary-calculator.html">Salary</a></li>
+    <li><a href="calcfi-fire-calculator.html" class="active">FIRE</a></li>
+    <li><a href="calcfi-investment-calculator.html">Invest</a></li>
+    <li><a href="calcfi-rent-vs-buy.html">Rent vs Buy</a></li>
+  </ul>
+  <a href="#" class="nav-cta">All calculators →</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div>
+    <div class="hero-eyebrow">Free FIRE Calculator</div>
+    <h1>When can you<br><em>retire early?</em></h1>
+    <p class="hero-sub">Calculate your FIRE number — the exact amount you need invested to retire on your terms. Uses the proven 4% rule and Rule of 25 used by thousands of early retirees worldwide.</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-serif);font-size:28px;color:var(--accent);">4%</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;">Safe withdrawal rate</div>
+      </div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-serif);font-size:28px;color:var(--accent);">25×</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;">Rule of 25</div>
+      </div>
+      <div style="width:1px;background:var(--border);"></div>
+      <div style="text-align:center;">
+        <div style="font-family:var(--font-serif);font-size:28px;color:var(--accent);">7%</div>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;">Avg. market return</div>
+      </div>
+    </div>
+  </div>
+  <div class="fire-types">
+    <div style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;">Types of FIRE</div>
+    <div class="fire-type">
+      <div><div class="ft-name">Lean FIRE</div><div class="ft-desc">Minimal lifestyle · under $40k/yr</div></div>
+      <span class="ft-badge fb-lean">Frugal</span>
+    </div>
+    <div class="fire-type">
+      <div><div class="ft-name">Regular FIRE</div><div class="ft-desc">Comfortable lifestyle · $40–80k/yr</div></div>
+      <span class="ft-badge fb-regular">Popular</span>
+    </div>
+    <div class="fire-type">
+      <div><div class="ft-name">Fat FIRE</div><div class="ft-desc">Luxury lifestyle · $100k+/yr</div></div>
+      <span class="ft-badge fb-fat">Wealthy</span>
+    </div>
+    <div class="fire-type">
+      <div><div class="ft-name">Barista FIRE</div><div class="ft-desc">Part-time work covers some expenses</div></div>
+      <span class="ft-badge fb-barista">Flexible</span>
+    </div>
+  </div>
+</header>
+
+<!-- CALCULATOR -->
+<section class="calc-section">
+  <div class="input-card">
+    <div class="input-header"><div class="input-title">Your FIRE plan</div></div>
+    <div class="input-body">
+
+      <div class="field">
+        <span class="field-label">Current age <span class="field-hint">years old</span></span>
+        <div class="input-wrap">
+          <input type="number" class="calc-input" id="currentAge" placeholder="30" min="18" max="70" oninput="calculate()">
+          <span class="input-suffix">yrs</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Current savings / investments</span>
+        <div class="input-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" class="calc-input" id="currentSavings" placeholder="50,000" oninput="calculate()">
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Annual income (after tax)</span>
+        <div class="input-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" class="calc-input" id="annualIncome" placeholder="75,000" oninput="calculate()">
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Annual savings rate <span class="field-hint" id="savingsRatePct">20%</span></span>
+        <div class="slider-wrap">
+          <input type="range" id="savingsRate" min="1" max="80" value="20" step="1" oninput="updateSlider('savingsRate','savingsRatePct','%');calculate()">
+          <div class="slider-labels"><span>1%</span><span>20%</span><span>40%</span><span>60%</span><span>80%</span></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Expected annual expenses in retirement</span>
+        <div class="input-wrap">
+          <span class="input-prefix">$</span>
+          <input type="number" class="calc-input" id="annualExpenses" placeholder="40,000" oninput="calculate()">
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-title-sm">Advanced settings</div>
+
+      <div class="field">
+        <span class="field-label">Expected investment return <span class="field-hint" id="returnRatePct">7%</span></span>
+        <div class="slider-wrap">
+          <input type="range" id="returnRate" min="1" max="15" value="7" step="0.5" oninput="updateSlider('returnRate','returnRatePct','%');calculate()">
+          <div class="slider-labels"><span>1%</span><span>5%</span><span>7%</span><span>10%</span><span>15%</span></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Inflation rate <span class="field-hint" id="inflationPct">2.5%</span></span>
+        <div class="slider-wrap">
+          <input type="range" id="inflationRate" min="0" max="6" value="2.5" step="0.5" oninput="updateSlider('inflationRate','inflationPct','%');calculate()">
+          <div class="slider-labels"><span>0%</span><span>2%</span><span>3%</span><span>5%</span><span>6%</span></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Safe withdrawal rate</span>
+        <div class="rate-pills" id="withdrawalPills">
+          <button class="rate-pill" data-r="3" onclick="setWithdrawal(this,3)">3% (conservative)</button>
+          <button class="rate-pill active" data-r="4" onclick="setWithdrawal(this,4)">4% (standard)</button>
+          <button class="rate-pill" data-r="5" onclick="setWithdrawal(this,5)">5% (aggressive)</button>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="calculate()">Calculate my FIRE date →</button>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultsPanel">
+    <div class="result-empty" id="emptyState">
+      <div class="empty-text">Fill in your details<br>to find your<br><em>FIRE number.</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION - important for SEO -->
+<section class="faq-section">
+  <h2 class="faq-title">Everything about FIRE</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h3 class="faq-q">What is the FIRE movement?</h3>
+      <p class="faq-a">FIRE stands for Financial Independence, Retire Early. It's a movement focused on extreme saving and investing to achieve financial freedom decades before traditional retirement age. The goal is to accumulate enough wealth that investment returns can cover your living expenses indefinitely.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">How is my FIRE number calculated?</h3>
+      <p class="faq-a">Your FIRE number is calculated using the Rule of 25: multiply your expected annual expenses in retirement by 25. This is derived from the 4% safe withdrawal rate — if you withdraw 4% of your portfolio annually, it should last indefinitely based on historical market returns.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What is the 4% rule?</h3>
+      <p class="faq-a">The 4% rule (also known as the Bengen Rule) comes from a 1994 study showing that retirees could withdraw 4% of their portfolio in year one, then adjust for inflation each year, and never run out of money over a 30-year retirement period — based on historical US stock and bond market returns.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What savings rate do I need?</h3>
+      <p class="faq-a">Your savings rate dramatically affects your FIRE timeline. Saving 10% may take 40+ years. Saving 25% takes about 32 years. Saving 50% takes roughly 17 years. Saving 70% can achieve FIRE in under 9 years. The higher your savings rate, the faster you reach financial independence.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">What's the difference between Lean, Regular, and Fat FIRE?</h3>
+      <p class="faq-a">Lean FIRE targets a frugal retirement lifestyle with annual expenses under $40,000. Regular FIRE targets $40,000–$80,000 per year for a comfortable lifestyle. Fat FIRE targets $100,000+ per year for a luxurious retirement. Barista FIRE is a hybrid where part-time work covers some expenses while investments cover the rest.</p>
+    </div>
+    <div class="faq-item">
+      <h3 class="faq-q">Is the 4% rule still valid in 2024?</h3>
+      <p class="faq-a">The 4% rule remains widely used but some financial planners now recommend 3–3.5% for longer retirements (40+ years) due to lower expected future returns and higher valuations. Our calculator lets you adjust the withdrawal rate from 3% to 5% so you can model different scenarios.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Calc<span>FI</span></div>
+  <p class="footer-disc">Projections are estimates based on historical averages and are not financial advice. Past market performance does not guarantee future results. Consult a financial advisor for personalised retirement planning.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+let withdrawalRate = 4;
+
+function updateSlider(id, labelId, suffix) {
+  document.getElementById(labelId).textContent = document.getElementById(id).value + suffix;
+}
+
+function setWithdrawal(el, rate) {
+  withdrawalRate = rate;
+  document.querySelectorAll('.rate-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  calculate();
+}
+
+function getVal(id) {
+  return parseFloat(document.getElementById(id)?.value) || 0;
+}
+
+function fmt(n) { return Math.round(n).toLocaleString(); }
+function fmtK(n) {
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + Math.round(n/1000) + 'k';
+  return '$' + Math.round(n);
+}
+
+let chartInstance = null;
+
+function calculate() {
+  const age = getVal('currentAge');
+  const savings = getVal('currentSavings');
+  const income = getVal('annualIncome');
+  const savingsRatePct = getVal('savingsRate');
+  const expenses = getVal('annualExpenses');
+  const returnPct = getVal('returnRate');
+  const inflationPct = getVal('inflationRate');
+
+  if (!age || !income || !expenses) return;
+
+  const annualSavings = income * (savingsRatePct / 100);
+  const realReturn = (returnPct - inflationPct) / 100;
+  const fireNumber = expenses * (100 / withdrawalRate);
+
+  // Project year by year
+  let portfolio = savings;
+  let yearsToFIRE = null;
+  const projectionYears = [];
+  const projectionValues = [];
+  const milestones = [0.25, 0.5, 0.75, 1.0];
+  const milestoneData = [];
+
+  for (let yr = 0; yr <= 50; yr++) {
+    projectionYears.push(age + yr);
+    projectionValues.push(Math.round(portfolio));
+
+    milestones.forEach((m, i) => {
+      if (!milestoneData[i] && portfolio >= fireNumber * m) {
+        milestoneData[i] = { pct: m * 100, age: age + yr, year: yr, amount: portfolio };
+      }
+    });
+
+    if (yearsToFIRE === null && portfolio >= fireNumber) {
+      yearsToFIRE = yr;
+    }
+
+    portfolio = portfolio * (1 + realReturn) + annualSavings;
+    if (portfolio > fireNumber * 3) break;
+  }
+
+  const fireAge = yearsToFIRE !== null ? age + yearsToFIRE : null;
+  const currentPct = Math.min(100, (savings / fireNumber) * 100);
+
+  // Determine FIRE type
+  let fireType, fireTypeDesc, fireTypeBg;
+  if (expenses < 40000) { fireType = 'Lean FIRE'; fireTypeDesc = 'Minimal lifestyle — housing, food, basics covered.'; fireTypeBg = '#fef3c7'; }
+  else if (expenses < 80000) { fireType = 'Regular FIRE'; fireTypeDesc = 'Comfortable lifestyle with travel and leisure.'; fireTypeBg = '#eff3ff'; }
+  else if (expenses < 120000) { fireType = 'Fat FIRE'; fireTypeDesc = 'Generous lifestyle with significant discretionary spending.'; fireTypeBg = '#f0fdf4'; }
+  else { fireType = 'Ultra Fat FIRE'; fireTypeDesc = 'Luxury lifestyle with no financial constraints.'; fireTypeBg = '#fff7ed'; }
+
+  renderResults({ fireNumber, fireAge, yearsToFIRE, currentPct, savings, annualSavings, expenses, projectionYears, projectionValues, milestoneData, fireType, fireTypeDesc, fireTypeBg, withdrawalRate, age });
+}
+
+function renderResults(d) {
+  const panel = document.getElementById('resultsPanel');
+  document.getElementById('emptyState')?.remove();
+  panel.querySelectorAll('.results-wrap').forEach(e => e.remove());
+
+  const wrap = document.createElement('div');
+  wrap.className = 'results-wrap';
+
+  // FIRE hero numbers
+  const hero = document.createElement('div');
+  hero.className = 'fire-hero';
+  hero.innerHTML = `
+    <div class="fh-item">
+      <div class="fh-label">Your FIRE Number</div>
+      <div class="fh-value highlight">$${fmt(d.fireNumber)}</div>
+      <div class="fh-sub">Rule of ${Math.round(100/d.withdrawalRate)} · ${d.withdrawalRate}% withdrawal</div>
+    </div>
+    <div class="fh-item">
+      <div class="fh-label">Retirement Age</div>
+      <div class="fh-value">${d.fireAge !== null ? d.fireAge : '60+'}</div>
+      <div class="fh-sub">${d.yearsToFIRE !== null ? `In ${d.yearsToFIRE} years` : 'Increase savings rate'}</div>
+    </div>
+    <div class="fh-item">
+      <div class="fh-label">Progress Today</div>
+      <div class="fh-value">${d.currentPct.toFixed(1)}%</div>
+      <div class="fh-sub">$${fmt(d.savings)} of $${fmt(d.fireNumber)}</div>
+    </div>`;
+  wrap.appendChild(hero);
+
+  // FIRE type
+  const ft = document.createElement('div');
+  ft.className = 'fire-type-result';
+  ft.style.background = d.fireTypeBg;
+  ft.innerHTML = `
+    <div class="ftr-label">Your FIRE type</div>
+    <div class="ftr-title">${d.fireType}</div>
+    <div class="ftr-desc">${d.fireTypeDesc} Annual expenses: $${fmt(d.expenses)}</div>`;
+  wrap.appendChild(ft);
+
+  // Projection chart
+  const chartCard = document.createElement('div');
+  chartCard.className = 'chart-card';
+  chartCard.innerHTML = `
+    <div class="chart-title">Portfolio projection</div>
+    <div class="chart-sub">Your wealth growing over time toward your FIRE number</div>
+    <div class="chart-wrap"><canvas id="fireChart"></canvas></div>`;
+  wrap.appendChild(chartCard);
+
+  // Milestones
+  const ms = document.createElement('div');
+  ms.className = 'milestones-card';
+  ms.innerHTML = `<div class="ms-title">FIRE milestones</div>` +
+    d.milestoneData.filter(Boolean).map(m => `
+    <div class="ms-row">
+      <span class="ms-year">Age ${m.age}</span>
+      <div class="ms-bar-wrap"><div class="ms-bar" style="width:${m.pct}%"></div></div>
+      <span class="ms-amount">${fmtK(m.amount)}</span>
+      <span class="ms-pct">${m.pct}%</span>
+    </div>`).join('');
+  wrap.appendChild(ms);
+
+  // Tips
+  const tips = document.createElement('div');
+  tips.className = 'tips-card';
+  const savingsRateNum = Math.round((d.annualSavings / (d.annualSavings / (getVal('savingsRate')/100) || 1)));
+  tips.innerHTML = `
+    <div class="tips-title">How to reach FIRE faster</div>
+    <div class="tip-item"><span class="tip-num">01</span><span>Increase your savings rate by just 5% — this alone can cut years off your FIRE timeline.</span></div>
+    <div class="tip-item"><span class="tip-num">02</span><span>Invest in low-cost index funds (S&P 500, Total Market) to capture market returns with minimal fees.</span></div>
+    <div class="tip-item"><span class="tip-num">03</span><span>Maximize tax-advantaged accounts first — KiwiSaver (NZ), 401k (US), Super (AU), RRSP (CA), pension (UK).</span></div>
+    <div class="tip-item"><span class="tip-num">04</span><span>Each dollar you cut from annual expenses reduces your FIRE number by $25 (at 4% withdrawal rate).</span></div>
+    <div class="tip-item"><span class="tip-num">05</span><span>Consider geographic arbitrage — retiring in a lower cost-of-living country can dramatically reduce your FIRE number.</span></div>`;
+  wrap.appendChild(tips);
+
+  panel.appendChild(wrap);
+
+  // Geo-targeted affiliate
+  createAffiliateBanner('invest').then(b=>panel.appendChild(b));
+
+  // Draw chart
+  setTimeout(() => {
+    const ctx = document.getElementById('fireChart')?.getContext('2d');
+    if (!ctx) return;
+    if (chartInstance) chartInstance.destroy();
+
+    const fireIdx = d.projectionYears.indexOf(d.fireAge);
+    const fireLineData = d.projectionYears.map(() => d.fireNumber);
+
+    chartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: d.projectionYears,
+        datasets: [
+          {
+            label: 'Portfolio value',
+            data: d.projectionValues,
+            borderColor: '#2563eb',
+            backgroundColor: 'rgba(37,99,235,0.08)',
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.4,
+            pointRadius: 0,
+            pointHoverRadius: 5,
+          },
+          {
+            label: 'FIRE number',
+            data: fireLineData,
+            borderColor: '#16a34a',
+            borderWidth: 1.5,
+            borderDash: [6, 4],
+            pointRadius: 0,
+            fill: false,
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { intersect: false, mode: 'index' },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: ctx => ctx.dataset.label + ': $' + Math.round(ctx.raw).toLocaleString()
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(0,0,0,0.04)' },
+            ticks: { font: { family: 'DM Mono', size: 10 }, color: '#a8a59d', maxTicksLimit: 8 }
+          },
+          y: {
+            grid: { color: 'rgba(0,0,0,0.04)' },
+            ticks: {
+              font: { family: 'DM Mono', size: 10 },
+              color: '#a8a59d',
+              callback: v => v >= 1000000 ? '$' + (v/1000000).toFixed(1) + 'M' : '$' + Math.round(v/1000) + 'k'
+            }
+          }
+        }
+      }
+    });
+  }, 100);
+}
+</script>
+</body>
+</html>

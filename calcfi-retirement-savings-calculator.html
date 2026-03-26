@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retirement Savings Calculator — How Much to Save | MyFinCalc</title>
+<meta name="description" content="Free retirement savings calculator. Find out exactly how much you need to save each month to retire comfortably.">
+<meta name="keywords" content="retirement savings calculator, how much to retire, retirement planning calculator, pension calculator">
+<link rel="canonical" href="https://myfincalc.org/calcfi-retirement-savings-calculator.html">
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}
+.nav-logo .fi{color:var(--accent);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.hero{padding:48px 24px 32px;max-width:800px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}
+.hero h1 .green{color:var(--accent);}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:480px;margin:0 auto;}
+.main{max-width:960px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;}
+.card-title{font-family:var(--font-title);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px;}
+.field{margin-bottom:18px;}
+label{display:block;font-family:var(--font-title);font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:8px;}
+.input-wrap{position:relative;}
+.input-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+.input-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+input[type="number"],select{width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:15px;padding:11px 14px;transition:border-color 0.2s;outline:none;appearance:none;}
+input.has-prefix{padding-left:28px;}
+input.has-suffix{padding-right:36px;}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,107,60,0.08);}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;cursor:pointer;}
+select option{background:#fff;}
+.field-hint{font-size:12px;color:var(--text-muted);margin-top:4px;}
+.divider{height:1px;background:var(--border);margin:18px 0;}
+input[type="range"]{width:100%;accent-color:var(--accent);margin:8px 0;}
+.range-val{font-family:var(--font-title);font-size:14px;font-weight:700;color:var(--accent);float:right;}
+.btn-calc{width:100%;margin-top:8px;padding:15px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-title);font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.btn-calc:hover{background:var(--accent2);transform:translateY(-1px);}
+.results-panel{display:flex;flex-direction:column;gap:14px;}
+.result-empty{background:var(--bg-card);border:1px dashed var(--border);border-radius:20px;padding:60px 28px;text-align:center;color:var(--text-muted);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.result-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);border-radius:18px;padding:24px;color:#fff;text-align:center;}
+.rh-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:8px;font-family:var(--font-title);}
+.rh-value{font-family:var(--font-title);font-size:38px;font-weight:700;letter-spacing:-1.5px;margin-bottom:4px;}
+.rh-sub{font-size:13px;opacity:0.75;}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;}
+.metric-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--font-title);margin-bottom:5px;}
+.metric-value{font-family:var(--font-title);font-size:20px;font-weight:700;color:var(--accent);}
+.metric-sub{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.disclaimer{font-size:11px;color:var(--text-muted);text-align:center;padding:0 24px 32px;max-width:900px;margin:0 auto;}
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:960px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:15px;}
+.footer-logo .fi{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:700px){.main{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <a href="index.html" class="nav-back">← All calculators</a>
+</nav>
+<header class="hero">
+  <div class="hero-badge">🏖️ Calculator</div>
+  <h1><span class="green">Retirement savings calculator</span></h1>
+  <p>Find out exactly how much you need to save to retire on your terms.</p>
+</header>
+<main class="main">
+  <div class="card">
+    <p class="card-title">Enter your numbers</p>
+    <div id="inputFields"></div>
+    <button class="btn-calc" onclick="calculate()">Calculate</button>
+  </div>
+  <div class="results-panel" id="resultsPanel">
+    <div class="result-empty" id="emptyState"><div style="font-size:40px;opacity:0.3;">🏖️</div><span>Enter your numbers and click Calculate.</span></div>
+  </div>
+</main>
+<div class="disclaimer">⚠️ For educational purposes only. Not financial advice. Consult a qualified financial advisor.</div>
+<footer>
+  <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <p class="footer-copy">© 2026 MyFinCalc.org</p>
+</footer>
+<script>
+document.getElementById('inputFields').innerHTML=`
+<div class="field"><label>Current age</label><input type="number" id="age" value="30" min="18" max="65"></div>
+<div class="field"><label>Retirement age</label><input type="number" id="retAge" value="65" min="40" max="80"></div>
+<div class="field"><label>Current savings</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="savings" class="has-prefix" value="20000" min="0" step="1000"></div></div>
+<div class="field"><label>Monthly income needed in retirement</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="income" class="has-prefix" value="4000" min="0" step="100"></div></div>
+<div class="field"><label>Expected return <span class="range-val" id="rVal">7%</span></label><input type="range" id="rate" min="3" max="12" value="7" step="0.5" oninput="document.getElementById('rVal').textContent=this.value+'%'"></div>`;
+function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
+function calculate(){
+  const age=parseInt(document.getElementById('age').value)||30;
+  const retAge=parseInt(document.getElementById('retAge').value)||65;
+  const savings=parseFloat(document.getElementById('savings').value)||0;
+  const income=parseFloat(document.getElementById('income').value)||0;
+  const rate=parseFloat(document.getElementById('rate').value)/100;
+  const years=retAge-age;
+  const neededAtRetirement=income*12/0.04;
+  const futureValueOfSavings=savings*Math.pow(1+rate,years);
+  const remaining=Math.max(0,neededAtRetirement-futureValueOfSavings);
+  const monthlyNeeded=remaining*(rate/12)/(Math.pow(1+rate/12,years*12)-1);
+  const panel=document.getElementById('resultsPanel');
+  panel.querySelectorAll('.result-hero,.metrics-grid,.aff-banner').forEach(e=>e.remove());
+  document.getElementById('emptyState').style.display='none';
+  const hero=document.createElement('div');hero.className='result-hero';
+  hero.innerHTML=`<div class="rh-label">Monthly savings needed</div><div class="rh-value">${fmt(monthlyNeeded)}</div><div class="rh-sub">To retire at ${retAge} with ${fmt(income)}/month income</div>`;
+  panel.appendChild(hero);
+  const mg=document.createElement('div');mg.className='metrics-grid';
+  mg.innerHTML=`<div class="metric-card"><div class="metric-label">Target nest egg</div><div class="metric-value">${fmt(neededAtRetirement)}</div></div><div class="metric-card"><div class="metric-label">Years to save</div><div class="metric-value">${years}</div></div><div class="metric-card"><div class="metric-label">Current savings value at retirement</div><div class="metric-value">${fmt(futureValueOfSavings)}</div></div><div class="metric-card"><div class="metric-label">Gap to fill</div><div class="metric-value">${fmt(remaining)}</div></div>`;
+  panel.appendChild(mg);
+  // Geo-targeted affiliate
+  createAffiliateBanner('retirement').then(b=>panel.appendChild(b));
+}
+calculate();
+</script></body></html>

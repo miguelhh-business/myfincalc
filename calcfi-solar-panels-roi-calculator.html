@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solar Panels ROI Calculator — Payback Period | MyFinCalc</title>
+<meta name="description" content="Free solar panels ROI calculator. Calculate the payback period, lifetime savings, and return on investment for solar panel installation.">
+<meta name="keywords" content="solar panels calculator, solar ROI calculator, solar payback period, solar panels savings calculator, solar panel cost calculator NZ">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/calcfi-solar-panels-roi-calculator.html">
+<meta property="og:title" content="Solar Panels ROI Calculator — Payback Period">
+<meta property="og:description" content="Calculate your payback period and lifetime savings from solar panels.">
+<meta property="og:type" content="website">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Solar Panels ROI Calculator","description":"Calculate solar panel payback period and lifetime savings","url":"https://myfincalc.org/calcfi-solar-panels-roi-calculator.html","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"MyFinCalc","url":"https://myfincalc.org"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long do solar panels take to pay for themselves?","acceptedAnswer":{"@type":"Answer","text":"The average payback period for residential solar panels is 6-10 years, depending on installation cost, electricity rates, sun exposure, and local incentives. After payback, solar panels provide essentially free electricity."}},{"@type":"Question","name":"How long do solar panels last?","acceptedAnswer":{"@type":"Answer","text":"Modern solar panels typically last 25-30 years with minimal degradation. Most manufacturers guarantee at least 80% output at 25 years. Inverters may need replacement after 10-15 years."}},{"@type":"Question","name":"Are solar panels worth it in New Zealand?","acceptedAnswer":{"@type":"Answer","text":"New Zealand receives good solar radiation, especially in the upper North Island. With electricity prices rising, solar panels typically pay for themselves in 7-10 years in NZ, then provide 15-20 years of savings."}},{"@type":"Question","name":"What is the typical ROI on solar panels?","acceptedAnswer":{"@type":"Answer","text":"Solar panels typically deliver 10-20% annual ROI, which is competitive with stock market returns. The ROI depends on your electricity rate, sun exposure, system size, and installation cost."}}]}</script>
+<script src="config.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}
+.nav-back{font-size:13px;color:var(--text-muted);text-decoration:none;}
+.hero{padding:48px 24px 32px;max-width:800px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}.hero h1 .green{color:var(--accent);}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:480px;margin:0 auto;}
+.main{max-width:960px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;}
+.card-title{font-family:var(--font-title);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px;}
+.field{margin-bottom:16px;}
+label{display:block;font-family:var(--font-title);font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:6px;}
+.input-wrap{position:relative;}
+.input-prefix{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+.input-suffix{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--text-muted);}
+input[type="number"]{width:100%;background:var(--bg-input);border:1px solid var(--border);border-radius:10px;color:var(--text-primary);font-family:var(--font-body);font-size:15px;padding:11px 14px;outline:none;appearance:none;-moz-appearance:textfield;}
+input[type="range"]{width:100%;accent-color:var(--accent);margin:8px 0;}
+input.has-prefix{padding-left:28px;}
+input.has-suffix{padding-right:50px;}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,107,60,0.08);}
+.range-val{font-family:var(--font-title);font-size:14px;font-weight:700;color:var(--accent);float:right;}
+.field-hint{font-size:12px;color:var(--text-muted);margin-top:4px;}
+.btn-calc{width:100%;margin-top:12px;padding:15px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-title);font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;}.btn-calc:hover{background:var(--accent2);transform:translateY(-1px);}
+.results-panel{display:flex;flex-direction:column;gap:12px;}
+.result-empty{background:var(--bg-card);border:1px dashed var(--border);border-radius:20px;padding:60px 28px;text-align:center;color:var(--text-muted);font-size:14px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+.result-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);border-radius:18px;padding:24px;color:#fff;text-align:center;}
+.rh-label{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:8px;font-family:var(--font-title);}
+.rh-value{font-family:var(--font-title);font-size:38px;font-weight:700;letter-spacing:-1.5px;margin-bottom:4px;}
+.rh-sub{font-size:13px;opacity:0.75;}
+.metrics-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.metric-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:14px;text-align:center;}
+.metric-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--font-title);margin-bottom:5px;}
+.metric-value{font-family:var(--font-title);font-size:20px;font-weight:700;color:var(--accent);}
+.metric-sub{font-size:11px;color:var(--text-muted);margin-top:2px;}
+.timeline-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.tl-title{font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:10px;}
+.tl-row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;border-bottom:1px solid var(--border);}.tl-row:last-child{border:none;}
+.tl-row.payback{font-weight:700;color:var(--accent);background:var(--accent-light);margin:4px -8px;padding:6px 8px;border-radius:6px;}
+.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.aff-text{font-size:13px;color:var(--text-secondary);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.disclaimer{font-size:11px;color:var(--text-muted);text-align:center;padding:0 24px 32px;max-width:900px;margin:0 auto;}
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:960px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:15px;}.footer-logo .fi{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:700px){.main{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
+<header class="hero">
+  <div class="hero-badge">☀️ Calculator</div>
+  <h1><span class="green">Solar panels ROI calculator</span></h1>
+  <p>Calculate your payback period and lifetime savings from solar panels.</p>
+</header>
+<main class="main">
+  <div class="card">
+    <p class="card-title">Your solar setup</p>
+    <div class="field"><label>Installation cost</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="cost" class="has-prefix" value="12000" min="0" step="500"></div></div>
+    <div class="field"><label>Government rebate / incentive</label><div class="input-wrap"><span class="input-prefix">$</span><input type="number" id="rebate" class="has-prefix" value="0" min="0" step="100"></div></div>
+    <div class="field"><label>System size (kW)</label><input type="number" id="systemSize" value="6" min="1" max="20" step="0.5"></div>
+    <div class="field"><label>Daily sun hours (average) <span class="range-val" id="sunVal">4.5</span></label><input type="range" id="sunHours" min="2" max="8" value="4.5" step="0.5" oninput="document.getElementById('sunVal').textContent=this.value"></div>
+    <div class="field"><label>Current electricity rate</label><div class="input-wrap"><input type="number" id="elecRate" value="0.30" min="0.05" max="1" step="0.01"><span class="input-suffix">$/kWh</span></div></div>
+    <div class="field"><label>Annual electricity rate increase <span class="range-val" id="incVal">3%</span></label><input type="range" id="rateIncrease" min="0" max="10" value="3" step="0.5" oninput="document.getElementById('incVal').textContent=this.value+'%'"></div>
+    <div class="field"><label>Panel degradation <span class="range-val" id="degVal">0.5%</span></label><input type="range" id="degradation" min="0" max="2" value="0.5" step="0.1" oninput="document.getElementById('degVal').textContent=this.value+'%'"><div class="field-hint">Panels lose ~0.5% efficiency per year</div></div>
+    <button class="btn-calc" onclick="calculate()">Calculate solar ROI</button>
+  </div>
+  <div class="results-panel" id="resultsPanel">
+    <div class="result-empty" id="emptyState"><div style="font-size:40px;opacity:0.3;">☀️</div><span>Enter your solar details and click Calculate.</span></div>
+  </div>
+</main>
+<div class="disclaimer">⚠️ Estimates only. Actual production depends on roof orientation, shading, weather, and local conditions.</div>
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+<script>
+function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
+
+function calculate(){
+  const cost=parseFloat(document.getElementById('cost').value)||0;
+  const rebate=parseFloat(document.getElementById('rebate').value)||0;
+  const systemSize=parseFloat(document.getElementById('systemSize').value)||6;
+  const sunHours=parseFloat(document.getElementById('sunHours').value)||4.5;
+  const elecRate=parseFloat(document.getElementById('elecRate').value)||0.30;
+  const rateIncrease=parseFloat(document.getElementById('rateIncrease').value)/100;
+  const degradation=parseFloat(document.getElementById('degradation').value)/100;
+  if(!cost) return;
+
+  const netCost=cost-rebate;
+  const panelLife=25;
+  let totalSavings=0,paybackYear=null,cumSavings=0;
+  const yearlyData=[];
+
+  for(let yr=1;yr<=panelLife;yr++){
+    const output=systemSize*sunHours*365*(1-degradation*(yr-1));
+    const rate=elecRate*Math.pow(1+rateIncrease,yr-1);
+    const savings=output*rate;
+    cumSavings+=savings;
+    totalSavings+=savings;
+    if(!paybackYear&&cumSavings>=netCost) paybackYear=yr;
+    yearlyData.push({yr,output:Math.round(output),rate:rate.toFixed(3),savings,cumSavings});
+  }
+
+  const roi=((totalSavings-netCost)/netCost*100);
+  const annualROI=roi/panelLife;
+  const dailyProduction=systemSize*sunHours;
+  const yearlyProduction=dailyProduction*365;
+  const firstYearSavings=yearlyProduction*elecRate;
+
+  const panel=document.getElementById('resultsPanel');
+  panel.innerHTML='';
+
+  const hero=document.createElement('div');hero.className='result-hero';
+  hero.innerHTML=`<div class="rh-label">Payback period</div><div class="rh-value">${paybackYear?paybackYear+' years':'25+ years'}</div><div class="rh-sub">Net cost: ${fmt(netCost)} · Total ${panelLife}-year savings: ${fmt(totalSavings)}</div>`;
+  panel.appendChild(hero);
+
+  const mg=document.createElement('div');mg.className='metrics-grid';
+  mg.innerHTML=`
+    <div class="metric-card"><div class="metric-label">Total ROI</div><div class="metric-value">${roi.toFixed(0)}%</div><div class="metric-sub">Over ${panelLife} years</div></div>
+    <div class="metric-card"><div class="metric-label">Annual ROI</div><div class="metric-value">${annualROI.toFixed(1)}%</div><div class="metric-sub">Avg per year</div></div>
+    <div class="metric-card"><div class="metric-label">Net profit</div><div class="metric-value">${fmt(totalSavings-netCost)}</div><div class="metric-sub">After paying off system</div></div>
+    <div class="metric-card"><div class="metric-label">Year 1 savings</div><div class="metric-value">${fmt(firstYearSavings)}</div><div class="metric-sub">${Math.round(yearlyProduction).toLocaleString()} kWh/yr</div></div>`;
+  panel.appendChild(mg);
+
+  // Year by year timeline (show key years)
+  const tc=document.createElement('div');tc.className='timeline-card';
+  const showYears=[1,3,5,paybackYear,10,15,20,25].filter((v,i,a)=>v&&v<=25&&a.indexOf(v)===i).sort((a,b)=>a-b);
+  tc.innerHTML=`<div class="tl-title">Savings timeline</div>`+showYears.map(y=>{
+    const d=yearlyData[y-1];
+    return `<div class="tl-row${y===paybackYear?' payback':''}"><span>Year ${y}${y===paybackYear?' ✓ Payback!':''}</span><span>${fmt(d.cumSavings)} total saved</span></div>`;
+  }).join('');
+  panel.appendChild(tc);
+  createAffiliateBanner('property').then(b=>panel.appendChild(b));
+}
+calculate();
+</script>
+</body></html>
