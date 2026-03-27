@@ -68,27 +68,27 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#f2f1ed;--bg-white:#ffffff;--border:#e2e0d8;--border-dark:#c8c5bc;
-  --accent:#2563eb;--accent-light:#eff3ff;--accent2:#16a34a;--accent2-light:#f0fdf4;
+  --bg:#f8f7f4;--bg-white:#ffffff;--border:#e5e4e0;--border-dark:#ccc;
+  --accent:#1a6b3c;--accent-light:#e8f5ee;--accent2:#2d9e5f;--accent2-light:#f0fdf4;
   --orange:#ea580c;--orange-light:#fff7ed;
-  --text-primary:#0d0c0b;--text-secondary:#6b6860;--text-muted:#a8a59d;
-  --font-serif:'Instrument Serif',serif;--font-body:'DM Sans',sans-serif;--font-mono:'DM Mono',monospace;
+  --text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;
+  --font-serif:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;--font-mono:'DM Mono',monospace;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
 
-nav{background:var(--bg);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+nav{background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 .nav-logo{font-family:var(--font-serif);font-size:20px;color:var(--text-primary);text-decoration:none;}
 .nav-logo span{color:var(--accent);}
 .nav-links{display:flex;gap:24px;list-style:none;}
 .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
 .nav-links a:hover,.nav-links a.active{color:var(--text-primary);}
-.nav-cta{background:var(--text-primary);color:#fff;font-size:13px;font-weight:500;padding:7px 18px;border-radius:100px;text-decoration:none;}
+.nav-cta{background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:7px 18px;border-radius:100px;text-decoration:none;}
 
 /* HERO */
 .hero{padding:64px 40px 48px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
@@ -138,12 +138,12 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .rate-pills{display:flex;gap:6px;flex-wrap:wrap;}
 .rate-pill{padding:6px 12px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text-secondary);font-family:var(--font-body);font-size:12px;font-weight:500;cursor:pointer;transition:all 0.15s;}
 .rate-pill:hover{border-color:var(--border-dark);color:var(--text-primary);}
-.rate-pill.active{background:var(--text-primary);color:#fff;border-color:var(--text-primary);}
+.rate-pill.active{background:var(--accent);color:#fff;border-color:var(--accent);}
 
 .divider{height:1px;background:var(--border);margin:16px 0;}
 .section-title-sm{font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;}
 
-.btn-calc{width:100%;padding:14px;background:var(--text-primary);color:#fff;border:none;border-radius:12px;font-family:var(--font-body);font-size:14px;font-weight:500;cursor:pointer;transition:opacity 0.2s,transform 0.15s;margin-top:4px;}
+.btn-calc{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:var(--font-body);font-size:14px;font-weight:500;cursor:pointer;transition:opacity 0.2s,transform 0.15s;margin-top:4px;}
 .btn-calc:hover{opacity:0.85;transform:translateY(-1px);}
 
 /* RESULTS */
@@ -152,11 +152,11 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .empty-text{font-family:var(--font-serif);font-size:22px;color:var(--text-muted);font-style:italic;line-height:1.5;}
 
 /* FIRE NUMBER HERO */
-.fire-hero{background:var(--text-primary);border-radius:20px;padding:32px;color:#fff;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+.fire-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);border-radius:20px;padding:32px;color:#fff;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
 .fh-item{}
 .fh-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:8px;}
 .fh-value{font-family:var(--font-serif);font-size:36px;color:#fff;letter-spacing:-1.5px;line-height:1;}
-.fh-value.highlight{color:#a5f3c8;}
+.fh-value.highlight{color:#bbf7d0;}
 .fh-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;}
 
 /* FIRE TYPE RESULT */
@@ -179,7 +179,7 @@ canvas{width:100%!important;}
 .ms-row:last-child{border-bottom:none;}
 .ms-year{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);width:50px;flex-shrink:0;}
 .ms-bar-wrap{flex:1;height:6px;background:var(--bg);border-radius:3px;overflow:hidden;}
-.ms-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent),#1d4ed8);transition:width 0.8s ease;}
+.ms-bar{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 0.8s ease;}
 .ms-amount{font-family:var(--font-mono);font-size:12px;font-weight:500;color:var(--text-primary);width:90px;text-align:right;flex-shrink:0;}
 .ms-pct{font-size:11px;color:var(--text-muted);width:36px;text-align:right;flex-shrink:0;}
 
@@ -214,22 +214,16 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
   .nav-links,.nav-cta{display:none;}
   footer{padding:20px;}
 }
-.aff-banner{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;}
+.aff-banner{background:var(--bg-white);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;}
 .aff-text{font-size:13px;color:var(--text-secondary);}
-.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.aff-cta{background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:7px 16px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-serif);}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Calc<span>FI</span></a>
-  <ul class="nav-links">
-    <li><a href="calcfi-salary-calculator.html">Salary</a></li>
-    <li><a href="calcfi-fire-calculator.html" class="active">FIRE</a></li>
-    <li><a href="calcfi-investment-calculator.html">Invest</a></li>
-    <li><a href="calcfi-rent-vs-buy.html">Rent vs Buy</a></li>
-  </ul>
-  <a href="#" class="nav-cta">All calculators →</a>
+  <a href="index.html" class="nav-logo">My<span>Fin</span>Calc</a>
+  <a href="index.html" class="nav-cta">← All calculators</a>
 </nav>
 
 <!-- HERO -->
@@ -394,8 +388,8 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 </section>
 
 <footer>
-  <div class="footer-logo">Calc<span>FI</span></div>
-  <p class="footer-disc">Projections are estimates based on historical averages and are not financial advice. Past market performance does not guarantee future results. Consult a financial advisor for personalised retirement planning.</p>
+  <div class="footer-logo">My<span>Fin</span>Calc</div>
+  <p class="footer-disc">© 2026 MyFinCalc.org — Projections are estimates and not financial advice. Consult a financial advisor for personalised retirement planning.</p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
@@ -576,8 +570,8 @@ function renderResults(d) {
           {
             label: 'Portfolio value',
             data: d.projectionValues,
-            borderColor: '#2563eb',
-            backgroundColor: 'rgba(37,99,235,0.08)',
+            borderColor: '#1a6b3c',
+            backgroundColor: 'rgba(26,107,60,0.08)',
             borderWidth: 2.5,
             fill: true,
             tension: 0.4,
