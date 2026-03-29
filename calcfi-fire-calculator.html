@@ -7,7 +7,7 @@
 <!-- SEO PRIMARY -->
 <title>FIRE Calculator — Financial Independence Retire Early | MyFinCalc</title>
 <meta name="description" content="Free FIRE calculator. Find out exactly when you can retire early using the 4% rule and Rule of 25. Enter your savings, income, and expenses to get your FIRE number and retirement age.">
-<meta name="keywords" content="FIRE calculator, financial independence calculator, retire early calculator, FIRE number calculator, 4% rule calculator, rule of 25 calculator, how much to retire, early retirement calculator NZ, FIRE calculator New Zealand">
+<meta name="keywords" content="FIRE calculator, financial independence calculator, retire early calculator, FIRE number calculator, 4% rule calculator, rule of 25 calculator, how much to retire, early retirement calculator">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://myfincalc.org/calcfi-fire-calculator.html">
 
@@ -17,9 +17,6 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://myfincalc.org/calcfi-fire-calculator.html">
 <meta property="og:site_name" content="MyFinCalc">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="FIRE Calculator — Financial Independence Retire Early">
-<meta name="twitter:description" content="Find your FIRE number and retirement age. Free calculator using the 4% rule and Rule of 25.">
 
 <!-- SCHEMA MARKUP -->
 <script type="application/ld+json">
@@ -36,7 +33,7 @@
 }
 </script>
 
-<!-- FAQ SCHEMA for SEO -->
+<!-- FAQ SCHEMA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -44,23 +41,33 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the FIRE number?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Your FIRE number is the total amount you need saved and invested to retire early. It is calculated by multiplying your annual expenses by 25 (the Rule of 25), which is derived from the 4% safe withdrawal rate." }
+      "name": "What is the FIRE movement?",
+      "acceptedAnswer": { "@type": "Answer", "text": "FIRE stands for Financial Independence, Retire Early. It is a movement focused on extreme saving and investing to achieve financial freedom decades before traditional retirement age. The goal is to accumulate enough wealth that investment returns can cover your living expenses indefinitely." }
     },
     {
       "@type": "Question",
-      "name": "What is the 4% rule?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The 4% rule states that you can withdraw 4% of your investment portfolio each year in retirement without running out of money. This is based on historical stock market returns and is the foundation of FIRE planning." }
+      "name": "How does the 4% rule work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The 4% rule states that you can withdraw 4% of your investment portfolio each year in retirement without running out of money over a 30-year period. This is based on historical stock and bond market returns. Your FIRE number is calculated by multiplying your annual expenses by 25 (the inverse of 4%)." }
     },
     {
       "@type": "Question",
-      "name": "How much do I need to retire early?",
-      "acceptedAnswer": { "@type": "Answer", "text": "To retire early, multiply your expected annual expenses in retirement by 25. For example, if you plan to spend $40,000 per year, you need $1,000,000 invested. This is your FIRE number." }
+      "name": "What is a good FIRE number?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Your FIRE number depends on your expected annual expenses in retirement. Multiply your annual expenses by 25. For example, if you need $40,000 per year, your FIRE number is $1,000,000. If you need $80,000 per year, your FIRE number is $2,000,000." }
     },
     {
       "@type": "Question",
-      "name": "What are the types of FIRE?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The main types of FIRE are: Lean FIRE (minimal expenses, under $40k/year), Regular FIRE (moderate lifestyle), Fat FIRE (comfortable lifestyle, $100k+/year), and Barista FIRE (partial retirement with part-time work)." }
+      "name": "How does KiwiSaver / 401k / superannuation affect my FIRE date?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Retirement accounts like KiwiSaver (NZ), 401k (US), and superannuation (AU) grow tax-advantaged but are locked until age 60-67. For early retirees, you need a bridge strategy: taxable investments to cover expenses until you can access locked retirement funds." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is FIRE realistic with a normal salary?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, FIRE is possible on a normal salary. The key is your savings rate, not your income level. Someone earning $60,000 who saves 50% can reach FIRE faster than someone earning $150,000 who saves 10%. Reducing expenses has a double effect — it increases savings and lowers your FIRE number." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Lean FIRE and Fat FIRE?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lean FIRE targets a frugal retirement with annual expenses under $40,000. Fat FIRE targets a comfortable or luxury lifestyle with $100,000+ per year. Regular FIRE falls in between at $40,000-$80,000 per year. Barista FIRE is a hybrid where part-time work covers some expenses." }
     }
   ]
 }
@@ -85,9 +92,9 @@ body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body)
 nav{background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 .nav-logo{font-family:var(--font-serif);font-size:20px;color:var(--text-primary);text-decoration:none;}
 .nav-logo span{color:var(--accent);}
-.nav-links{display:flex;gap:24px;list-style:none;}
-.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--text-primary);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
+.nav-link:hover{color:var(--text-primary);}
 .nav-cta{background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:7px 18px;border-radius:100px;text-decoration:none;}
 
 /* HERO */
@@ -159,6 +166,13 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .fh-value.highlight{color:#bbf7d0;}
 .fh-sub{font-size:12px;color:rgba(255,255,255,0.45);margin-top:4px;}
 
+/* EXPLANATION CARD */
+.explain-card{background:var(--bg-white);border:1px solid var(--border);border-radius:20px;padding:24px 28px;}
+.explain-title{font-family:var(--font-serif);font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.explain-text{font-size:14px;color:var(--text-secondary);line-height:1.8;}
+.explain-text strong{color:var(--text-primary);font-weight:600;}
+.explain-highlight{background:var(--accent-light);border-left:3px solid var(--accent);padding:12px 16px;border-radius:0 10px 10px 0;margin:12px 0;font-size:13px;color:var(--accent);line-height:1.7;}
+
 /* FIRE TYPE RESULT */
 .fire-type-result{border-radius:14px;padding:18px 22px;border:1px solid var(--border);}
 .ftr-label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}
@@ -193,25 +207,38 @@ canvas{width:100%!important;}
 /* FAQ SECTION */
 .faq-section{max-width:1100px;margin:0 auto;padding:0 40px 80px;}
 .faq-title{font-family:var(--font-serif);font-size:32px;margin-bottom:32px;letter-spacing:-0.5px;}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.faq-item{background:var(--bg-white);border:1px solid var(--border);border-radius:16px;padding:22px;}
-.faq-q{font-family:var(--font-serif);font-size:16px;margin-bottom:8px;}
-.faq-a{font-size:13px;color:var(--text-secondary);line-height:1.7;}
+.faq-list{display:flex;flex-direction:column;gap:10px;}
+.faq-item{background:var(--bg-white);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.faq-item summary{padding:18px 22px;font-family:var(--font-serif);font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;transition:color 0.2s;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'+';font-size:20px;color:var(--text-muted);transition:transform 0.2s;}
+.faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.faq-item[open] summary{color:var(--accent);}
+.faq-answer{padding:0 22px 18px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+
+/* RELATED ARTICLE CTA */
+.article-cta{max-width:1100px;margin:0 auto;padding:0 40px 60px;}
+.article-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.article-cta-text{font-size:14px;color:var(--text-primary);}
+.article-cta-text strong{font-family:var(--font-serif);}
+.article-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-serif);}
 
 footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1100px;margin:0 auto;}
 .footer-logo{font-family:var(--font-serif);font-size:16px;}
 .footer-logo span{color:var(--accent);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
 .footer-disc{font-size:11px;color:var(--text-muted);max-width:520px;}
 
 @media(max-width:900px){
-  .hero,.calc-section,.faq-section{padding-left:20px;padding-right:20px;}
+  .hero,.calc-section,.faq-section,.article-cta{padding-left:20px;padding-right:20px;}
   .hero{grid-template-columns:1fr;padding-top:40px;}
   .calc-section{grid-template-columns:1fr;}
   .fire-hero{grid-template-columns:1fr 1fr;}
-  .faq-grid{grid-template-columns:1fr;}
   .input-card{position:static;}
   nav{padding:0 20px;}
-  .nav-links,.nav-cta{display:none;}
+  .nav-cta{display:none;}
   footer{padding:20px;}
 }
 .aff-banner{background:var(--bg-white);border:1px solid var(--border);border-radius:14px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:14px;}
@@ -224,7 +251,10 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
 
 <nav>
   <a href="index.html" class="nav-logo">My<span>Fin</span>Calc</a>
-  <a href="index.html" class="nav-cta">← All calculators</a>
+  <div class="nav-right">
+    <a href="blog/" class="nav-link">Blog</a>
+    <a href="index.html" class="nav-cta">← All calculators</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -357,39 +387,48 @@ footer{border-top:1px solid var(--border);padding:28px 40px;display:flex;align-i
   </div>
 </section>
 
-<!-- FAQ SECTION - important for SEO -->
+<!-- FAQ SECTION -->
 <section class="faq-section">
-  <h2 class="faq-title">Everything about FIRE</h2>
-  <div class="faq-grid">
-    <div class="faq-item">
-      <h3 class="faq-q">What is the FIRE movement?</h3>
-      <p class="faq-a">FIRE stands for Financial Independence, Retire Early. It's a movement focused on extreme saving and investing to achieve financial freedom decades before traditional retirement age. The goal is to accumulate enough wealth that investment returns can cover your living expenses indefinitely.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">How is my FIRE number calculated?</h3>
-      <p class="faq-a">Your FIRE number is calculated using the Rule of 25: multiply your expected annual expenses in retirement by 25. This is derived from the 4% safe withdrawal rate — if you withdraw 4% of your portfolio annually, it should last indefinitely based on historical market returns.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">What is the 4% rule?</h3>
-      <p class="faq-a">The 4% rule (also known as the Bengen Rule) comes from a 1994 study showing that retirees could withdraw 4% of their portfolio in year one, then adjust for inflation each year, and never run out of money over a 30-year retirement period — based on historical US stock and bond market returns.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">What savings rate do I need?</h3>
-      <p class="faq-a">Your savings rate dramatically affects your FIRE timeline. Saving 10% may take 40+ years. Saving 25% takes about 32 years. Saving 50% takes roughly 17 years. Saving 70% can achieve FIRE in under 9 years. The higher your savings rate, the faster you reach financial independence.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">What's the difference between Lean, Regular, and Fat FIRE?</h3>
-      <p class="faq-a">Lean FIRE targets a frugal retirement lifestyle with annual expenses under $40,000. Regular FIRE targets $40,000–$80,000 per year for a comfortable lifestyle. Fat FIRE targets $100,000+ per year for a luxurious retirement. Barista FIRE is a hybrid where part-time work covers some expenses while investments cover the rest.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Is the 4% rule still valid in 2024?</h3>
-      <p class="faq-a">The 4% rule remains widely used but some financial planners now recommend 3–3.5% for longer retirements (40+ years) due to lower expected future returns and higher valuations. Our calculator lets you adjust the withdrawal rate from 3% to 5% so you can model different scenarios.</p>
-    </div>
+  <h2 class="faq-title">Frequently asked questions</h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What is the FIRE movement?</summary>
+      <div class="faq-answer">FIRE stands for Financial Independence, Retire Early. It's a movement focused on extreme saving and investing to achieve financial freedom decades before traditional retirement age. The goal is to accumulate enough wealth that investment returns can cover your living expenses indefinitely.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How does the 4% rule work?</summary>
+      <div class="faq-answer">The 4% rule (also known as the Bengen Rule) comes from a 1994 study showing that retirees could withdraw 4% of their portfolio in year one, then adjust for inflation each year, and not run out of money over a 30-year retirement — based on historical US stock and bond market returns. Your FIRE number is simply your annual expenses multiplied by 25 (the inverse of 4%).</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is a good FIRE number?</summary>
+      <div class="faq-answer">Your FIRE number depends entirely on your expected annual expenses in retirement. Multiply your annual expenses by 25 (at a 4% withdrawal rate). For example, if you need $40,000 per year, your FIRE number is $1,000,000. If you need $80,000 per year, your FIRE number is $2,000,000. There is no universal "good" number — it's personal.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How does KiwiSaver / 401k / superannuation affect my FIRE date?</summary>
+      <div class="faq-answer">Retirement accounts like KiwiSaver (NZ), 401k (US), and superannuation (AU) grow tax-advantaged but are locked until age 60-67. For early retirees, you need a "bridge strategy": enough money in taxable investment accounts to cover expenses from your early retirement date until you can access your locked retirement funds.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Is FIRE realistic with a normal salary?</summary>
+      <div class="faq-answer">Yes. The key to FIRE is your savings rate, not your income level. Someone earning $60,000 who saves 50% can reach FIRE faster than someone earning $150,000 who saves 10%. Reducing expenses has a double effect: it increases your savings AND lowers your FIRE number (because you need less to live on in retirement).</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the difference between Lean FIRE and Fat FIRE?</summary>
+      <div class="faq-answer">Lean FIRE targets a frugal retirement lifestyle with annual expenses under $40,000. Regular FIRE targets $40,000–$80,000 per year for a comfortable lifestyle. Fat FIRE targets $100,000+ per year for a luxurious retirement. Barista FIRE is a hybrid where you retire from your career but work part-time to cover some expenses while investments cover the rest.</div>
+    </details>
   </div>
 </section>
 
+<!-- RELATED ARTICLE CTA -->
+<div class="article-cta">
+  <div class="article-cta-card">
+    <div class="article-cta-text"><strong>📖 Want to go deeper?</strong> Read our guide: FIRE Calculator — How to Find Your Financial Independence Number</div>
+    <a href="blog/fire-calculator-financial-independence-number.html" class="article-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
 <footer>
   <div class="footer-logo">My<span>Fin</span>Calc</div>
+  <div class="footer-links"><a href="blog/">Blog</a><a href="#">Privacy</a><a href="#">Terms</a></div>
   <p class="footer-disc">© 2026 MyFinCalc.org — Projections are estimates and not financial advice. Consult a financial advisor for personalised retirement planning.</p>
 </footer>
 
@@ -472,7 +511,7 @@ function calculate() {
   else if (expenses < 120000) { fireType = 'Fat FIRE'; fireTypeDesc = 'Generous lifestyle with significant discretionary spending.'; fireTypeBg = '#f0fdf4'; }
   else { fireType = 'Ultra Fat FIRE'; fireTypeDesc = 'Luxury lifestyle with no financial constraints.'; fireTypeBg = '#fff7ed'; }
 
-  renderResults({ fireNumber, fireAge, yearsToFIRE, currentPct, savings, annualSavings, expenses, projectionYears, projectionValues, milestoneData, fireType, fireTypeDesc, fireTypeBg, withdrawalRate, age });
+  renderResults({ fireNumber, fireAge, yearsToFIRE, currentPct, savings, annualSavings, expenses, projectionYears, projectionValues, milestoneData, fireType, fireTypeDesc, fireTypeBg, withdrawalRate, age, income, savingsRatePct, returnPct, inflationPct });
 }
 
 function renderResults(d) {
@@ -503,6 +542,28 @@ function renderResults(d) {
       <div class="fh-sub">$${fmt(d.savings)} of $${fmt(d.fireNumber)}</div>
     </div>`;
   wrap.appendChild(hero);
+
+  // EXPLANATION CARD — plain English results
+  const explain = document.createElement('div');
+  explain.className = 'explain-card';
+  const monthlyExpenses = Math.round(d.expenses / 12);
+  const monthlySavings = Math.round(d.annualSavings / 12);
+
+  let explainHTML = `<div class="explain-title">💡 What this means for you</div><div class="explain-text">`;
+
+  explainHTML += `Based on your numbers, you need <strong>$${fmt(d.fireNumber)}</strong> invested to retire. This is your FIRE number — the amount that, at a ${d.withdrawalRate}% annual withdrawal rate, generates <strong>$${fmt(d.expenses)}/year</strong> ($${fmt(monthlyExpenses)}/month) to cover your living expenses without ever running out.`;
+
+  if (d.fireAge !== null && d.yearsToFIRE !== null) {
+    explainHTML += `<div class="explain-highlight">At your current savings rate of ${d.savingsRatePct}% ($${fmt(monthlySavings)}/month), you are on track to reach financial independence at <strong>age ${d.fireAge}</strong> — that's <strong>${d.yearsToFIRE} years from now</strong>.</div>`;
+    explainHTML += `Right now you have $${fmt(d.savings)} saved, which is <strong>${d.currentPct.toFixed(1)}%</strong> of your goal. Your investments are projected to grow at ${d.returnPct}% per year (${(d.returnPct - d.inflationPct).toFixed(1)}% after inflation).`;
+  } else {
+    explainHTML += `<div class="explain-highlight">⚠️ At your current savings rate of ${d.savingsRatePct}%, reaching your FIRE number will take a very long time. Consider increasing your savings rate or reducing your expected retirement expenses.</div>`;
+    explainHTML += `Every 5% increase in your savings rate can shave years off your timeline. Even small reductions in expenses help — every $1,000 less in annual expenses reduces your FIRE number by $${fmt(1000 * (100/d.withdrawalRate))}.`;
+  }
+
+  explainHTML += `</div>`;
+  explain.innerHTML = explainHTML;
+  wrap.appendChild(explain);
 
   // FIRE type
   const ft = document.createElement('div');
@@ -539,20 +600,21 @@ function renderResults(d) {
   // Tips
   const tips = document.createElement('div');
   tips.className = 'tips-card';
-  const savingsRateNum = Math.round((d.annualSavings / (d.annualSavings / (getVal('savingsRate')/100) || 1)));
   tips.innerHTML = `
     <div class="tips-title">How to reach FIRE faster</div>
     <div class="tip-item"><span class="tip-num">01</span><span>Increase your savings rate by just 5% — this alone can cut years off your FIRE timeline.</span></div>
     <div class="tip-item"><span class="tip-num">02</span><span>Invest in low-cost index funds (S&P 500, Total Market) to capture market returns with minimal fees.</span></div>
     <div class="tip-item"><span class="tip-num">03</span><span>Maximize tax-advantaged accounts first — KiwiSaver (NZ), 401k (US), Super (AU), RRSP (CA), pension (UK).</span></div>
-    <div class="tip-item"><span class="tip-num">04</span><span>Each dollar you cut from annual expenses reduces your FIRE number by $25 (at 4% withdrawal rate).</span></div>
+    <div class="tip-item"><span class="tip-num">04</span><span>Each dollar you cut from annual expenses reduces your FIRE number by $${Math.round(100/d.withdrawalRate)} (at ${d.withdrawalRate}% withdrawal rate).</span></div>
     <div class="tip-item"><span class="tip-num">05</span><span>Consider geographic arbitrage — retiring in a lower cost-of-living country can dramatically reduce your FIRE number.</span></div>`;
   wrap.appendChild(tips);
 
   panel.appendChild(wrap);
 
   // Geo-targeted affiliate
-  createAffiliateBanner('invest').then(b=>panel.appendChild(b));
+  if (typeof createAffiliateBanner === 'function') {
+    createAffiliateBanner('invest').then(b=>panel.appendChild(b));
+  }
 
   // Draw chart
   setTimeout(() => {
@@ -560,7 +622,6 @@ function renderResults(d) {
     if (!ctx) return;
     if (chartInstance) chartInstance.destroy();
 
-    const fireIdx = d.projectionYears.indexOf(d.fireAge);
     const fireLineData = d.projectionYears.map(() => d.fireNumber);
 
     chartInstance = new Chart(ctx, {

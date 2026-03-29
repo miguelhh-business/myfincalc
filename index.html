@@ -3,13 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MyFinCalc — Money Math Made Easy | Free Financial Calculators</title>
-<meta name="description" content="Free financial calculators for everyone. FIRE calculator, salary after tax for NZ, AU, UK, US & CA, compound interest, investment returns, retirement savings, and more.">
-<meta name="keywords" content="FIRE calculator, salary calculator, financial independence calculator, compound interest calculator, retirement calculator, investment calculator, salary after tax NZ AU UK US CA">
+<title>MyFinCalc — Free Financial Calculators | FIRE, Salary After Tax, Compound Interest & More</title>
+<meta name="description" content="12 free financial calculators for real-life money decisions. FIRE calculator, salary after tax for NZ, AU, UK, US & CA, compound interest, investment returns, retirement savings, rent vs buy, and more.">
+<meta name="keywords" content="FIRE calculator, salary calculator, financial independence calculator, compound interest calculator, retirement calculator, investment calculator, salary after tax NZ AU UK US CA, rent vs buy calculator, debt payoff calculator">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://myfincalc.org/">
-<meta property="og:title" content="MyFinCalc — Money Math Made Easy">
-<meta property="og:description" content="Free financial calculators. FIRE, salary after tax (NZ, AU, UK, US, CA), compound interest, retirement savings, and more.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"MyFinCalc","url":"https://myfincalc.org","description":"Free financial calculators — money math made easy"}</script>
+<meta property="og:title" content="MyFinCalc — Free Financial Calculators for Real-Life Money Decisions">
+<meta property="og:description" content="12 free calculators: FIRE, salary after tax (NZ, AU, UK, US, CA), compound interest, retirement savings, rent vs buy, debt payoff, and more.">
+<meta property="og:url" content="https://myfincalc.org/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyFinCalc">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "MyFinCalc",
+  "url": "https://myfincalc.org",
+  "description": "12 free financial calculators — money math made easy. FIRE, salary after tax, compound interest, retirement savings, and more.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "MyFinCalc",
+    "url": "https://myfincalc.org"
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -23,14 +40,13 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden;position:relative;}
 
-/* Animated gradient orbs background — inspired by Salt Level aesthetic */
 .bg-glow{position:fixed;top:0;left:0;right:0;bottom:0;z-index:-1;overflow:hidden;pointer-events:none;}
 .bg-orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:0.18;mix-blend-mode:normal;}
 .bg-orb-1{width:600px;height:600px;background:radial-gradient(circle,#2d9e5f 0%,transparent 70%);top:-10%;left:-10%;animation:orbDrift1 20s ease-in-out infinite;}
 .bg-orb-2{width:500px;height:500px;background:radial-gradient(circle,#16a34a 0%,transparent 70%);bottom:-5%;right:-10%;animation:orbDrift2 25s ease-in-out infinite;}
 .bg-orb-3{width:400px;height:400px;background:radial-gradient(circle,#a3e635 0%,transparent 70%);top:40%;left:50%;transform:translate(-50%,-50%);animation:orbDrift3 18s ease-in-out infinite;opacity:0.1;}
 .bg-orb-4{width:350px;height:350px;background:radial-gradient(circle,#34d399 0%,transparent 70%);top:10%;right:20%;animation:orbDrift4 22s ease-in-out infinite;opacity:0.12;}
-@keyframes orbDrift1{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(80px,40px) scale(1.1);}50%{transform:translate(40px,80px) scale(0.95);}75%{transform:translate(-30px,50px) scale(1.05);}  }
+@keyframes orbDrift1{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(80px,40px) scale(1.1);}50%{transform:translate(40px,80px) scale(0.95);}75%{transform:translate(-30px,50px) scale(1.05);}}
 @keyframes orbDrift2{0%,100%{transform:translate(0,0) scale(1);}25%{transform:translate(-60px,-30px) scale(1.05);}50%{transform:translate(-30px,-70px) scale(1.1);}75%{transform:translate(40px,-40px) scale(0.95);}}
 @keyframes orbDrift3{0%,100%{transform:translate(-50%,-50%) scale(1);}33%{transform:translate(-40%,-60%) scale(1.15);}66%{transform:translate(-60%,-40%) scale(0.9);}}
 @keyframes orbDrift4{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-50px,60px) scale(1.1);}}
@@ -38,6 +54,9 @@ body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body)
 nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
 .nav-logo{font-family:var(--font-title);font-weight:700;font-size:20px;color:var(--text-primary);text-decoration:none;display:flex;align-items:center;gap:2px;}
 .nav-logo .fi{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
+.nav-link:hover{color:var(--text-primary);}
 .nav-tag{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px;}
 .nav-dot{width:5px;height:5px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
@@ -124,6 +143,7 @@ footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:
   footer{flex-direction:column;text-align:center;}
   .trust-row{gap:16px;}
   .hero h1{letter-spacing:-1.5px;}
+  .nav-tag{display:none;}
 }
 @media(max-width:480px){.calcs-grid{grid-template-columns:1fr;}}
 </style>
@@ -131,7 +151,6 @@ footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:
 </head>
 <body>
 
-<!-- Animated gradient background -->
 <div class="bg-glow">
   <div class="bg-orb bg-orb-1"></div>
   <div class="bg-orb bg-orb-2"></div>
@@ -141,7 +160,10 @@ footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:
 
 <nav>
   <a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
-  <span class="nav-tag"><span class="nav-dot"></span> Money math, made easy</span>
+  <div class="nav-right">
+    <a href="blog/" class="nav-link">Blog</a>
+    <span class="nav-tag"><span class="nav-dot"></span> Money math, made easy</span>
+  </div>
 </nav>
 
 <section class="hero">
@@ -285,7 +307,7 @@ footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:
     <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
     <div class="footer-tagline">Money math, made easy.</div>
   </div>
-  <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div>
+  <div class="footer-links"><a href="blog/">Blog</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Disclaimer</a></div>
   <p class="footer-copy">© 2026 MyFinCalc.org</p>
 </footer>
 
