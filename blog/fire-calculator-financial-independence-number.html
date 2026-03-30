@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIRE Calculator: How to Find Your Financial Independence Number | MyFinCalc</title>
+<meta name="description" content="Calculate your FIRE number using the 4% rule and Rule of 25. Learn about Lean FIRE, Fat FIRE, and Barista FIRE with real examples. Free FIRE calculator and step-by-step guide.">
+<meta name="keywords" content="FIRE calculator, financial independence number, FIRE number calculator, 4% rule, rule of 25, retire early calculator, Lean FIRE, Fat FIRE, Barista FIRE, FIRE movement, how much to retire early">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/blog/fire-calculator-financial-independence-number.html">
+<meta property="og:title" content="FIRE Calculator: How to Find Your Financial Independence Number">
+<meta property="og:description" content="The 4% rule, Rule of 25, Lean vs Fat FIRE explained. Calculate exactly when you can retire early.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://myfincalc.org/blog/fire-calculator-financial-independence-number.html">
+<meta property="og:site_name" content="MyFinCalc">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FIRE Calculator: How to Find Your Financial Independence Number",
+  "description": "Complete guide to calculating your FIRE number using the 4% rule, with Lean FIRE, Fat FIRE, and Barista FIRE breakdowns.",
+  "author": {"@type": "Organization", "name": "MyFinCalc"},
+  "publisher": {"@type": "Organization", "name": "MyFinCalc", "url": "https://myfincalc.org"},
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-03-15",
+  "mainEntityOfPage": "https://myfincalc.org/blog/fire-calculator-financial-independence-number.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the FIRE number?", "acceptedAnswer": {"@type": "Answer", "text": "Your FIRE number is the total amount of invested assets needed to sustain your lifestyle without working. It is calculated by multiplying your annual expenses by 25 (the Rule of 25), based on the 4% safe withdrawal rate."}},
+    {"@type": "Question", "name": "Is the 4% rule still valid?", "acceptedAnswer": {"@type": "Answer", "text": "Morningstar's 2025 research recommends 3.9% as the safe starting withdrawal rate for 2026 retirees, up from 3.7% in 2024. The 4% rule creator Bill Bengen now suggests 4.7% may be safe with diversified portfolios. For early retirees with 40-50 year horizons, 3-3.5% is more conservative."}},
+    {"@type": "Question", "name": "How long does it take to reach FIRE?", "acceptedAnswer": {"@type": "Answer", "text": "It depends primarily on your savings rate. At 10% savings rate: about 40 years. At 25%: about 32 years. At 50%: about 17 years. At 70%: under 9 years. Your income level matters less than the percentage you save."}},
+    {"@type": "Question", "name": "What is Lean FIRE vs Fat FIRE?", "acceptedAnswer": {"@type": "Answer", "text": "Lean FIRE targets annual expenses under $40,000 (FIRE number under $1M). Fat FIRE targets $100,000+ per year ($2.5M+). Regular FIRE is $40-80K/year. Barista FIRE means semi-retiring with part-time work covering some expenses."}},
+    {"@type": "Question", "name": "Can I retire early with a normal salary?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FIRE depends on savings rate, not income. Someone earning $60,000 saving 50% reaches FIRE faster than someone earning $150,000 saving 10%. Reducing expenses has a double effect: it increases savings AND lowers your FIRE number."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--border:#e5e4e0;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:16px;line-height:1.75;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:20px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;}.nav-link:hover{color:var(--text-primary);}.nav-link.active{color:var(--text-primary);font-weight:600;}
+.article-wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:24px;}.breadcrumb a{color:var(--text-muted);text-decoration:none;}.breadcrumb a:hover{color:var(--accent);}
+.article-wrap h1{font-family:var(--font-title);font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;}
+.article-meta{font-size:13px;color:var(--text-muted);margin-bottom:32px;display:flex;gap:16px;flex-wrap:wrap;}
+.article-wrap h2{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin:40px 0 16px;}
+.article-wrap h3{font-family:var(--font-title);font-size:18px;font-weight:700;margin:28px 0 12px;}
+.article-wrap p{margin-bottom:16px;color:var(--text-secondary);}
+.article-wrap strong{color:var(--text-primary);}
+.calc-cta{background:var(--accent-light);border:2px solid var(--accent);border-radius:16px;padding:24px 28px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.calc-cta-text{font-size:15px;color:var(--text-primary);}.calc-cta-text strong{font-family:var(--font-title);}
+.calc-cta-btn{background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14px;}
+.data-table th{background:var(--bg-card);border:1px solid var(--border);padding:10px 14px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.data-table td{border:1px solid var(--border);padding:10px 14px;background:var(--bg-card);}
+.data-table tr:last-child td{font-weight:600;background:var(--accent-light);color:var(--accent);}
+.data-table .right{text-align:right;}
+.highlight-box{background:var(--accent-light);border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 12px 12px 0;margin:24px 0;font-size:14px;color:var(--accent);line-height:1.7;}
+.disclaimer-box{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:32px 0;font-size:13px;color:var(--text-muted);line-height:1.6;}
+.faq-section{margin:48px 0 0;}
+.faq-title{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin-bottom:20px;}.faq-title span{color:var(--accent);}
+.faq-list{display:flex;flex-direction:column;gap:8px;}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);}
+.faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.faq-item[open] summary{color:var(--accent);}
+.faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.internal-links{margin:32px 0;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;}
+.internal-links-title{font-family:var(--font-title);font-size:14px;font-weight:700;margin-bottom:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}
+.internal-links a{display:block;color:var(--accent);text-decoration:none;font-size:14px;padding:4px 0;}.internal-links a:hover{text-decoration:underline;}
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:720px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;}.footer-logo .fi{color:var(--accent);}
+.footer-links{display:flex;gap:16px;}.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;}.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:600px){.article-wrap{padding:32px 16px 60px;}.calc-cta{flex-direction:column;align-items:flex-start;}footer{flex-direction:column;text-align:center;}.data-table{font-size:12px;}.data-table th,.data-table td{padding:8px 10px;}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <div class="nav-right"><a href="./" class="nav-link active">Blog</a><a href="../index.html" class="nav-link">Calculators</a></div>
+</nav>
+<article class="article-wrap">
+
+<div class="breadcrumb"><a href="../index.html">Home</a> → <a href="./">Blog</a> → FIRE Calculator</div>
+
+<h1>FIRE Calculator: How to Find Your Financial Independence Number</h1>
+
+<div class="article-meta">
+  <span>📅 March 2026</span>
+  <span>🕐 12 min read</span>
+  <span>🔥 Most popular</span>
+</div>
+
+<p>Financial Independence, Retire Early — FIRE — is built on a deceptively simple idea: save and invest enough money that your investment returns cover your living expenses forever. Once you reach that point, working becomes optional. The amount of money you need to get there is called your <strong>FIRE number</strong>, and it is more achievable than most people think.</p>
+
+<p>This guide explains exactly how to calculate your FIRE number, walks through the math behind the 4% rule and Rule of 25, compares different types of FIRE, and shows you how your savings rate — not your income — determines when you can retire.</p>
+
+<div class="calc-cta">
+  <div class="calc-cta-text"><strong>🔥 Calculate your FIRE number:</strong> Enter your income, expenses, and savings to see when you could reach financial independence.</div>
+  <a href="../calcfi-fire-calculator.html" class="calc-cta-btn">Open FIRE calculator →</a>
+</div>
+
+<h2>The formula: Rule of 25 and the 4% rule</h2>
+
+<p>Your FIRE number is calculated using the <strong>Rule of 25</strong>: multiply your expected annual expenses in retirement by 25. That is it. The Rule of 25 is the inverse of the 4% safe withdrawal rate — if you withdraw 4% of your portfolio each year, it should last indefinitely based on historical market returns.</p>
+
+<p>The formula looks like this:</p>
+
+<div class="highlight-box">
+  <strong>FIRE Number = Annual Expenses × 25</strong><br><br>
+  If you spend $40,000 per year → FIRE number is $1,000,000<br>
+  If you spend $60,000 per year → FIRE number is $1,500,000<br>
+  If you spend $80,000 per year → FIRE number is $2,000,000
+</div>
+
+<p>The 4% rule originates from William Bengen's 1994 research, later expanded by the Trinity Study. The research examined every 30-year period in US market history and found that a 4% initial withdrawal rate (adjusted annually for inflation) survived in the vast majority of scenarios without the portfolio running out of money.</p>
+
+<h3>Is the 4% rule still valid in 2026?</h3>
+
+<p>The 4% rule remains the most widely used benchmark, but recent research suggests some nuance. <strong>Morningstar's December 2025 analysis</strong> recommends 3.9% as the safe starting withdrawal rate for new retirees — up from 3.7% in 2024 due to improved bond yields. Meanwhile, Bill Bengen himself (the rule's creator) now suggests that 4.7% may be safe with portfolios that include small-cap value stocks.</p>
+
+<p>For early retirees planning 40-50+ year retirements (typical in the FIRE community), a more conservative 3-3.5% withdrawal rate is generally recommended. This means using a <strong>Rule of 28-33</strong> instead of Rule of 25. Our FIRE calculator lets you adjust the withdrawal rate from 3% to 5% so you can model different scenarios.</p>
+
+<h2>Types of FIRE</h2>
+
+<p>Not everyone pursuing FIRE has the same target lifestyle. The FIRE community recognises several flavours, each with different expense levels and corresponding FIRE numbers:</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>FIRE type</th><th class="right">Annual expenses</th><th class="right">FIRE number (at 4%)</th><th>Lifestyle</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Lean FIRE</td><td class="right">Under $40,000</td><td class="right">Under $1,000,000</td><td>Minimal — housing, food, basics. No frills.</td></tr>
+    <tr><td>Regular FIRE</td><td class="right">$40,000 – $80,000</td><td class="right">$1M – $2M</td><td>Comfortable with travel, dining, hobbies.</td></tr>
+    <tr><td>Fat FIRE</td><td class="right">$100,000+</td><td class="right">$2,500,000+</td><td>Generous lifestyle, no financial constraints.</td></tr>
+    <tr><td>Barista FIRE</td><td class="right">Varies</td><td class="right">Partial</td><td>Semi-retired with part-time work covering some costs.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Lean FIRE</strong> is the most achievable numerically but requires a frugal lifestyle indefinitely. It works well for people in lower cost-of-living areas or countries. The risk is that there is little margin for unexpected expenses.</p>
+
+<p><strong>Regular FIRE</strong> is the sweet spot for most people — enough to live comfortably with travel, eating out, and hobbies, but not extravagantly. This is what most FIRE calculators target.</p>
+
+<p><strong>Fat FIRE</strong> requires substantially more savings but allows a generous retirement lifestyle. It is typical for higher-income professionals who do not want to significantly change their spending habits in retirement.</p>
+
+<p><strong>Barista FIRE</strong> is a pragmatic middle ground: you accumulate enough investments to cover most of your expenses, then work a relaxed part-time job (barista, freelance, seasonal work) to fill the gap and maintain health insurance. This dramatically reduces the savings target and provides social structure.</p>
+
+<h2>Why your savings rate matters more than your income</h2>
+
+<p>The single most important variable in reaching FIRE is not how much you earn — it is what percentage of your income you save and invest. This is because a higher savings rate has a double effect: it increases how much you invest each year AND it proves you can live on less, which lowers your FIRE number.</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Savings rate</th><th class="right">Approximate years to FIRE</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>10%</td><td class="right">~40 years</td></tr>
+    <tr><td>20%</td><td class="right">~30 years</td></tr>
+    <tr><td>30%</td><td class="right">~24 years</td></tr>
+    <tr><td>40%</td><td class="right">~19 years</td></tr>
+    <tr><td>50%</td><td class="right">~17 years</td></tr>
+    <tr><td>60%</td><td class="right">~12 years</td></tr>
+    <tr><td>70%</td><td class="right">~8.5 years</td></tr>
+    <tr><td>80%</td><td class="right">~5.5 years</td></tr>
+  </tbody>
+</table>
+
+<p>These figures assume a 7% real (inflation-adjusted) return and starting from zero savings. The relationship is not linear — going from 10% to 20% savings cuts 10 years off the timeline, while going from 70% to 80% only cuts 3 years. The biggest gains come from increasing a low savings rate.</p>
+
+<div class="highlight-box">
+  <strong>The math is powerful:</strong> Someone earning $60,000 who saves 50% ($30,000/year, living on $30,000) reaches FIRE faster than someone earning $150,000 who saves 10% ($15,000/year, living on $135,000). The first person needs $750,000 (25 × $30,000) and saves $30,000/year. The second needs $3,375,000 (25 × $135,000) and saves only $15,000/year.
+</div>
+
+<h2>A complete FIRE example</h2>
+
+<p>Let us walk through a detailed example. Meet Alex, age 30, who earns $85,000 after tax and currently has $40,000 in investments.</p>
+
+<p><strong>Step 1: Calculate annual expenses.</strong> Alex tracks spending and finds they spend $50,000 per year on everything — rent, food, transport, entertainment, insurance, and miscellaneous expenses.</p>
+
+<p><strong>Step 2: Calculate the FIRE number.</strong> $50,000 × 25 = $1,250,000. This is Alex's FIRE number at a 4% withdrawal rate.</p>
+
+<p><strong>Step 3: Calculate annual savings.</strong> Alex earns $85,000 and spends $50,000, so they save $35,000 per year. That is a 41% savings rate.</p>
+
+<p><strong>Step 4: Project the timeline.</strong> Starting with $40,000 invested, adding $35,000 per year, and assuming a 7% real return:</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Year</th><th class="right">Age</th><th class="right">Portfolio value</th><th class="right">% of FIRE number</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Now</td><td class="right">30</td><td class="right">$40,000</td><td class="right">3.2%</td></tr>
+    <tr><td>Year 5</td><td class="right">35</td><td class="right">$259,000</td><td class="right">20.7%</td></tr>
+    <tr><td>Year 10</td><td class="right">40</td><td class="right">$548,000</td><td class="right">43.8%</td></tr>
+    <tr><td>Year 15</td><td class="right">45</td><td class="right">$934,000</td><td class="right">74.7%</td></tr>
+    <tr><td>Year 18</td><td class="right">48</td><td class="right">$1,260,000</td><td class="right">100.8%</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Result:</strong> Alex can reach financial independence at age 48 — about 18 years from now. Notice how the portfolio growth accelerates in the later years as compound interest takes effect. The first $500,000 takes about 10 years; the second $500,000 takes only about 6 years.</p>
+
+<h2>The power of reducing expenses</h2>
+
+<p>Every dollar you cut from your annual expenses reduces your FIRE number by $25 (at a 4% withdrawal rate). This is one of the most powerful levers in FIRE planning.</p>
+
+<p>If Alex reduces annual expenses from $50,000 to $45,000 (a $5,000 reduction), the FIRE number drops from $1,250,000 to $1,125,000 — a $125,000 reduction in the savings target. Plus, Alex now saves $40,000 per year instead of $35,000. The combined effect cuts roughly 3 years off the timeline.</p>
+
+<p>Common areas where FIRE seekers cut expenses include housing (downsizing, house hacking, relocating), transportation (one car instead of two, cycling), food (cooking at home, meal planning), and subscriptions and lifestyle inflation.</p>
+
+<h2>Country-specific FIRE considerations</h2>
+
+<h3>New Zealand</h3>
+
+<p>KiwiSaver is locked until age 65, so NZ early retirees need a "bridge strategy" — enough in taxable investment accounts to cover expenses from retirement until age 65, when KiwiSaver and NZ Super (approximately $24,000/year for a single person) kick in. NZ has no capital gains tax on shares held long-term, making it particularly favourable for FIRE investing.</p>
+
+<h3>Australia</h3>
+
+<p>Superannuation is locked until preservation age (60 for most). Like NZ, Australians need taxable investments to bridge the gap. The Age Pension provides about A$28,000/year for singles. Australia's franking credits on dividends are a significant advantage for FIRE investors using Australian shares.</p>
+
+<h3>United States</h3>
+
+<p>The Roth IRA conversion ladder is a key US FIRE strategy — it allows tax-free access to retirement funds before age 59½ by converting Traditional IRA funds to Roth and waiting 5 years. Social Security provides a baseline income from age 62 (reduced) or 67 (full). The 401(k) and IRA contribution limits are generous at $23,000 and $7,000 respectively.</p>
+
+<h3>United Kingdom</h3>
+
+<p>The UK State Pension (currently about £11,500/year) is available from age 66, rising to 67. ISAs allow tax-free growth with a £20,000 annual contribution limit — a powerful vehicle for FIRE savings. SIPPs (Self-Invested Personal Pensions) are accessible from age 55 (rising to 57 in 2028).</p>
+
+<h3>Canada</h3>
+
+<p>The TFSA (Tax-Free Savings Account) allows tax-free investment growth with a current cumulative limit of over $95,000. RRSPs provide pre-tax savings but are taxed on withdrawal. CPP/OAS provide baseline retirement income from age 65. Canada has no capital gains tax on primary residences.</p>
+
+<div class="calc-cta">
+  <div class="calc-cta-text"><strong>🔥 Run your own numbers:</strong> Enter your age, income, savings, and expenses to see your FIRE date and portfolio projection.</div>
+  <a href="../calcfi-fire-calculator.html" class="calc-cta-btn">Calculate your FIRE number →</a>
+</div>
+
+<h2>Common FIRE mistakes to avoid</h2>
+
+<p><strong>Ignoring inflation.</strong> A million dollars today will not buy a million dollars worth of goods in 20 years. Always use real (inflation-adjusted) returns when projecting your FIRE timeline. At 3% inflation, your expenses will roughly double over 24 years.</p>
+
+<p><strong>Forgetting healthcare costs.</strong> If you retire before you are eligible for public healthcare or employer-provided insurance, private health insurance can be a significant expense. Factor this into your annual expense estimate.</p>
+
+<p><strong>Underestimating expenses.</strong> Track your actual spending for at least 6-12 months before setting your FIRE number. Many people underestimate what they spend by 20-30%. Include irregular expenses like car replacement, home maintenance, and travel.</p>
+
+<p><strong>Being too aggressive with withdrawal rate.</strong> A 4% withdrawal rate has strong historical support for 30-year retirements. But if you are retiring at 35 and need 50+ years of income, consider using 3-3.5% for extra safety — or plan for some flexibility in your spending during market downturns.</p>
+
+<p><strong>Neglecting to enjoy the journey.</strong> FIRE is a marathon, not a sprint. Extreme deprivation for 10 years is not sustainable for most people. Find a savings rate that is aggressive but allows you to enjoy your life today. The perfect is the enemy of the good.</p>
+
+<h2>How to accelerate your FIRE timeline</h2>
+
+<p><strong>Increase your savings rate by 5%.</strong> Even a small increase compounds dramatically over time. Going from 20% to 25% can cut 4-5 years off your timeline.</p>
+
+<p><strong>Invest in low-cost index funds.</strong> The difference between a 0.1% expense ratio index fund and a 1.5% actively managed fund costs hundreds of thousands of dollars over a FIRE timeline. Total market or S&P 500 index funds from providers like Vanguard, Fidelity, or local equivalents are the standard FIRE investment.</p>
+
+<p><strong>Maximise tax-advantaged accounts first.</strong> KiwiSaver (NZ), 401k/IRA (US), Super (AU), RRSP/TFSA (CA), ISA/SIPP (UK). These reduce your tax burden and accelerate compounding.</p>
+
+<p><strong>Consider geographic arbitrage.</strong> Retiring in a lower cost-of-living country or region can dramatically reduce your FIRE number. Moving from Auckland to a provincial NZ town, or from London to Portugal, can cut expenses by 30-50%.</p>
+
+<p><strong>Build multiple income streams.</strong> Side income from freelancing, rental property, or online business accelerates savings while also providing backup income in early retirement.</p>
+
+<div class="disclaimer-box">
+  ⚠️ <strong>Disclaimer:</strong> This article is for educational purposes only and does not constitute financial advice. FIRE projections are based on historical data and assumptions that may not hold in the future. Market returns are not guaranteed. Always consult a qualified financial advisor for personalised retirement planning.
+</div>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2 class="faq-title">Frequently asked <span>questions</span></h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What is the FIRE number?</summary>
+      <div class="faq-answer">Your FIRE number is the total amount of invested assets needed to sustain your lifestyle without working. It is calculated by multiplying your annual expenses by 25 (Rule of 25), based on the 4% safe withdrawal rate. For example, $50,000 in annual expenses means a FIRE number of $1,250,000.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Is the 4% rule still valid in 2026?</summary>
+      <div class="faq-answer">The 4% rule remains the most widely used benchmark. Morningstar's 2025 analysis recommends 3.9% as the starting withdrawal rate for 2026 retirees. Bill Bengen (the rule's creator) now suggests 4.7% may work with diversified portfolios. For early retirees with 40-50+ year horizons, 3-3.5% is more conservative. Our calculator lets you adjust from 3% to 5%.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How long does it take to reach FIRE?</summary>
+      <div class="faq-answer">It depends primarily on your savings rate. At 10%: about 40 years. At 25%: about 32 years. At 50%: about 17 years. At 70%: under 9 years. Starting savings, investment returns, and expenses also matter, but savings rate is the dominant factor. Use our FIRE calculator to get your specific timeline.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is Lean FIRE vs Fat FIRE?</summary>
+      <div class="faq-answer">Lean FIRE targets annual expenses under $40,000 (FIRE number under $1M) for a frugal lifestyle. Regular FIRE targets $40-80K/year for comfortable living. Fat FIRE targets $100K+/year for a generous lifestyle. Barista FIRE is a hybrid where part-time work covers some expenses while investments cover the rest, reducing the required savings.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I retire early on a normal salary?</summary>
+      <div class="faq-answer">Yes. FIRE depends on your savings rate, not your income level. Someone earning $60,000 who saves 50% reaches FIRE faster than someone earning $150,000 who saves 10%. The first person needs $750K and saves $30K/year. The second needs $3.375M and saves $15K/year. Reducing expenses has a double effect — it increases savings AND lowers your target.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What should I invest in for FIRE?</summary>
+      <div class="faq-answer">The standard FIRE investment strategy is low-cost, broadly diversified index funds — typically a total stock market or S&P 500 index fund as the core, sometimes with international stocks and bonds. Keep expense ratios below 0.2%. The specific fund depends on your country and available platforms (Vanguard, Fidelity, InvestNow, etc.).</div>
+    </details>
+    <details class="faq-item">
+      <summary>How does KiwiSaver / 401k / Super affect my FIRE date?</summary>
+      <div class="faq-answer">Retirement accounts like KiwiSaver (NZ), 401k (US), and Super (AU) grow tax-efficiently but are locked until age 55-67. Early retirees need a bridge strategy: enough in taxable accounts to cover expenses from early retirement until they can access locked funds. The good news is these locked accounts reduce how much you need in taxable accounts for the second half of retirement.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the biggest risk with FIRE?</summary>
+      <div class="faq-answer">Sequence of returns risk — experiencing a major market downturn in the first few years of retirement. If your portfolio drops 30-40% early on while you are withdrawing, it may not recover enough to last. Mitigations include using a lower withdrawal rate (3-3.5%), keeping 2-3 years of cash reserves, and having flexibility to reduce spending during downturns.</div>
+    </details>
+  </div>
+</section>
+
+<!-- Internal links -->
+<div class="internal-links">
+  <div class="internal-links-title">Related guides</div>
+  <a href="how-much-to-retire-country-guide.html">📖 How Much Do You Need to Retire? A Country-by-Country Guide</a>
+  <a href="fire-new-zealand-kiwisaver-retire-early.html">📖 FIRE in New Zealand: Can You Retire Early with KiwiSaver?</a>
+  <a href="compound-interest-calculator-how-money-grows.html">📖 Compound Interest Calculator: See How Your Money Grows</a>
+</div>
+
+</article>
+<footer>
+  <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="./">Blog</a><a href="../index.html">Calculators</a><a href="#">Privacy</a></div>
+  <p class="footer-copy">© 2026 MyFinCalc.org</p>
+</footer>
+</body>
+</html>
