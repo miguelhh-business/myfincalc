@@ -1,1 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Financial Guides & Calculator Tips | MyFinCalc</title>
+<meta name="description" content="Financial guides, tax bracket breakdowns, FIRE planning tips, and calculator tutorials. Free resources to help you make smarter money decisions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/blog/">
+<meta property="og:title" content="MyFinCalc Blog — Financial Guides & Tips">
+<meta property="og:description" content="Free financial guides: tax brackets, FIRE planning, rent vs buy analysis, debt payoff strategies, and more.">
+<meta property="og:url" content="https://myfincalc.org/blog/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyFinCalc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--border:#e5e4e0;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:20px;color:var(--text-primary);text-decoration:none;}
+.nav-logo .fi{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;transition:color 0.2s;}
+.nav-link:hover{color:var(--text-primary);}
+.nav-link.active{color:var(--text-primary);font-weight:600;}
+.nav-cta{background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:7px 18px;border-radius:100px;text-decoration:none;}
 
+.hero{padding:64px 24px 48px;text-align:center;max-width:700px;margin:0 auto;}
+.hero h1{font-family:var(--font-title);font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:16px;}
+.hero h1 .green{color:var(--accent);}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:480px;margin:0 auto;}
+
+.blog-grid{max-width:900px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:1fr;gap:16px;}
+
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px 28px;text-decoration:none;display:flex;gap:20px;align-items:start;transition:all 0.2s;}
+.blog-card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 30px rgba(26,107,60,0.08);}
+.blog-emoji{font-size:32px;flex-shrink:0;line-height:1;}
+.blog-content{flex:1;min-width:0;}
+.blog-category{font-family:var(--font-title);font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+.blog-title{font-family:var(--font-title);font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:6px;letter-spacing:-0.5px;line-height:1.3;}
+.blog-excerpt{font-size:13px;color:var(--text-secondary);line-height:1.6;}
+.blog-meta{font-size:11px;color:var(--text-muted);margin-top:8px;display:flex;gap:12px;}
+.blog-arrow{color:var(--text-muted);font-size:18px;flex-shrink:0;align-self:center;transition:all 0.2s;}
+.blog-card:hover .blog-arrow{transform:translateX(4px);color:var(--accent);}
+
+.section-divider{max-width:900px;margin:0 auto;padding:0 24px 24px;}
+.section-label{font-family:var(--font-title);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);}
+
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:900px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;}
+.footer-logo .fi{color:var(--accent);}
+.footer-links{display:flex;gap:20px;}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+
+@media(max-width:600px){
+  .blog-card{flex-direction:column;gap:12px;}
+  .blog-emoji{font-size:24px;}
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <div class="nav-right">
+    <a href="./" class="nav-link active">Blog</a>
+    <a href="../index.html" class="nav-cta">← Calculators</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>The <span class="green">MyFinCalc</span> blog</h1>
+  <p>Practical financial guides with real numbers. No jargon, no fluff — just the information you need to make smarter money decisions.</p>
+</header>
+
+<!-- SALARY & TAX -->
+<div class="section-divider"><span class="section-label">💰 Salary & Tax</span></div>
+<div class="blog-grid">
+  <a href="salary-after-tax-calculator-how-much-take-home.html" class="blog-card">
+    <span class="blog-emoji">💰</span>
+    <div class="blog-content">
+      <div class="blog-category">Salary & Tax</div>
+      <div class="blog-title">Salary After Tax Calculator: How Much Will You Actually Take Home?</div>
+      <div class="blog-excerpt">Tax tables for NZ, AU, UK, US and CA. See exactly what lands in your bank account after PAYE, ACC, KiwiSaver, FICA, and more.</div>
+      <div class="blog-meta"><span>🇳🇿 🇦🇺 🇬🇧 🇺🇸 🇨🇦</span><span>8 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="nz-tax-brackets-paye-guide.html" class="blog-card">
+    <span class="blog-emoji">🇳🇿</span>
+    <div class="blog-content">
+      <div class="blog-category">Salary & Tax · New Zealand</div>
+      <div class="blog-title">NZ Tax Brackets 2025-2026: Complete PAYE Guide</div>
+      <div class="blog-excerpt">The 5 NZ tax brackets explained, plus ACC levy, KiwiSaver, IETC, and student loan repayment thresholds.</div>
+      <div class="blog-meta"><span>Updated 2025</span><span>10 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="australia-tax-brackets-take-home-pay-guide.html" class="blog-card">
+    <span class="blog-emoji">🇦🇺</span>
+    <div class="blog-content">
+      <div class="blog-category">Salary & Tax · Australia</div>
+      <div class="blog-title">Australia Tax Brackets 2025-2026: Take-Home Pay Guide</div>
+      <div class="blog-excerpt">Australian tax brackets, Medicare Levy, HECS-HELP repayment, and Super Guarantee explained with real examples.</div>
+      <div class="blog-meta"><span>Updated 2025</span><span>10 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+</div>
+
+<!-- FIRE & RETIREMENT -->
+<div class="section-divider"><span class="section-label">🔥 FIRE & Retirement</span></div>
+<div class="blog-grid">
+  <a href="fire-calculator-financial-independence-number.html" class="blog-card">
+    <span class="blog-emoji">🔥</span>
+    <div class="blog-content">
+      <div class="blog-category">FIRE & Retirement</div>
+      <div class="blog-title">FIRE Calculator: How to Find Your Financial Independence Number</div>
+      <div class="blog-excerpt">The 4% rule, Rule of 25, Lean vs Fat FIRE explained. Calculate exactly when you can retire early.</div>
+      <div class="blog-meta"><span>Most popular</span><span>12 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="how-much-to-retire-country-guide.html" class="blog-card">
+    <span class="blog-emoji">🏖️</span>
+    <div class="blog-content">
+      <div class="blog-category">FIRE & Retirement</div>
+      <div class="blog-title">How Much Do You Need to Retire? A Country-by-Country Guide</div>
+      <div class="blog-excerpt">Retirement costs and government pensions for NZ, AU, UK, and US. Real numbers for realistic planning.</div>
+      <div class="blog-meta"><span>🇳🇿 🇦🇺 🇬🇧 🇺🇸</span><span>10 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="fire-new-zealand-kiwisaver-retire-early.html" class="blog-card">
+    <span class="blog-emoji">🥝</span>
+    <div class="blog-content">
+      <div class="blog-category">FIRE & Retirement · New Zealand</div>
+      <div class="blog-title">FIRE in New Zealand: Can You Retire Early with KiwiSaver?</div>
+      <div class="blog-excerpt">KiwiSaver is locked until 65. Here is the bridge strategy NZ early retirees use, plus NZ Super details.</div>
+      <div class="blog-meta"><span>🇳🇿 NZ-specific</span><span>10 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+</div>
+
+<!-- HOUSING -->
+<div class="section-divider"><span class="section-label">🏠 Housing</span></div>
+<div class="blog-grid">
+  <a href="rent-vs-buy-calculator-comparison.html" class="blog-card">
+    <span class="blog-emoji">🏠</span>
+    <div class="blog-content">
+      <div class="blog-category">Housing</div>
+      <div class="blog-title">Rent vs Buy Calculator: The Honest Financial Comparison</div>
+      <div class="blog-excerpt">The variables most people miss, breakeven analysis, and real examples from multiple countries.</div>
+      <div class="blog-meta"><span>Multi-country</span><span>10 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="rent-vs-buy-auckland.html" class="blog-card">
+    <span class="blog-emoji">🏗️</span>
+    <div class="blog-content">
+      <div class="blog-category">Housing · Auckland</div>
+      <div class="blog-title">Rent vs Buy Auckland 2026: The Numbers Behind the Decision</div>
+      <div class="blog-excerpt">Median Auckland house prices, current mortgage rates, First Home Grant details, and the real math.</div>
+      <div class="blog-meta"><span>🇳🇿 Auckland</span><span>8 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="first-home-buyer-guide-how-much-to-save.html" class="blog-card">
+    <span class="blog-emoji">🔑</span>
+    <div class="blog-content">
+      <div class="blog-category">Housing</div>
+      <div class="blog-title">First Home Buyer Guide: How Much Do You Need to Save?</div>
+      <div class="blog-excerpt">Deposit requirements for NZ, AU, UK, and US. Government schemes and grants for first-time buyers.</div>
+      <div class="blog-meta"><span>🇳🇿 🇦🇺 🇬🇧 🇺🇸</span><span>10 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+</div>
+
+<!-- DEBT & SAVINGS -->
+<div class="section-divider"><span class="section-label">💳 Debt & Savings</span></div>
+<div class="blog-grid">
+  <a href="avalanche-vs-snowball-debt-payoff.html" class="blog-card">
+    <span class="blog-emoji">💳</span>
+    <div class="blog-content">
+      <div class="blog-category">Debt & Savings</div>
+      <div class="blog-title">Avalanche vs Snowball Method: Which Debt Payoff Strategy Is Best?</div>
+      <div class="blog-excerpt">Side-by-side comparison with real numbers. When to use each method and which saves the most money.</div>
+      <div class="blog-meta"><span>Popular</span><span>8 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="emergency-fund-calculator-how-much.html" class="blog-card">
+    <span class="blog-emoji">🛡️</span>
+    <div class="blog-content">
+      <div class="blog-category">Debt & Savings</div>
+      <div class="blog-title">Emergency Fund Calculator: How Much Do You Really Need?</div>
+      <div class="blog-excerpt">3 months vs 6 months vs 12 months — the factors that determine your ideal emergency fund size.</div>
+      <div class="blog-meta"><span>Essential</span><span>7 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+</div>
+
+<!-- INVESTING -->
+<div class="section-divider"><span class="section-label">📈 Investing</span></div>
+<div class="blog-grid">
+  <a href="compound-interest-calculator-how-money-grows.html" class="blog-card">
+    <span class="blog-emoji">📈</span>
+    <div class="blog-content">
+      <div class="blog-category">Investing</div>
+      <div class="blog-title">Compound Interest Calculator: See How Your Money Grows</div>
+      <div class="blog-excerpt">The compound interest formula explained simply, the power of starting early, and the Rule of 72.</div>
+      <div class="blog-meta"><span>Beginner-friendly</span><span>8 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="how-much-to-invest-each-month.html" class="blog-card">
+    <span class="blog-emoji">🎯</span>
+    <div class="blog-content">
+      <div class="blog-category">Investing</div>
+      <div class="blog-title">How Much Should I Invest Each Month? (Based on Your Goals)</div>
+      <div class="blog-excerpt">The 50/30/20 rule, investment tables by goal, and how to balance investing with debt payoff.</div>
+      <div class="blog-meta"><span>Practical</span><span>9 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+</div>
+
+<!-- NICHE -->
+<div class="section-divider"><span class="section-label">⚡ Niche Guides</span></div>
+<div class="blog-grid">
+  <a href="solar-panels-roi-worth-it.html" class="blog-card">
+    <span class="blog-emoji">☀️</span>
+    <div class="blog-content">
+      <div class="blog-category">Niche</div>
+      <div class="blog-title">Solar Panels ROI: Are They Worth It? (Calculator + 2026 Guide)</div>
+      <div class="blog-excerpt">Installation costs by country, real payback periods, and current government rebates for solar.</div>
+      <div class="blog-meta"><span>2026 data</span><span>10 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+  <a href="startup-valuation-methods-explained.html" class="blog-card">
+    <span class="blog-emoji">🦄</span>
+    <div class="blog-content">
+      <div class="blog-category">Niche</div>
+      <div class="blog-title">Startup Valuation Methods Explained: How to Value Your Startup</div>
+      <div class="blog-excerpt">Revenue multiples, DCF, comparables, Berkus method, and VC method — when to use each one.</div>
+      <div class="blog-meta"><span>For founders</span><span>12 min read</span></div>
+    </div>
+    <span class="blog-arrow">→</span>
+  </a>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  </div>
+  <div class="footer-links"><a href="./">Blog</a><a href="../index.html">Calculators</a><a href="#">Privacy</a></div>
+  <p class="footer-copy">© 2026 MyFinCalc.org</p>
+</footer>
+
+</body>
+</html>
