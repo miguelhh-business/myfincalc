@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Startup Valuation Methods Explained: How to Value Your Startup | MyFinCalc</title>
+<meta name="description" content="Learn 6 startup valuation methods: Berkus, Revenue Multiples, DCF, Comparable Transactions, VC Method, and Scorecard. Free calculator + worked examples for founders and investors.">
+<meta name="keywords" content="startup valuation, startup valuation methods, how to value a startup, berkus method, revenue multiples, DCF startup, VC method, pre-money valuation, post-money valuation, dilution, scorecard method">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/blog/startup-valuation-methods-explained.html">
+<meta property="og:title" content="Startup Valuation Methods Explained: How to Value Your Startup">
+<meta property="og:description" content="6 startup valuation methods with worked examples. Berkus, Revenue Multiples, DCF, Comparables, VC Method, and Scorecard. Free calculator.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://myfincalc.org/blog/startup-valuation-methods-explained.html">
+<meta property="og:site_name" content="MyFinCalc">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Startup Valuation Methods Explained: How to Value Your Startup",
+  "description": "Complete guide to 6 startup valuation methods with worked examples, pre vs post-money explained, and dilution calculations.",
+  "author": {"@type": "Organization", "name": "MyFinCalc"},
+  "publisher": {"@type": "Organization", "name": "MyFinCalc", "url": "https://myfincalc.org"},
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-04-01",
+  "mainEntityOfPage": "https://myfincalc.org/blog/startup-valuation-methods-explained.html"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the best method to value a startup?", "acceptedAnswer": {"@type": "Answer", "text": "There is no single best method. Pre-revenue startups typically use the Berkus Method or Scorecard Method. Early-revenue startups use Revenue Multiples or Comparable Transactions. Mature startups with predictable cash flows can use DCF. Most investors recommend using 2-3 methods and triangulating the results."}},
+    {"@type": "Question", "name": "What is the difference between pre-money and post-money valuation?", "acceptedAnswer": {"@type": "Answer", "text": "Pre-money valuation is what your company is worth before receiving new investment. Post-money valuation equals pre-money valuation plus the new investment amount. For example, a $4M pre-money valuation with a $1M investment creates a $5M post-money valuation. The investor owns 20% ($1M / $5M)."}},
+    {"@type": "Question", "name": "What is the Berkus Method of startup valuation?", "acceptedAnswer": {"@type": "Answer", "text": "The Berkus Method assigns up to $500,000 of value to each of five risk-reducing factors: Sound Idea, Prototype/Technology, Quality Management Team, Strategic Relationships, and Product Rollout/Sales. The maximum pre-money valuation is $2.5M. It is designed for pre-revenue startups."}},
+    {"@type": "Question", "name": "How does dilution work in startup funding?", "acceptedAnswer": {"@type": "Answer", "text": "Dilution occurs when a startup issues new shares to investors, reducing existing shareholders percentage ownership. For example, if a founder owns 100% of 1M shares and the startup issues 250K new shares to an investor, the founder's ownership drops to 80%. Dilution is normal — the goal is for each round to increase the per-share value."}},
+    {"@type": "Question", "name": "What are typical startup valuations by stage?", "acceptedAnswer": {"@type": "Answer", "text": "Typical pre-money valuations in 2026: Pre-seed $1M-$3M, Seed $3M-$8M, Series A $10M-$30M, Series B $30M-$100M. These vary significantly by sector, geography, team quality, and traction."}}
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--border:#e5e4e0;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:16px;line-height:1.75;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:20px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;}.nav-link:hover{color:var(--text-primary);}.nav-link.active{color:var(--text-primary);font-weight:600;}
+.article-wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px;}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:24px;}.breadcrumb a{color:var(--text-muted);text-decoration:none;}.breadcrumb a:hover{color:var(--accent);}
+.article-wrap h1{font-family:var(--font-title);font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;}
+.article-meta{font-size:13px;color:var(--text-muted);margin-bottom:32px;display:flex;gap:16px;flex-wrap:wrap;}
+.article-wrap h2{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin:40px 0 16px;}
+.article-wrap h3{font-family:var(--font-title);font-size:18px;font-weight:700;margin:28px 0 12px;}
+.article-wrap p{margin-bottom:16px;color:var(--text-secondary);}
+.article-wrap strong{color:var(--text-primary);}
+.calc-cta{background:var(--accent-light);border:2px solid var(--accent);border-radius:16px;padding:24px 28px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.calc-cta-text{font-size:15px;color:var(--text-primary);}.calc-cta-text strong{font-family:var(--font-title);}
+.calc-cta-btn{background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14px;}
+.data-table th{background:var(--bg-card);border:1px solid var(--border);padding:10px 14px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.data-table td{border:1px solid var(--border);padding:10px 14px;background:var(--bg-card);}
+.data-table tr:last-child td{font-weight:600;background:var(--accent-light);color:var(--accent);}
+.data-table .right{text-align:right;}
+.highlight-box{background:var(--accent-light);border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 12px 12px 0;margin:24px 0;font-size:14px;color:var(--accent);line-height:1.7;}
+.disclaimer-box{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:32px 0;font-size:13px;color:var(--text-muted);line-height:1.6;}
+.faq-section{margin:48px 0 0;}
+.faq-title{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin-bottom:20px;}.faq-title span{color:var(--accent);}
+.faq-list{display:flex;flex-direction:column;gap:8px;}
+.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);}
+.faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.faq-item[open] summary{color:var(--accent);}
+.faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.internal-links{margin:32px 0;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;}
+.internal-links-title{font-family:var(--font-title);font-size:14px;font-weight:700;margin-bottom:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}
+.internal-links a{display:block;color:var(--accent);text-decoration:none;font-size:14px;padding:4px 0;}.internal-links a:hover{text-decoration:underline;}
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:720px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;}.footer-logo .fi{color:var(--accent);}
+.footer-links{display:flex;gap:16px;}.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;}.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:600px){.article-wrap{padding:32px 16px 60px;}.calc-cta{flex-direction:column;align-items:flex-start;}footer{flex-direction:column;text-align:center;}.data-table{font-size:12px;}.data-table th,.data-table td{padding:8px 10px;}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <div class="nav-right"><a href="./" class="nav-link active">Blog</a><a href="../index.html" class="nav-link">Calculators</a></div>
+</nav>
+<article class="article-wrap">
+
+<div class="breadcrumb"><a href="../index.html">Home</a> → <a href="./">Blog</a> → Startup Valuation Methods</div>
+
+<h1>Startup Valuation Methods Explained: How to Value Your Startup</h1>
+
+<div class="article-meta">
+  <span>📅 April 2026</span>
+  <span>🕐 16 min read</span>
+  <span>🚀 Founder guide</span>
+</div>
+
+<p>Whether you are a founder preparing to raise capital, an angel investor evaluating deals, or simply curious about how startups get their price tags — understanding valuation methods is essential. The challenge? Early-stage companies rarely have the revenue, profits, or history that traditional valuation relies on.</p>
+
+<p>This guide explains six proven startup valuation methods, from the qualitative Berkus Method for pre-revenue companies to the quantitative DCF for later-stage startups. We cover pre-money vs. post-money valuation, how dilution works, and include worked examples for each method.</p>
+
+<div class="calc-cta">
+  <div class="calc-cta-text"><strong>🚀 Value your startup:</strong> Model your startup's valuation using multiple methods. Input your revenue, stage, risk factors, and exit projections.</div>
+  <a href="../calcfi-startup-valuation-calculator.html" class="calc-cta-btn">Open Valuation calculator →</a>
+</div>
+
+<h2>Valuation methods at a glance</h2>
+
+<p>Different methods suit different stages. Here is a quick comparison to help you choose the right approach:</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Method</th><th>Best for</th><th>Revenue needed?</th><th class="right">Complexity</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Berkus Method</td><td>Pre-revenue / Pre-seed</td><td>No</td><td class="right">Low</td></tr>
+    <tr><td>Scorecard Method</td><td>Pre-revenue / Seed</td><td>No</td><td class="right">Low–Medium</td></tr>
+    <tr><td>Revenue Multiples</td><td>Early revenue / Series A</td><td>Yes</td><td class="right">Medium</td></tr>
+    <tr><td>Comparable Transactions</td><td>Seed to Series B</td><td>Helpful</td><td class="right">Medium</td></tr>
+    <tr><td>VC Method</td><td>Seed to Series A</td><td>Projections</td><td class="right">Medium–High</td></tr>
+    <tr><td>DCF (Discounted Cash Flow)</td><td>Series B+ / Mature</td><td>Yes (predictable)</td><td class="right">High</td></tr>
+  </tbody>
+</table>
+
+<div class="highlight-box">
+  <strong>Best practice:</strong> Most experienced investors recommend using 2–3 methods in parallel and triangulating the results. If the Berkus Method gives you $1.8M, the Scorecard gives you $2.2M, and a comparable deal closed at $2M, you can confidently anchor your negotiation in the $1.8M–$2.2M range.
+</div>
+
+<h2>Pre-money vs. post-money valuation</h2>
+
+<p>Before diving into specific methods, you need to understand the two most fundamental terms in startup fundraising: pre-money and post-money valuation.</p>
+
+<p><strong>Pre-money valuation</strong> is what your company is worth <em>before</em> the new investment goes in. <strong>Post-money valuation</strong> is what it is worth <em>after</em>. The investor's ownership percentage is calculated from the post-money figure.</p>
+
+<div class="highlight-box">
+  <strong>Post-Money = Pre-Money + Investment</strong><br><br>
+  Investor Ownership % = Investment ÷ Post-Money Valuation<br><br>
+  Example: $4M pre-money + $1M investment = $5M post-money → investor owns 20%
+</div>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Term</th><th class="right">Value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Pre-money valuation</td><td class="right">$4,000,000</td></tr>
+    <tr><td>Investment amount</td><td class="right">$1,000,000</td></tr>
+    <tr><td>Post-money valuation</td><td class="right">$5,000,000</td></tr>
+    <tr><td>Investor ownership</td><td class="right">20%</td></tr>
+    <tr><td>Founder ownership (after)</td><td class="right">80%</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Always clarify whether a quoted valuation is pre-money or post-money.</strong> A "$5M valuation" could mean a $5M pre-money (investor gets a smaller slice) or a $5M post-money (investor gets a larger slice). This distinction can shift ownership by 10%+ in early rounds.</p>
+
+<h2>Method 1: The Berkus Method</h2>
+
+<p>The Berkus Method, developed by angel investor Dave Berkus, is one of the simplest and most widely used frameworks for pre-revenue startups. Instead of relying on financial projections (which are notoriously unreliable at the early stage), it assigns value based on progress across five risk-reducing factors.</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Factor</th><th>What it measures</th><th class="right">Max value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1. Sound Idea</td><td>Quality of the business concept</td><td class="right">$500,000</td></tr>
+    <tr><td>2. Prototype / Technology</td><td>Working product that reduces tech risk</td><td class="right">$500,000</td></tr>
+    <tr><td>3. Quality Management Team</td><td>Experienced founders with domain expertise</td><td class="right">$500,000</td></tr>
+    <tr><td>4. Strategic Relationships</td><td>Partnerships, advisors, distribution</td><td class="right">$500,000</td></tr>
+    <tr><td>5. Product Rollout / Sales</td><td>Early traction, customers, or revenue</td><td class="right">$500,000</td></tr>
+    <tr><td>Maximum total</td><td></td><td class="right">$2,500,000</td></tr>
+  </tbody>
+</table>
+
+<h3>Berkus worked example</h3>
+
+<p>A health-tech startup with a working MVP, experienced founders (one exit), a hospital partnership, but no revenue yet:</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Factor</th><th>Assessment</th><th class="right">Assigned value</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Sound Idea</td><td>Large addressable market, clear pain point</td><td class="right">$400,000</td></tr>
+    <tr><td>Prototype</td><td>Working MVP, beta tested with 50 users</td><td class="right">$450,000</td></tr>
+    <tr><td>Management Team</td><td>CEO has one prior exit; CTO 10+ years</td><td class="right">$500,000</td></tr>
+    <tr><td>Strategic Relationships</td><td>LOI with one hospital network</td><td class="right">$300,000</td></tr>
+    <tr><td>Product Rollout</td><td>No revenue yet, 200 waitlist signups</td><td class="right">$150,000</td></tr>
+    <tr><td>Berkus valuation</td><td></td><td class="right">$1,800,000</td></tr>
+  </tbody>
+</table>
+
+<div class="highlight-box">
+  <strong>Modern adjustment:</strong> The original $500K cap per factor was set in the 1990s. Many investors today adjust the maximum to reflect their market. If the average seed valuation in your sector is $6M, you might set each factor at up to $1.2M (20% of $6M). Dave Berkus himself recommends keeping the method flexible.
+</div>
+
+<h2>Method 2: Revenue Multiples</h2>
+
+<p>Once a startup has revenue, the simplest valuation approach is to multiply annual revenue (or ARR for SaaS) by a sector-specific multiple. This method is intuitive and widely used, but the "right" multiple varies enormously by industry, growth rate, and market conditions.</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Sector</th><th>Typical multiple (Seed–A)</th><th>High-growth premium</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>SaaS / Software</td><td>10x–25x ARR</td><td>Up to 40x+ for 3x YoY growth</td></tr>
+    <tr><td>Fintech</td><td>8x–20x</td><td>Higher for regulated moats</td></tr>
+    <tr><td>E-Commerce / D2C</td><td>2x–5x</td><td>Higher with subscription model</td></tr>
+    <tr><td>Marketplace</td><td>5x–15x</td><td>Based on GMV or take rate</td></tr>
+    <tr><td>Hardware / Deep Tech</td><td>3x–8x</td><td>Higher with recurring revenue</td></tr>
+    <tr><td>Healthcare / Biotech</td><td>5x–15x</td><td>Pipeline-dependent</td></tr>
+  </tbody>
+</table>
+
+<h3>Revenue multiples worked example</h3>
+
+<p>A B2B SaaS startup doing $500K ARR with 150% net revenue retention and 3x year-over-year growth:</p>
+
+<div class="highlight-box">
+  <strong>$500,000 ARR × 20x multiple = $10,000,000 pre-money valuation</strong><br><br>
+  The 20x multiple reflects strong growth and high retention. A similar company growing at only 50% YoY might command only 8x–12x.
+</div>
+
+<h2>Method 3: Discounted Cash Flow (DCF)</h2>
+
+<p>DCF is the gold standard of corporate valuation, but it is tricky for startups. It estimates the present value of all future cash flows the company will generate, discounted back at a rate that reflects the risk of those cash flows actually materialising.</p>
+
+<div class="highlight-box">
+  <strong>DCF Formula:</strong> Value = Σ [ CFₜ ÷ (1 + r)ᵗ ] for t = 1 to n<br><br>
+  Where CF = Free Cash Flow, r = Discount Rate, t = Year
+</div>
+
+<p><strong>Why DCF is hard for startups:</strong> Cash flows are speculative — most startups are burning cash and projecting revenue that may never materialise. Discount rates are extremely high (typically 30%–60% for early-stage, vs. 8%–12% for public companies). And 80%–90% of a startup's DCF value often comes from the terminal (exit) value, which is itself highly uncertain.</p>
+
+<p>DCF works best for <strong>Series B+ companies</strong> with at least 2–3 years of revenue history and somewhat predictable growth. For pre-revenue or early-revenue startups, use the Berkus, Scorecard, or VC Method instead.</p>
+
+<h2>Method 4: Comparable Transactions</h2>
+
+<p>This method values your startup based on what similar companies were valued at in recent funding rounds or acquisitions. It is the "what did the market pay?" approach.</p>
+
+<p><strong>Where to find comparables:</strong> Crunchbase and PitchBook for recent rounds in your sector and stage. AngelList and Carta for benchmark data from thousands of startup rounds. Industry reports for sector-specific valuation data. Local accelerators and investor networks for regional benchmarks.</p>
+
+<p><strong>Key matching criteria:</strong> For comparables to be meaningful, match on industry/vertical, funding stage, revenue range and growth rate, geographic market, business model (SaaS, marketplace, D2C), and recency (ideally within the last 12–18 months). Poor comparables are worse than no comparables — comparing your seed-stage startup to a unicorn will not help your credibility with investors.</p>
+
+<h2>Method 5: The VC Method</h2>
+
+<p>The Venture Capital Method works backward from a projected exit to determine what the company should be worth today. It is the method VCs actually use to calculate whether a deal can deliver their target return.</p>
+
+<div class="highlight-box">
+  <strong>VC Method steps:</strong><br>
+  1. Estimate Terminal Value at exit (Year 5–7)<br>
+  2. Post-Money Today = Terminal Value ÷ Target ROI<br>
+  3. Pre-Money Today = Post-Money Today − Investment Amount
+</div>
+
+<h3>VC Method worked example</h3>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Step</th><th>Calculation</th><th class="right">Result</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1. Revenue at exit (Year 5)</td><td>$10M ARR</td><td class="right">$10,000,000</td></tr>
+    <tr><td>2. Apply exit multiple</td><td>$10M × 8x</td><td class="right">$80,000,000</td></tr>
+    <tr><td>3. Apply target ROI</td><td>$80M ÷ 20x return</td><td class="right">$4,000,000</td></tr>
+    <tr><td>4. Post-money today</td><td>Max the VC will pay</td><td class="right">$4,000,000</td></tr>
+    <tr><td>5. Subtract investment</td><td>$4M − $1M investment</td><td class="right">$3,000,000</td></tr>
+    <tr><td>Pre-money valuation</td><td></td><td class="right">$3,000,000</td></tr>
+  </tbody>
+</table>
+
+<p><strong>What is "Target ROI"?</strong> VCs typically target 10x–30x return on early-stage investments because most portfolio companies will fail. A 20x target does not mean greed — it means the VC needs the winners to cover the losers. The higher the risk (earlier stage), the higher the required multiple.</p>
+
+<h2>Method 6: The Scorecard Method</h2>
+
+<p>The Scorecard Method (also called the Bill Payne Method) combines the simplicity of the Berkus approach with market-based benchmarking. It starts with the average valuation for comparable startups, then adjusts up or down based on weighted qualitative factors.</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Factor</th><th>Weight</th><th>Score (% of avg)</th><th class="right">Weighted</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Management Team</td><td>25%</td><td>125% (strong)</td><td class="right">0.3125</td></tr>
+    <tr><td>Size of Opportunity</td><td>20%</td><td>110% (large TAM)</td><td class="right">0.2200</td></tr>
+    <tr><td>Product / Technology</td><td>18%</td><td>100% (average)</td><td class="right">0.1800</td></tr>
+    <tr><td>Competitive Environment</td><td>12%</td><td>90% (crowded)</td><td class="right">0.1080</td></tr>
+    <tr><td>Marketing / Sales</td><td>15%</td><td>80% (early)</td><td class="right">0.1200</td></tr>
+    <tr><td>Need for Additional Funding</td><td>5%</td><td>100%</td><td class="right">0.0500</td></tr>
+    <tr><td>Other</td><td>5%</td><td>100%</td><td class="right">0.0500</td></tr>
+    <tr><td>Total weighted score</td><td>100%</td><td></td><td class="right">1.0405</td></tr>
+  </tbody>
+</table>
+
+<p>If the average seed valuation in your market is $4M:</p>
+
+<div class="highlight-box">
+  <strong>$4,000,000 × 1.0405 = $4,162,000 pre-money valuation</strong><br><br>
+  The Scorecard Method is particularly useful because it forces you to benchmark against real market data rather than abstract assumptions.
+</div>
+
+<h2>Understanding dilution</h2>
+
+<p>Dilution is one of the most misunderstood concepts in startup fundraising. Every time a startup issues new shares to investors, existing shareholders' percentage ownership decreases. This is normal and expected — but understanding the math is crucial.</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Round</th><th>Pre-money</th><th>Investment</th><th>Post-money</th><th class="right">Founder ownership</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Founding</td><td>—</td><td>—</td><td>—</td><td class="right">100%</td></tr>
+    <tr><td>Seed</td><td>$2M</td><td>$500K</td><td>$2.5M</td><td class="right">80%</td></tr>
+    <tr><td>Series A</td><td>$10M</td><td>$3M</td><td>$13M</td><td class="right">61.5%</td></tr>
+    <tr><td>Series B</td><td>$40M</td><td>$10M</td><td>$50M</td><td class="right">49.2%</td></tr>
+  </tbody>
+</table>
+
+<div class="highlight-box">
+  <strong>Dilution is not bad if value grows.</strong> In the example above, the founder's ownership dropped from 100% to 49.2%. But their shares went from being worth $0 to being worth $24.6M (49.2% of $50M). The goal of fundraising is not to preserve percentage ownership — it is to increase the total value of your stake.
+</div>
+
+<h2>Typical valuations by stage (2026)</h2>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Stage</th><th>Typical pre-money</th><th>Typical investment</th><th class="right">Usual dilution</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Pre-Seed</td><td>$1M–$3M</td><td>$100K–$500K</td><td class="right">10%–20%</td></tr>
+    <tr><td>Seed</td><td>$3M–$8M</td><td>$500K–$3M</td><td class="right">15%–25%</td></tr>
+    <tr><td>Series A</td><td>$10M–$30M</td><td>$3M–$15M</td><td class="right">15%–25%</td></tr>
+    <tr><td>Series B</td><td>$30M–$100M</td><td>$10M–$50M</td><td class="right">15%–25%</td></tr>
+    <tr><td>Series C+</td><td>$100M+</td><td>$50M+</td><td class="right">10%–20%</td></tr>
+  </tbody>
+</table>
+
+<p>These ranges reflect primarily US and Western European markets. Valuations in Southeast Asia, Latin America, or Africa tend to be 30%–50% lower at the same stage for comparable companies. Local investors benchmark to local comparables, not Silicon Valley norms.</p>
+
+<div class="calc-cta">
+  <div class="calc-cta-text"><strong>🚀 Run your own numbers:</strong> Model your startup's valuation using Berkus, Revenue Multiples, and VC Method — all in one calculator.</div>
+  <a href="../calcfi-startup-valuation-calculator.html" class="calc-cta-btn">Calculate your valuation →</a>
+</div>
+
+<h2>Common valuation mistakes to avoid</h2>
+
+<p><strong>Comparing to unicorns.</strong> Just because a competitor raised at $100M does not mean your seed-stage company is worth $10M. Investors use stage-appropriate comparables, not aspirational ones.</p>
+
+<p><strong>Overestimating market size.</strong> Saying "we are targeting a $50B market" means nothing without a credible path to capturing a meaningful slice. Investors care about your serviceable addressable market (SAM), not the total addressable market (TAM).</p>
+
+<p><strong>Relying solely on financial projections.</strong> Founders' five-year projections are almost always wrong. Experienced investors know this, which is why qualitative methods like Berkus and Scorecard exist. Use projections as a guide, not gospel.</p>
+
+<p><strong>Ignoring dilution over multiple rounds.</strong> Many first-time founders optimise for a high valuation in one round without modelling how 3–4 rounds of fundraising will affect their ownership. A slightly lower seed valuation with a smaller raise can leave you with more equity at exit.</p>
+
+<p><strong>Using only one method.</strong> No single valuation method is definitive. Triangulate with 2–3 approaches to build confidence in your range and defend it to investors.</p>
+
+<div class="disclaimer-box">
+  ⚠️ <strong>Disclaimer:</strong> This article is for educational purposes only and does not constitute financial or legal advice. Startup valuations are inherently subjective and depend on numerous factors including market conditions, investor sentiment, and negotiation dynamics. All figures are approximate and based on publicly available data as of early 2026. Consult a qualified advisor before making investment decisions.
+</div>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2 class="faq-title">Frequently asked <span>questions</span></h2>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What is the best method to value a startup?</summary>
+      <div class="faq-answer">There is no single best method. The right approach depends on your startup's stage. Pre-revenue startups typically use the Berkus Method or Scorecard Method. Early-revenue startups use Revenue Multiples or Comparable Transactions. Mature startups with predictable cash flows can use DCF. Most investors recommend using 2–3 methods and triangulating the results.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the difference between pre-money and post-money valuation?</summary>
+      <div class="faq-answer">Pre-money valuation is what your company is worth before receiving new investment. Post-money valuation equals pre-money valuation plus the new investment amount. For example, a $4M pre-money valuation with a $1M investment creates a $5M post-money valuation. The investor owns 20% ($1M ÷ $5M). Always clarify which figure is being quoted.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the Berkus Method?</summary>
+      <div class="faq-answer">The Berkus Method assigns up to $500,000 of value to each of five risk-reducing factors: Sound Idea, Prototype/Technology, Quality Management Team, Strategic Relationships, and Product Rollout/Sales. The maximum pre-money valuation under this method is $2.5M. It was designed for pre-revenue startups and intentionally avoids reliance on financial projections.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How does dilution work in startup funding?</summary>
+      <div class="faq-answer">Dilution occurs when a startup issues new shares to investors, reducing existing shareholders' percentage ownership. For example, if a founder owns 100% of 1M shares and the startup issues 250K new shares to an investor, the founder's ownership drops to 80% (1M ÷ 1.25M). Dilution is normal — the goal is for each round to increase the per-share value even as percentage ownership decreases.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What are typical startup valuations by stage?</summary>
+      <div class="faq-answer">Typical pre-money valuations in 2026 (primarily US/European markets): Pre-seed $1M–$3M, Seed $3M–$8M, Series A $10M–$30M, Series B $30M–$100M, Series C+ $100M+. These vary significantly by sector, geography, team quality, and traction. SaaS companies often command higher multiples than hardware startups at the same revenue level.</div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the VC Method?</summary>
+      <div class="faq-answer">The VC Method works backward from a projected exit. You estimate the company's value at exit (e.g., $80M), divide by the investor's target return multiple (e.g., 20x), to get today's post-money valuation ($4M). Subtract the investment amount to get the pre-money valuation. This method reflects how VCs actually think about deals — whether the potential return justifies the risk.</div>
+    </details>
+    <details class="faq-item">
+      <summary>How do SAFEs and convertible notes affect valuation?</summary>
+      <div class="faq-answer">SAFEs (Simple Agreements for Future Equity) and convertible notes defer valuation to a future priced round. They typically include a valuation cap (maximum conversion price) and a discount rate (e.g., 20% discount). The cap effectively sets a maximum pre-money valuation for the early investor. For example, a SAFE with a $5M cap means the investor's shares will convert at no more than $5M pre-money, even if the next round values the company at $10M.</div>
+    </details>
+    <details class="faq-item">
+      <summary>Should I aim for the highest possible valuation?</summary>
+      <div class="faq-answer">Not necessarily. A valuation that is too high creates a "down round" risk if the company cannot grow into it by the next fundraise. Down rounds damage morale, dilute founders more, and signal trouble to the market. It is better to raise at a fair valuation that gives you enough runway and sets achievable expectations. Many experienced founders prefer a moderate valuation with strong investor support over a high valuation with no value-add.</div>
+    </details>
+  </div>
+</section>
+
+<!-- Internal links -->
+<div class="internal-links">
+  <div class="internal-links-title">Related guides</div>
+  <a href="how-much-to-invest-guide.html">📖 How Much Should You Invest? A Step-by-Step Guide</a>
+  <a href="compound-interest-calculator-how-money-grows.html">📖 Compound Interest Calculator: See How Your Money Grows</a>
+  <a href="fire-calculator-financial-independence-number.html">📖 FIRE Calculator: How to Find Your Financial Independence Number</a>
+</div>
+
+</article>
+<footer>
+  <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="./">Blog</a><a href="../index.html">Calculators</a><a href="#">Privacy</a></div>
+  <p class="footer-copy">© 2026 MyFinCalc.org</p>
+</footer>
+</body>
+</html>
