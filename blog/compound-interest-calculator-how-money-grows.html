@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound Interest Calculator: See How Your Money Grows | MyFinCalc</title>
+<meta name="description" content="Understand how compound interest works with real examples. See how starting early, increasing contributions, and the Rule of 72 can dramatically grow your wealth over time.">
+<meta name="keywords" content="compound interest calculator, compound interest formula, how compound interest works, Rule of 72, investment growth calculator, power of compounding, savings growth calculator">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/blog/compound-interest-calculator-how-money-grows.html">
+<meta property="og:title" content="Compound Interest Calculator: See How Your Money Grows">
+<meta property="og:description" content="How compound interest works, the power of starting early, and the Rule of 72 explained with real examples.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://myfincalc.org/blog/compound-interest-calculator-how-money-grows.html">
+<meta property="og:site_name" content="MyFinCalc">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Compound Interest Calculator: See How Your Money Grows","description":"How compound interest works with real examples, the Rule of 72, and why starting early matters more than investing more.","author":{"@type":"Organization","name":"MyFinCalc"},"publisher":{"@type":"Organization","name":"MyFinCalc","url":"https://myfincalc.org"},"datePublished":"2026-03-15","dateModified":"2026-03-15","mainEntityOfPage":"https://myfincalc.org/blog/compound-interest-calculator-how-money-grows.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is compound interest?","acceptedAnswer":{"@type":"Answer","text":"Compound interest is interest earned on both your original investment and on all previously earned interest. Unlike simple interest (which only applies to the principal), compounding makes your money grow exponentially over time."}},{"@type":"Question","name":"What is the Rule of 72?","acceptedAnswer":{"@type":"Answer","text":"Divide 72 by your annual interest rate to estimate how many years it takes to double your money. At 7% returns: 72 ÷ 7 = about 10.3 years to double. At 10%: about 7.2 years. At 4%: about 18 years."}},{"@type":"Question","name":"How much does starting early matter?","acceptedAnswer":{"@type":"Answer","text":"Enormously. Investing $300/month from age 25 to 65 at 7% gives you about $790,000. Starting the same amount at age 35 gives only $365,000 — less than half. The extra 10 years of compounding more than doubles the result."}},{"@type":"Question","name":"What is the difference between simple and compound interest?","acceptedAnswer":{"@type":"Answer","text":"Simple interest is calculated only on the original principal. Compound interest is calculated on principal plus accumulated interest. Over 30 years at 7%, $10,000 with simple interest grows to $31,000. With compound interest, it grows to $76,123 — more than double."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f7f4;--bg-card:#fff;--border:#e5e4e0;--accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;--text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;--font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:16px;line-height:1.75;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 32px;height:56px;display:flex;align-items:center;justify-content:space-between;}.nav-logo{font-family:var(--font-title);font-weight:700;font-size:20px;color:var(--text-primary);text-decoration:none;}.nav-logo .fi{color:var(--accent);}.nav-right{display:flex;align-items:center;gap:20px;}.nav-link{color:var(--text-secondary);text-decoration:none;font-size:13px;font-weight:500;}.nav-link:hover{color:var(--text-primary);}.nav-link.active{color:var(--text-primary);font-weight:600;}
+.article-wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px;}.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:24px;}.breadcrumb a{color:var(--text-muted);text-decoration:none;}.breadcrumb a:hover{color:var(--accent);}.article-wrap h1{font-family:var(--font-title);font-size:clamp(28px,5vw,42px);font-weight:700;line-height:1.1;letter-spacing:-1.5px;margin-bottom:16px;}.article-meta{font-size:13px;color:var(--text-muted);margin-bottom:32px;display:flex;gap:16px;flex-wrap:wrap;}.article-wrap h2{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin:40px 0 16px;}.article-wrap p{margin-bottom:16px;color:var(--text-secondary);}.article-wrap strong{color:var(--text-primary);}
+.calc-cta{background:var(--accent-light);border:2px solid var(--accent);border-radius:16px;padding:24px 28px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}.calc-cta-text{font-size:15px;color:var(--text-primary);}.calc-cta-text strong{font-family:var(--font-title);}.calc-cta-btn{background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.data-table{width:100%;border-collapse:collapse;margin:20px 0 28px;font-size:14px;}.data-table th{background:var(--bg-card);border:1px solid var(--border);padding:10px 14px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}.data-table td{border:1px solid var(--border);padding:10px 14px;background:var(--bg-card);}.data-table tr:last-child td{font-weight:600;background:var(--accent-light);color:var(--accent);}.data-table .right{text-align:right;}
+.highlight-box{background:var(--accent-light);border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 12px 12px 0;margin:24px 0;font-size:14px;color:var(--accent);line-height:1.7;}
+.disclaimer-box{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin:32px 0;font-size:13px;color:var(--text-muted);line-height:1.6;}
+.faq-section{margin:48px 0 0;}.faq-title{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin-bottom:20px;}.faq-title span{color:var(--accent);}.faq-list{display:flex;flex-direction:column;gap:8px;}.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}.faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}.faq-item summary::-webkit-details-marker{display:none;}.faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);}.faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}.faq-item[open] summary{color:var(--accent);}.faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.internal-links{margin:32px 0;padding:20px 24px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;}.internal-links-title{font-family:var(--font-title);font-size:14px;font-weight:700;margin-bottom:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;}.internal-links a{display:block;color:var(--accent);text-decoration:none;font-size:14px;padding:4px 0;}.internal-links a:hover{text-decoration:underline;}
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:720px;margin:0 auto;}.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;}.footer-logo .fi{color:var(--accent);}.footer-links{display:flex;gap:16px;}.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;}.footer-links a:hover{color:var(--accent);}.footer-copy{font-size:12px;color:var(--text-muted);}
+@media(max-width:600px){.article-wrap{padding:32px 16px 60px;}.calc-cta{flex-direction:column;align-items:flex-start;}footer{flex-direction:column;text-align:center;}.data-table{font-size:12px;}.data-table th,.data-table td{padding:8px 10px;}}
+</style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav><a href="../index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><div class="nav-right"><a href="./" class="nav-link active">Blog</a><a href="../index.html" class="nav-link">Calculators</a></div></nav>
+<article class="article-wrap">
+<div class="breadcrumb"><a href="../index.html">Home</a> → <a href="./">Blog</a> → Compound Interest</div>
+
+<h1>Compound Interest Calculator: See How Your Money Grows</h1>
+
+<div class="article-meta"><span>📅 March 2026</span><span>🕐 8 min read</span><span>📈 Beginner-friendly</span></div>
+
+<p>Compound interest is the reason a small amount invested today can become a large sum decades later. It is also the reason people who start investing in their 20s end up dramatically wealthier than those who start in their 40s — even if the late starter invests more per month. Understanding compounding is the single most important financial concept for building wealth.</p>
+
+<div class="calc-cta">
+  <div class="calc-cta-text"><strong>📈 See your money grow:</strong> Enter your starting amount, monthly contributions, and expected return rate.</div>
+  <a href="../calcfi-compound-interest-calculator.html" class="calc-cta-btn">Open compound interest calculator →</a>
+</div>
+
+<h2>How compound interest works</h2>
+
+<p>Simple interest pays you a percentage on your original investment only. If you invest $10,000 at 7% simple interest, you earn $700 every year, forever — totalling $31,000 after 30 years.</p>
+
+<p>Compound interest pays you a percentage on your original investment <strong>plus all accumulated interest</strong>. That same $10,000 at 7% compound interest earns $700 in year one, then $749 in year two (7% of $10,700), then $801.43 in year three, and so on. After 30 years: <strong>$76,123</strong> — more than double the simple interest result.</p>
+
+<p>The difference between $31,000 and $76,123 is entirely due to earning interest on your interest. This effect accelerates over time — which is why the second decade of investing grows your money faster than the first, and the third decade faster still.</p>
+
+<h2>The Rule of 72</h2>
+
+<p>The Rule of 72 is a quick mental shortcut to estimate how long it takes to double your money. Divide 72 by your annual return rate:</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Annual return</th><th class="right">Years to double</th><th class="right">$10,000 becomes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>4%</td><td class="right">18 years</td><td class="right">$20,000</td></tr>
+    <tr><td>7%</td><td class="right">10.3 years</td><td class="right">$20,000</td></tr>
+    <tr><td>10%</td><td class="right">7.2 years</td><td class="right">$20,000</td></tr>
+    <tr><td>12%</td><td class="right">6 years</td><td class="right">$20,000</td></tr>
+  </tbody>
+</table>
+
+<p>At 7% returns, your money doubles roughly every 10 years. So $10,000 becomes $20,000 after 10 years, $40,000 after 20 years, and $80,000 after 30 years — without adding a single dollar. With regular monthly contributions, the numbers become much more impressive.</p>
+
+<h2>Why starting early matters more than investing more</h2>
+
+<p>This is the most powerful and counterintuitive lesson about compounding. Let us compare two investors:</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Investor</th><th class="right">Starts at</th><th class="right">Monthly</th><th class="right">Total contributed</th><th class="right">Value at 65 (7%)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Anna (starts early)</td><td class="right">Age 25</td><td class="right">$300</td><td class="right">$144,000</td><td class="right">$790,000</td></tr>
+    <tr><td>Ben (starts later)</td><td class="right">Age 35</td><td class="right">$300</td><td class="right">$108,000</td><td class="right">$365,000</td></tr>
+    <tr><td>Carlos (starts late, invests more)</td><td class="right">Age 35</td><td class="right">$600</td><td class="right">$216,000</td><td class="right">$730,000</td></tr>
+  </tbody>
+</table>
+
+<div class="highlight-box">
+  <strong>Anna invested $36,000 less than Carlos but ends up with $60,000 more.</strong> That extra 10 years of compounding is more powerful than doubling your monthly contributions. Time in the market beats almost everything else.
+</div>
+
+<h2>The impact of contributions over time</h2>
+
+<p>Monthly contributions are where compounding really shows its power. Here is what $500/month grows to at 7% annual return:</p>
+
+<table class="data-table">
+  <thead>
+    <tr><th>Years invested</th><th class="right">Total contributed</th><th class="right">Interest earned</th><th class="right">Portfolio value</th><th class="right">Interest as % of total</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>5 years</td><td class="right">$30,000</td><td class="right">$5,800</td><td class="right">$35,800</td><td class="right">16%</td></tr>
+    <tr><td>10 years</td><td class="right">$60,000</td><td class="right">$26,500</td><td class="right">$86,500</td><td class="right">31%</td></tr>
+    <tr><td>20 years</td><td class="right">$120,000</td><td class="right">$140,500</td><td class="right">$260,500</td><td class="right">54%</td></tr>
+    <tr><td>30 years</td><td class="right">$180,000</td><td class="right">$427,000</td><td class="right">$607,000</td><td class="right">70%</td></tr>
+    <tr><td>40 years</td><td class="right">$240,000</td><td class="right">$1,060,000</td><td class="right">$1,300,000</td><td class="right">82%</td></tr>
+  </tbody>
+</table>
+
+<p>After 40 years, <strong>82% of your portfolio is interest</strong> — money the market generated for you. Only 18% is money you actually contributed. This is the magic of compounding over long periods: the market does most of the heavy lifting, but only if you give it enough time.</p>
+
+<h2>What rate of return should you expect?</h2>
+
+<p>The return rate you use matters enormously in projections. Here are reasonable expectations for different asset types:</p>
+
+<p><strong>Stock market (S&P 500 or total market index):</strong> Historically about 10% nominal return (7% after inflation) over long periods. Individual years vary wildly (-37% to +52%), but over 20+ year periods, the average has been remarkably consistent.</p>
+
+<p><strong>Balanced portfolio (60/40 stocks/bonds):</strong> Historically about 8% nominal (5% real). Lower volatility but lower long-term returns.</p>
+
+<p><strong>High-yield savings account:</strong> Currently 4-5% nominal (1-2% real). Safe but will not build significant wealth over time.</p>
+
+<p><strong>Term deposits:</strong> Similar to savings accounts. Useful for short-term goals but not for long-term wealth building.</p>
+
+<p>For long-term projections (20+ years), using 7% is a reasonable and conservative assumption for a diversified stock portfolio. For shorter periods or more conservative portfolios, use 5-6%.</p>
+
+<div class="calc-cta">
+  <div class="calc-cta-text"><strong>📈 Run your own scenario:</strong> Adjust starting amount, monthly contributions, rate, and time period.</div>
+  <a href="../calcfi-compound-interest-calculator.html" class="calc-cta-btn">Calculate compound interest →</a>
+</div>
+
+<div class="disclaimer-box">⚠️ <strong>Disclaimer:</strong> Past performance does not guarantee future results. The examples use historical averages for illustration. Actual investment returns vary and can include periods of significant loss. This is not financial advice.</div>
+
+<section class="faq-section">
+  <h2 class="faq-title">Frequently asked <span>questions</span></h2>
+  <div class="faq-list">
+    <details class="faq-item"><summary>What is compound interest?</summary><div class="faq-answer">Compound interest is interest earned on both your original principal and on all previously accumulated interest. This creates exponential growth over time. $10,000 at 7% compound interest grows to $76,123 in 30 years, compared to only $31,000 with simple interest.</div></details>
+    <details class="faq-item"><summary>What is the Rule of 72?</summary><div class="faq-answer">Divide 72 by your annual return rate to estimate years to double. At 7%: about 10 years. At 10%: about 7 years. At 4%: about 18 years. It is a quick mental shortcut, not exact, but close enough for planning purposes.</div></details>
+    <details class="faq-item"><summary>How much does starting early really matter?</summary><div class="faq-answer">Investing $300/month from age 25 to 65 at 7% gives $790,000. Starting at 35 gives only $365,000 — less than half. Even doubling contributions to $600/month from age 35 only catches up to $730,000. Time is more powerful than amount.</div></details>
+    <details class="faq-item"><summary>Does compounding frequency matter?</summary><div class="faq-answer">Slightly. $10,000 at 7% for 20 years grows to $38,697 with annual compounding vs $39,720 with daily compounding — a difference of about $1,000. Most investment returns compound continuously in practice. For planning, annual compounding is a fine approximation.</div></details>
+    <details class="faq-item"><summary>What return rate should I use for planning?</summary><div class="faq-answer">For long-term stock market investing (20+ years): 7% real (inflation-adjusted) or 10% nominal. For balanced portfolios: 5% real. For savings accounts: 1-2% real. Use the lower (real) number for retirement planning to account for inflation automatically.</div></details>
+  </div>
+</section>
+
+<div class="internal-links">
+  <div class="internal-links-title">Related guides</div>
+  <a href="how-much-to-invest-each-month.html">📖 How Much Should I Invest Each Month?</a>
+  <a href="fire-calculator-financial-independence-number.html">📖 FIRE Calculator: How to Find Your Financial Independence Number</a>
+  <a href="how-much-to-retire-country-guide.html">📖 How Much Do You Need to Retire? Country-by-Country Guide</a>
+</div>
+
+</article>
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><div class="footer-links"><a href="./">Blog</a><a href="../index.html">Calculators</a><a href="#">Privacy</a></div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+</body>
+</html>
