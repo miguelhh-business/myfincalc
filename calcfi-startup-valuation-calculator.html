@@ -70,6 +70,96 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 @media(max-width:700px){.main{grid-template-columns:1fr;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+
+<style>
+.content-section{max-width:760px;margin:0 auto;padding:32px 24px 40px;}
+.content-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin:32px 0 14px;color:var(--text-primary);}
+.content-section h2:first-child{margin-top:8px;}
+.content-section h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+.content-section p{margin-bottom:14px;color:var(--text-primary);line-height:1.7;}
+.content-section ul{margin:10px 0 16px 22px;}
+.content-section li{margin-bottom:6px;color:var(--text-primary);line-height:1.65;}
+.content-section strong{font-weight:600;}
+.content-section .example-box{background:var(--accent-light);border:1px solid #c8e0d0;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14px;line-height:1.7;}
+.content-section .example-box strong{color:var(--accent);}
+.content-section table.cs-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;}
+.content-section table.cs-table th{background:var(--bg-card);border:1px solid var(--border);padding:9px 12px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.content-section table.cs-table td{border:1px solid var(--border);padding:9px 12px;background:var(--bg-card);}
+.cs-faq-section{max-width:760px;margin:0 auto;padding:24px 24px 40px;}
+.cs-faq-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:18px;}
+.cs-faq-section h2 span{color:var(--accent);}
+.cs-faq-list{display:flex;flex-direction:column;gap:8px;}
+.cs-faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.cs-faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.cs-faq-item summary::-webkit-details-marker{display:none;}
+.cs-faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);transition:transform 0.2s;}
+.cs-faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.cs-faq-item[open] summary{color:var(--accent);}
+.cs-faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.cs-cta{max-width:760px;margin:0 auto;padding:8px 24px 56px;}
+.cs-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cs-cta-text{font-size:14px;color:var(--text-primary);line-height:1.55;}
+.cs-cta-text strong{font-family:var(--font-title);}
+.cs-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.cs-cta-btn:hover{background:var(--accent2);}
+@media(max-width:640px){.content-section,.cs-faq-section,.cs-cta{padding-left:20px;padding-right:20px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's a typical revenue multiple for a SaaS startup in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a high-growth SaaS startup ($1–10M ARR, growing 80%+ year-over-year), 10–20× ARR is typical for Series A/B rounds in 2026. Slower growth or smaller scale brings that down to 5–10×. The multiple compression that happened in 2022–2023 has stabilised, but is still well below the 2021 peak of 30–50× for top-tier SaaS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is pre-money valuation different from post-money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-money is the company's value before the new investment. Post-money is pre-money plus the investment amount. If a VC invests $2M into a company at $8M pre-money, post-money valuation is $10M, and the VC owns 20% (2/10). Founders typically reference pre-money; investors reference post-money. Always clarify which is meant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which method should I use for an early-stage startup with no revenue?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For pre-revenue, the Berkus method or scorecard method give a structured way to estimate value (typical range $1–3M pre-money). The VC method also works if you have credible exit projections. Avoid DCF for pre-revenue — assumption error makes the output unreliable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should founders dilute in each round?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical ranges: pre-seed/seed 15–25%, Series A 20–25%, Series B 15–20%, Series C onward 10–15%. Cumulatively, founders often own 20–40% by IPO or acquisition, depending on rounds raised. Less dilution per round = higher valuations, which require strong metrics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do similar startups get different valuations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Growth rate, retention, market size, team quality, and competitive dynamics all matter — but the biggest factor is often timing and competition for the deal. A startup with multiple competing term sheets can negotiate 30–50% above a similar company with one offer. Macro conditions (rates, IPO market) also swing valuations significantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a higher valuation always better for founders?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Over-valuing a round creates a 'down round' risk if you can't grow into it for the next raise. Down rounds are dilutive and signal-negative. A reasonable valuation that you can comfortably 2–3× by your next round is healthier than a stretched valuation that puts pressure on metrics. Many seasoned founders take slightly lower valuations from better partners."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
@@ -110,7 +200,107 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </div>
 </main>
 <div class="disclaimer">⚠️ These are rough estimates for educational purposes. Actual valuations depend on market conditions, negotiation, and many other factors.</div>
-<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+
+<section class="content-section">
+  <h2>Why startup valuation is hard</h2>
+  <p>Public companies have years of revenue, earnings, and cash flow data — valuation is largely arithmetic. Startups have little or none of that. Valuation becomes a mix of comparable analysis, growth projections, and informed negotiation. <strong>"What is a startup worth?" really means "what is someone willing to pay, given limited information?"</strong></p>
+  <p>Different methods exist for different stages. A pre-revenue idea uses fundamentally different methods than a Series B startup with $5M ARR. This calculator estimates a range using multiple methods so you can triangulate.</p>
+
+  <h2>The five main methods</h2>
+
+  <h3>1. Revenue multiple (most common for SaaS)</h3>
+  <p>Apply a multiple to your annual recurring revenue (ARR) or trailing twelve-month revenue. Typical multiples in 2025–2026:</p>
+  <table class="cs-table">
+    <thead><tr><th>Stage / type</th><th>Revenue multiple</th></tr></thead>
+    <tbody>
+      <tr><td>Early SaaS (high growth, &lt;$1M ARR)</td><td>8–15×</td></tr>
+      <tr><td>Mid-stage SaaS ($1–10M ARR, 80%+ growth)</td><td>10–20×</td></tr>
+      <tr><td>Mature SaaS ($10M+ ARR, 30–50% growth)</td><td>5–10×</td></tr>
+      <tr><td>Marketplace / e-commerce</td><td>2–5× (revenue) or 1–2× (GMV)</td></tr>
+      <tr><td>Hardware / consumer products</td><td>1–3×</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2. Discounted cash flow (DCF)</h3>
+  <p>Project future free cash flows for 5–10 years, plus a terminal value, and discount back to present using a discount rate (typically 20–40% for startups, reflecting risk). DCF is rigorous but only as good as your assumptions. For early-stage startups, the assumption error often exceeds the result, making DCF less useful than it appears.</p>
+
+  <h3>3. Comparable companies ("comps")</h3>
+  <p>Find similar companies that have raised funding or been acquired. Apply their valuation multiples to your metrics. Sources: Crunchbase, PitchBook, AngelList, public M&amp;A announcements. The challenge: truly comparable companies are rare, and adjustments for size, growth, and quality are subjective.</p>
+
+  <h3>4. Berkus method (pre-revenue)</h3>
+  <p>Add up to $500k for each of five elements: sound idea, prototype, quality of management, strategic relationships, product launch / sales. Cap at $2.5M pre-money for very early stage. Crude but useful as a sanity check for pre-revenue startups.</p>
+
+  <h3>5. VC method</h3>
+  <p>Work backwards from a hypothetical exit. If you can sell the company for $50M in 5 years and the VC requires a 10× return on their $2M investment, they need $20M of value at exit (40% of $50M). Therefore, post-money valuation today is $5M ($2M ÷ 40%) — pre-money is $3M.</p>
+
+  <h2>A worked example</h2>
+  <div class="example-box">
+    <strong>SaaS startup: $1.2M ARR, growing 100% YoY, 75% gross margin, raising Series A.</strong><br>
+    Revenue multiple method (12× ARR): <strong>$14.4M</strong> pre-money<br>
+    Comps method (3 similar Series A deals at 10–15×): <strong>$12–18M</strong><br>
+    VC method (target $100M exit in 5 yrs, 10× return on $4M raise): <strong>~$10M</strong> pre-money<br>
+    <strong>Likely negotiation range: $11–15M pre-money.</strong>
+  </div>
+
+  <h2>What actually moves the multiple</h2>
+  <ul>
+    <li><strong>Growth rate:</strong> the single largest factor. A SaaS company growing 150% YoY commands 2–3× the multiple of one growing 30%.</li>
+    <li><strong>Net revenue retention (NRR):</strong> 130%+ NRR signals expansion within existing accounts. Each 10 percentage points of NRR can add 20%+ to multiple.</li>
+    <li><strong>Gross margin:</strong> 80%+ for software vs 30–40% for services-heavy businesses. Higher margin = higher multiple.</li>
+    <li><strong>Burn multiple:</strong> capital efficiency. Burn multiple under 1.5 is excellent, over 3 is concerning.</li>
+    <li><strong>TAM / market size:</strong> investors pay for the dream; large TAM raises ceiling on multiple.</li>
+    <li><strong>Founder quality and team:</strong> hard to quantify but materially affects valuation, especially pre-revenue.</li>
+  </ul>
+
+  <h2>What this calculator can't account for</h2>
+  <ul>
+    <li>Negotiation leverage (multiple term sheets vs. only one offer)</li>
+    <li>Strategic vs. financial buyers — strategics often pay 30–50% premiums</li>
+    <li>Macro / market conditions — multiples in 2021 were 2–3× what they are now</li>
+    <li>Geographic differences — silicon valley premiums vs. emerging markets</li>
+    <li>Specific terms (preferences, anti-dilution) that affect effective valuation</li>
+  </ul>
+</section>
+
+<section class="cs-faq-section">
+  <h2>Frequently asked <span>questions</span></h2>
+  <div class="cs-faq-list">
+    <details class="cs-faq-item">
+      <summary>What's a typical revenue multiple for a SaaS startup in 2026?</summary>
+      <div class="cs-faq-answer">For a high-growth SaaS startup ($1–10M ARR, growing 80%+ year-over-year), 10–20× ARR is typical for Series A/B rounds in 2026. Slower growth or smaller scale brings that down to 5–10×. The multiple compression that happened in 2022–2023 has stabilised, but is still well below the 2021 peak of 30–50× for top-tier SaaS.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How is pre-money valuation different from post-money?</summary>
+      <div class="cs-faq-answer">Pre-money is the company's value before the new investment. Post-money is pre-money plus the investment amount. If a VC invests $2M into a company at $8M pre-money, post-money valuation is $10M, and the VC owns 20% (2/10). Founders typically reference pre-money; investors reference post-money. Always clarify which is meant.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Which method should I use for an early-stage startup with no revenue?</summary>
+      <div class="cs-faq-answer">For pre-revenue, the Berkus method or scorecard method give a structured way to estimate value (typical range $1–3M pre-money). The VC method also works if you have credible exit projections. Avoid DCF for pre-revenue — assumption error makes the output unreliable.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How much should founders dilute in each round?</summary>
+      <div class="cs-faq-answer">Typical ranges: pre-seed/seed 15–25%, Series A 20–25%, Series B 15–20%, Series C onward 10–15%. Cumulatively, founders often own 20–40% by IPO or acquisition, depending on rounds raised. Less dilution per round = higher valuations, which require strong metrics.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Why do similar startups get different valuations?</summary>
+      <div class="cs-faq-answer">Growth rate, retention, market size, team quality, and competitive dynamics all matter — but the biggest factor is often timing and competition for the deal. A startup with multiple competing term sheets can negotiate 30–50% above a similar company with one offer. Macro conditions (rates, IPO market) also swing valuations significantly.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Is a higher valuation always better for founders?</summary>
+      <div class="cs-faq-answer">No. Over-valuing a round creates a 'down round' risk if you can't grow into it for the next raise. Down rounds are dilutive and signal-negative. A reasonable valuation that you can comfortably 2–3× by your next round is healthier than a stretched valuation that puts pressure on metrics. Many seasoned founders take slightly lower valuations from better partners.</div>
+    </details>
+  </div>
+</section>
+
+<div class="cs-cta">
+  <div class="cs-cta-card">
+    <div class="cs-cta-text"><strong>📖 Deep dive:</strong> All five valuation methods explained — with example calculations and when to use each.</div>
+    <a href="blog/startup-valuation-methods-explained.html" class="cs-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="index.html">Calculators</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
 <script>
 const multiples={saas:[8,15],ecommerce:[1.5,3],marketplace:[4,8],fintech:[6,12],health:[5,10],ai:[10,20],other:[3,6]};
 

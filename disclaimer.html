@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Disclaimer — MyFinCalc</title>
+<meta name="description" content="MyFinCalc is an educational tool, not a source of personalised financial advice. Read our full disclaimer covering calculator limitations, tax accuracy, and investment risk.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/disclaimer.html">
+<meta property="og:title" content="Financial Disclaimer">
+<meta property="og:description" content="MyFinCalc is an educational tool, not a source of personalised financial advice. Read our full disclaimer covering calculator limitations, tax accuracy, and investment risk.">
+<meta property="og:url" content="https://myfincalc.org/disclaimer.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyFinCalc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f7f4;--bg-card:#ffffff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;
+  --accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;
+  --warn:#b54708;--warn-bg:#fef6ed;
+  --text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;
+  --font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.65;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}
+.nav-logo .fi{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-link:hover{color:var(--accent);}
+
+.hero{padding:64px 24px 24px;max-width:760px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}
+.hero h1 .green{color:var(--accent);}
+.hero p.lede{font-size:17px;color:var(--text-secondary);max-width:580px;margin:8px auto 0;line-height:1.55;}
+.hero p.updated{font-size:13px;color:var(--text-muted);margin-top:16px;font-family:var(--font-title);letter-spacing:0.05em;}
+
+.content{max-width:740px;margin:0 auto;padding:32px 24px 80px;}
+.content h2{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin-top:44px;margin-bottom:14px;color:var(--text-primary);}
+.content h2:first-child{margin-top:0;}
+.content h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin-top:24px;margin-bottom:10px;color:var(--text-primary);}
+.content p{margin-bottom:14px;color:var(--text-primary);}
+.content ul{margin:12px 0 16px 22px;}
+.content li{margin-bottom:6px;}
+.content a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s;}
+.content a:hover{border-bottom-color:var(--accent);}
+.content strong{font-weight:600;color:var(--text-primary);}
+
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;margin:24px 0 32px;}
+.contact-card .label{font-family:var(--font-title);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+.email-display{font-family:var(--font-title);font-size:24px;font-weight:600;color:var(--accent);margin:8px 0 12px;word-break:break-all;}
+.contact-card .meta{color:var(--text-secondary);font-size:14px;margin:0;}
+
+.callout{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0;}
+.callout p{margin:0;color:var(--text-secondary);font-size:14px;}
+.callout strong{color:var(--text-primary);}
+
+.alert{background:var(--warn-bg);border:1px solid #f5d7b3;border-left:4px solid var(--warn);border-radius:12px;padding:18px 22px;margin:24px 0 32px;}
+.alert p{margin:0;color:var(--text-primary);font-size:14px;}
+.alert strong{color:var(--warn);}
+
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;display:flex;align-items:center;gap:2px;}
+.footer-logo .fi{color:var(--accent);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+
+@media(max-width:640px){
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <div class="nav-right">
+    <a href="blog/" class="nav-link">Blog</a>
+    <a href="index.html" class="nav-link">Calculators</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge">Legal</div>
+  <h1>Financial <span class="green">disclaimer</span></h1>
+  <p class="lede">MyFinCalc is an educational tool, not personalised financial advice.</p>
+  <p class="updated">Last updated: 28 April 2026</p>
+</header>
+
+<main class="content">
+  <div class="alert">
+    <p><strong>Important:</strong> MyFinCalc is an educational website. The information and tools provided here are not personalised financial advice. Always consult a qualified, licensed financial advisor, tax professional, or accountant before making significant financial decisions.</p>
+  </div>
+
+  <h2>1. Educational purpose only</h2>
+  <p>MyFinCalc is a free educational resource. The calculators, articles, examples, charts, and any other content on this Site are provided <strong>for general informational and educational purposes only</strong>. They are not intended to be — and should not be relied upon as — financial, investment, tax, legal, accounting, retirement, or any other type of professional advice.</p>
+  <p>Personal finance is deeply individual. What is appropriate for one person may be inappropriate or even harmful for another. The right financial decision depends on your specific circumstances: your income, expenses, debts, risk tolerance, time horizon, family situation, country of residence, tax bracket, and many other factors that no general calculator can fully account for.</p>
+
+  <h2>2. We are not licensed advisors</h2>
+  <p>The MyFinCalc team is not registered, licensed, or authorised as financial advisors, investment advisors, tax preparers, accountants, or legal professionals in any jurisdiction. Specifically:</p>
+  <ul>
+    <li>We are not a Financial Advice Provider under the New Zealand <em>Financial Markets Conduct Act 2013</em></li>
+    <li>We are not registered with the U.S. Securities and Exchange Commission, FINRA, or any state regulator</li>
+    <li>We are not authorised by the UK Financial Conduct Authority</li>
+    <li>We are not licensed by the Australian Securities and Investments Commission</li>
+    <li>We are not certified public accountants, chartered accountants, or tax preparers in any jurisdiction</li>
+  </ul>
+  <p>If you need personalised advice, please consult a properly licensed professional in your country.</p>
+
+  <h2>3. Calculator limitations</h2>
+
+  <h3>3.1 Simplified models</h3>
+  <p>Every calculator on this Site uses a simplified mathematical model. Real-world finance involves variables that are difficult or impossible to model: inflation, market volatility, changes in personal circumstances, tax law revisions, employer policy changes, currency fluctuations, and unforeseen life events. Calculator outputs are <strong>estimates, not predictions</strong>.</p>
+
+  <h3>3.2 Tax data accuracy</h3>
+  <p>Our salary and tax-related calculators use published tax brackets and rates for the supported countries (currently New Zealand, Australia, United Kingdom, United States, and Canada). We make a reasonable effort to keep these tables current, but:</p>
+  <ul>
+    <li>Tax laws change throughout the year, and there may be a lag between when a change takes effect and when our calculators are updated</li>
+    <li>We do not account for every deduction, credit, or special circumstance available in any jurisdiction</li>
+    <li>State, provincial, regional, council, and municipal taxes are not included unless explicitly stated</li>
+    <li>Self-employment, business income, capital gains, and non-standard income types may not be modelled</li>
+  </ul>
+  <p>Always verify tax calculations with official sources (IRD, ATO, HMRC, IRS, CRA) or a qualified tax professional before relying on them.</p>
+
+  <h3>3.3 Investment return assumptions</h3>
+  <p>Calculators that model investment growth (Compound Interest, FIRE, Retirement Savings, How Much to Invest) require an assumed annual rate of return. <strong>Past performance does not guarantee future results.</strong> The "average market return of 7%" commonly referenced is a long-term historical average for U.S. equities, after inflation. Actual returns vary widely year to year and may be significantly different over your specific time horizon. Some years see negative returns. Some decades see flat or negative real returns. Diversification, fees, taxes, and behaviour all affect actual outcomes.</p>
+
+  <h3>3.4 Inflation, fees, and taxes</h3>
+  <p>Unless explicitly stated, calculators may not fully account for the impact of inflation, investment fees, transaction costs, or taxes on returns. These factors materially reduce real-world outcomes. A nominal 7% return becomes substantially less after accounting for them.</p>
+
+  <h2>4. Investment risk</h2>
+  <p><strong>All investments carry risk, including the risk of partial or total loss of capital.</strong> The value of investments can go down as well as up. Higher potential returns generally come with higher potential losses. Markets are influenced by economic, political, and unpredictable global events.</p>
+  <p>Specifically:</p>
+  <ul>
+    <li>Stock markets can decline significantly and remain depressed for extended periods</li>
+    <li>Real estate values are not guaranteed to appreciate</li>
+    <li>Bonds carry interest rate, credit, and inflation risk</li>
+    <li>Cryptocurrency, commodities, and alternative assets are highly volatile</li>
+    <li>"Safe" investments still carry inflation risk and reinvestment risk</li>
+  </ul>
+  <p>Never invest money you cannot afford to lose. Never make investment decisions based solely on a calculator output or a blog article.</p>
+
+  <h2>5. Country-specific notes</h2>
+
+  <h3>5.1 New Zealand</h3>
+  <p>Content on this Site does not constitute "regulated financial advice" as defined in the Financial Markets Conduct Act 2013. We do not provide personalised advice and have no knowledge of your individual financial situation, needs, or objectives. For licensed advice, consult a Financial Advice Provider listed on the <a href="https://fsp-register.companiesoffice.govt.nz/" target="_blank" rel="noopener">Financial Service Providers Register</a>.</p>
+
+  <h3>5.2 Australia</h3>
+  <p>Content does not constitute "personal advice" under the Corporations Act 2001 (Cth). We have not considered your personal objectives, financial situation, or needs. Consider whether the information is appropriate for you, and consult a licensed Australian financial advisor.</p>
+
+  <h3>5.3 United States</h3>
+  <p>Content is not investment advice within the meaning of the Investment Advisers Act of 1940 or any state law. Consult a Registered Investment Advisor or Certified Financial Planner&trade; for personalised advice.</p>
+
+  <h3>5.4 United Kingdom</h3>
+  <p>Content is not regulated by the Financial Conduct Authority and does not constitute a personal recommendation. For regulated advice, consult an FCA-authorised firm.</p>
+
+  <h2>6. Third-party content and affiliate links</h2>
+  <p>Some articles may link to third-party financial products, platforms, or services. Some of these may be affiliate links, disclosed in the article where present. We do not endorse or guarantee any third-party product, and the inclusion of a link is not a recommendation to use that product. Read all relevant disclosures, fees, and terms before signing up for any financial service.</p>
+
+  <h2>7. No fiduciary relationship</h2>
+  <p>Use of this Site does not create a fiduciary, advisor-client, or any other professional relationship between you and MyFinCalc. We have no duty to act in your best interest in any individualised way, because we do not know your individual situation.</p>
+
+  <h2>8. Limitation of liability</h2>
+  <p>By using this Site, you acknowledge and agree that MyFinCalc and its operators are not responsible for any financial losses, missed opportunities, or other damages — direct, indirect, incidental, consequential, or otherwise — that may result from decisions you make based on the content or calculators provided here. You use the information at your own risk and are solely responsible for your financial decisions.</p>
+
+  <h2>9. Updates to this disclaimer</h2>
+  <p>We may update this disclaimer from time to time. The "Last updated" date at the top reflects the most recent revision. Material changes will be highlighted on the Site for a reasonable period.</p>
+
+  <h2>10. Contact</h2>
+  <p>Questions about this disclaimer? Reach us through our <a href="contact.html">contact page</a> at <strong>hello@myfincalc.org</strong>.</p>
+
+</main>
+
+<footer>
+  <div>
+    <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+    <p class="footer-copy">© 2026 MyFinCalc.org</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Calculators</a>
+    <a href="blog/">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+</body>
+</html>

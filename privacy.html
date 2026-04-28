@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — MyFinCalc</title>
+<meta name="description" content="MyFinCalc privacy policy: what data we collect, how we use cookies, Google AdSense disclosure, and your rights under GDPR and the NZ Privacy Act.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/privacy.html">
+<meta property="og:title" content="Privacy Policy">
+<meta property="og:description" content="MyFinCalc privacy policy: what data we collect, how we use cookies, Google AdSense disclosure, and your rights under GDPR and the NZ Privacy Act.">
+<meta property="og:url" content="https://myfincalc.org/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyFinCalc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f7f4;--bg-card:#ffffff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;
+  --accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;
+  --warn:#b54708;--warn-bg:#fef6ed;
+  --text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;
+  --font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.65;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}
+.nav-logo .fi{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-link:hover{color:var(--accent);}
+
+.hero{padding:64px 24px 24px;max-width:760px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}
+.hero h1 .green{color:var(--accent);}
+.hero p.lede{font-size:17px;color:var(--text-secondary);max-width:580px;margin:8px auto 0;line-height:1.55;}
+.hero p.updated{font-size:13px;color:var(--text-muted);margin-top:16px;font-family:var(--font-title);letter-spacing:0.05em;}
+
+.content{max-width:740px;margin:0 auto;padding:32px 24px 80px;}
+.content h2{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin-top:44px;margin-bottom:14px;color:var(--text-primary);}
+.content h2:first-child{margin-top:0;}
+.content h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin-top:24px;margin-bottom:10px;color:var(--text-primary);}
+.content p{margin-bottom:14px;color:var(--text-primary);}
+.content ul{margin:12px 0 16px 22px;}
+.content li{margin-bottom:6px;}
+.content a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s;}
+.content a:hover{border-bottom-color:var(--accent);}
+.content strong{font-weight:600;color:var(--text-primary);}
+
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;margin:24px 0 32px;}
+.contact-card .label{font-family:var(--font-title);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+.email-display{font-family:var(--font-title);font-size:24px;font-weight:600;color:var(--accent);margin:8px 0 12px;word-break:break-all;}
+.contact-card .meta{color:var(--text-secondary);font-size:14px;margin:0;}
+
+.callout{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0;}
+.callout p{margin:0;color:var(--text-secondary);font-size:14px;}
+.callout strong{color:var(--text-primary);}
+
+.alert{background:var(--warn-bg);border:1px solid #f5d7b3;border-left:4px solid var(--warn);border-radius:12px;padding:18px 22px;margin:24px 0 32px;}
+.alert p{margin:0;color:var(--text-primary);font-size:14px;}
+.alert strong{color:var(--warn);}
+
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;display:flex;align-items:center;gap:2px;}
+.footer-logo .fi{color:var(--accent);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+
+@media(max-width:640px){
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <div class="nav-right">
+    <a href="blog/" class="nav-link">Blog</a>
+    <a href="index.html" class="nav-link">Calculators</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge">Legal</div>
+  <h1>Privacy <span class="green">policy</span></h1>
+  <p class="lede">How we collect, use, and protect information when you visit MyFinCalc.</p>
+  <p class="updated">Last updated: 28 April 2026</p>
+</header>
+
+<main class="content">
+  <p>This Privacy Policy explains how MyFinCalc ("we", "us", "our") collects, uses, and protects information when you visit <strong>myfincalc.org</strong> (the "Site"). We have written this policy in plain English and tried to keep legal jargon to a minimum.</p>
+
+  <h2>1. The short version</h2>
+  <ul>
+    <li>The financial calculators run entirely in your browser. <strong>We never see, store, or transmit the numbers you enter.</strong></li>
+    <li>We use Google Analytics to understand site traffic in aggregate (page views, browser type, country) — never to identify individuals.</li>
+    <li>We use Google AdSense to display advertisements, which uses cookies to serve relevant ads.</li>
+    <li>We do not sell your personal data. We do not run an email newsletter or build user profiles.</li>
+    <li>You can opt out of personalised ads through Google's settings (linked below).</li>
+  </ul>
+
+  <h2>2. Information we collect</h2>
+
+  <h3>2.1 Information you provide directly</h3>
+  <p>If you email us through the address listed on our <a href="contact.html">contact page</a>, we receive your email address and the contents of your message. We use this only to respond to your inquiry. We do not add you to any mailing list.</p>
+
+  <h3>2.2 Information collected automatically</h3>
+  <p>When you visit the Site, our analytics and ad providers automatically receive standard web request data, including:</p>
+  <ul>
+    <li>Your IP address (used to approximate country / region; truncated by Google Analytics)</li>
+    <li>Browser type, version, and language</li>
+    <li>Operating system and device type</li>
+    <li>Pages visited, time on page, and referring URL</li>
+    <li>General location at country or city level (not precise GPS)</li>
+  </ul>
+
+  <h3>2.3 Calculator inputs</h3>
+  <p>The numbers you type into our calculators (income, savings, debt amounts, etc.) are processed entirely within your browser using JavaScript. <strong>This data is never sent to our servers, never logged, and never stored anywhere outside your own device.</strong> If you close the tab, your inputs are gone.</p>
+
+  <h2>3. Cookies and tracking technologies</h2>
+
+  <h3>3.1 What cookies are</h3>
+  <p>Cookies are small text files placed on your device that help websites remember information about your visit. Some cookies are essential; others are used for analytics or advertising.</p>
+
+  <h3>3.2 Cookies we use</h3>
+  <ul>
+    <li><strong>Google Analytics cookies</strong> (_ga, _gid, _gat) — used to count visits and understand usage patterns. Data is aggregated and anonymised.</li>
+    <li><strong>Google AdSense cookies</strong> — used to serve advertisements, including personalised ads based on your browsing interests.</li>
+  </ul>
+
+  <h3>3.3 Managing cookies</h3>
+  <p>You can disable cookies through your browser settings. Doing so will not break the calculators (they don't use cookies), but it may affect how ads are served and how analytics records your visit.</p>
+
+  <h2>4. Google AdSense disclosure</h2>
+  <p>This Site uses <strong>Google AdSense</strong>, a third-party advertising service operated by Google LLC, to display ads. AdSense uses cookies and similar technologies to:</p>
+  <ul>
+    <li>Serve ads based on a user's prior visits to this Site or other websites</li>
+    <li>Measure ad performance and prevent fraudulent clicks</li>
+    <li>Limit the number of times a user sees a particular ad</li>
+  </ul>
+  <p>Google's use of advertising cookies enables it and its partners to serve ads to users based on their visits to this and other sites on the Internet. Users may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>, or opt out of third-party vendor use of cookies for personalised advertising by visiting <a href="https://www.aboutads.info/" target="_blank" rel="noopener">aboutads.info</a>.</p>
+  <p>For more information on how Google uses data, please see Google's <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Privacy &amp; Terms — How Google uses information from sites that use our services</a>.</p>
+
+  <h2>5. Google Analytics disclosure</h2>
+  <p>We use Google Analytics to understand how visitors interact with the Site. Google Analytics anonymises IP addresses and aggregates data. You can opt out of Google Analytics tracking site-wide by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+  <h2>6. How we use information</h2>
+  <p>We use the limited information we receive only to:</p>
+  <ul>
+    <li>Operate, maintain, and improve the Site and its calculators</li>
+    <li>Respond to your inquiries and bug reports</li>
+    <li>Understand which calculators and articles are most useful to readers</li>
+    <li>Display advertisements through Google AdSense</li>
+    <li>Detect and prevent fraud, spam, or abuse of the Site</li>
+  </ul>
+
+  <h2>7. How we share information</h2>
+  <p>We do not sell or rent personal information to anyone. We share information only with:</p>
+  <ul>
+    <li><strong>Google</strong> (Analytics and AdSense) — as described above</li>
+    <li><strong>Hosting providers</strong> — our Site is served via static hosting infrastructure that processes web requests to deliver pages</li>
+    <li><strong>Legal authorities</strong> — only when legally compelled to do so by valid court order or law enforcement request</li>
+  </ul>
+
+  <h2>8. Data retention</h2>
+  <p>Email correspondence is retained for as long as needed to handle your inquiry, and then deleted within a reasonable period unless we have a legitimate reason to keep it (for example, if you reported a recurring bug). Analytics data is retained according to Google Analytics' default retention period (currently 14 months). Ad-related data is governed by Google AdSense's retention policies.</p>
+
+  <h2>9. Your rights</h2>
+
+  <h3>9.1 Under the GDPR (European Economic Area, UK)</h3>
+  <p>If you reside in the EEA or UK, you have the right to access, correct, delete, or restrict the processing of your personal data, and to object to processing or request data portability. To exercise any of these rights, email us through our <a href="contact.html">contact page</a>.</p>
+
+  <h3>9.2 Under the New Zealand Privacy Act 2020</h3>
+  <p>NZ residents have the right to access and correct any personal information we hold about them. The same contact email applies.</p>
+
+  <h3>9.3 Under the CCPA (California residents)</h3>
+  <p>California residents have the right to know what personal information is collected, the right to delete personal information, and the right to opt out of the sale of personal information. <strong>We do not sell personal information.</strong></p>
+
+  <h2>10. Children's privacy</h2>
+  <p>The Site is not directed at children under 16. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+
+  <h2>11. International data transfers</h2>
+  <p>Because we use Google services, your data may be transferred to and processed in the United States or other countries where Google operates. Google maintains appropriate safeguards for international transfers, including Standard Contractual Clauses where applicable.</p>
+
+  <h2>12. Security</h2>
+  <p>The Site is served over HTTPS. We take reasonable technical and organisational measures to protect any information we hold, but no online service can guarantee absolute security.</p>
+
+  <h2>13. Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top reflects the most recent revision. Material changes will be highlighted on the Site for a reasonable period.</p>
+
+  <h2>14. Contact</h2>
+  <p>Questions about this Privacy Policy? Reach us through our <a href="contact.html">contact page</a> at <strong>hello@myfincalc.org</strong>.</p>
+
+</main>
+
+<footer>
+  <div>
+    <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+    <p class="footer-copy">© 2026 MyFinCalc.org</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Calculators</a>
+    <a href="blog/">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+</body>
+</html>

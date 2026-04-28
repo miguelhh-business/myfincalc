@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact MyFinCalc — Get in Touch</title>
+<meta name="description" content="Contact the MyFinCalc team. Bug reports, calculator suggestions, corrections, and partnership inquiries welcome.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://myfincalc.org/contact.html">
+<meta property="og:title" content="Contact MyFinCalc">
+<meta property="og:description" content="Contact the MyFinCalc team. Bug reports, calculator suggestions, corrections, and partnership inquiries welcome.">
+<meta property="og:url" content="https://myfincalc.org/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyFinCalc">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8f7f4;--bg-card:#ffffff;--bg-input:#f2f1ee;--border:#e5e4e0;--border-hover:#ccc;
+  --accent:#1a6b3c;--accent2:#2d9e5f;--accent-light:#e8f5ee;
+  --warn:#b54708;--warn-bg:#fef6ed;
+  --text-primary:#1a1a1a;--text-secondary:#666;--text-muted:#999;
+  --font-title:'Clash Display',sans-serif;--font-body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--font-body);font-size:15px;line-height:1.65;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:var(--font-title);font-weight:700;font-size:18px;color:var(--text-primary);text-decoration:none;}
+.nav-logo .fi{color:var(--accent);}
+.nav-right{display:flex;align-items:center;gap:20px;}
+.nav-link{color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s;}
+.nav-link:hover{color:var(--accent);}
+
+.hero{padding:64px 24px 24px;max-width:760px;margin:0 auto;text-align:center;}
+.hero-badge{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:100px;margin-bottom:16px;font-family:var(--font-title);}
+.hero h1{font-family:var(--font-title);font-size:clamp(32px,5vw,52px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}
+.hero h1 .green{color:var(--accent);}
+.hero p.lede{font-size:17px;color:var(--text-secondary);max-width:580px;margin:8px auto 0;line-height:1.55;}
+.hero p.updated{font-size:13px;color:var(--text-muted);margin-top:16px;font-family:var(--font-title);letter-spacing:0.05em;}
+
+.content{max-width:740px;margin:0 auto;padding:32px 24px 80px;}
+.content h2{font-family:var(--font-title);font-size:24px;font-weight:700;letter-spacing:-0.5px;margin-top:44px;margin-bottom:14px;color:var(--text-primary);}
+.content h2:first-child{margin-top:0;}
+.content h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin-top:24px;margin-bottom:10px;color:var(--text-primary);}
+.content p{margin-bottom:14px;color:var(--text-primary);}
+.content ul{margin:12px 0 16px 22px;}
+.content li{margin-bottom:6px;}
+.content a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s;}
+.content a:hover{border-bottom-color:var(--accent);}
+.content strong{font-weight:600;color:var(--text-primary);}
+
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;margin:24px 0 32px;}
+.contact-card .label{font-family:var(--font-title);font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;}
+.email-display{font-family:var(--font-title);font-size:24px;font-weight:600;color:var(--accent);margin:8px 0 12px;word-break:break-all;}
+.contact-card .meta{color:var(--text-secondary);font-size:14px;margin:0;}
+
+.callout{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0;}
+.callout p{margin:0;color:var(--text-secondary);font-size:14px;}
+.callout strong{color:var(--text-primary);}
+
+.alert{background:var(--warn-bg);border:1px solid #f5d7b3;border-left:4px solid var(--warn);border-radius:12px;padding:18px 22px;margin:24px 0 32px;}
+.alert p{margin:0;color:var(--text-primary);font-size:14px;}
+.alert strong{color:var(--warn);}
+
+footer{border-top:1px solid var(--border);padding:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1100px;margin:0 auto;}
+.footer-logo{font-family:var(--font-title);font-weight:700;font-size:16px;display:flex;align-items:center;gap:2px;}
+.footer-logo .fi{color:var(--accent);}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;}
+.footer-links a{color:var(--text-muted);text-decoration:none;font-size:13px;transition:color 0.2s;}
+.footer-links a:hover{color:var(--accent);}
+.footer-copy{font-size:12px;color:var(--text-muted);}
+
+@media(max-width:640px){
+  footer{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a>
+  <div class="nav-right">
+    <a href="blog/" class="nav-link">Blog</a>
+    <a href="index.html" class="nav-link">Calculators</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-badge">Contact</div>
+  <h1>Get <span class="green">in touch</span></h1>
+  <p class="lede">Bug reports, calculator suggestions, corrections, and partnership inquiries are all welcome. We read every email.</p>
+  
+</header>
+
+<main class="content">
+  <div class="contact-card">
+    <p class="label">Email us at</p>
+    <p class="email-display">hello@myfincalc.org</p>
+    <p class="meta">We aim to reply within 3 business days. If your message is urgent, please mention that in the subject line.</p>
+  </div>
+
+  <h2>What to write about</h2>
+  <p>To help us respond faster, here are the most common reasons people contact us — and what to include in your message:</p>
+  <ul>
+    <li><strong>Bug reports.</strong> If a calculator is producing wrong results, please tell us which calculator, what inputs you used, what result you got, and what you expected. Screenshots help.</li>
+    <li><strong>Outdated tax brackets or rates.</strong> Tax laws change. If you spot a salary calculator using last year's brackets, let us know which country and which bracket — we'll update it and credit you if you'd like.</li>
+    <li><strong>Calculator suggestions.</strong> Have a money question that doesn't fit any of our existing calculators? Tell us what you're trying to figure out. The best ideas come from real-world problems.</li>
+    <li><strong>Editorial corrections.</strong> If a blog post contains an error or oversimplification, please point us to the specific paragraph. We update articles regularly.</li>
+    <li><strong>Partnership and press inquiries.</strong> Affiliate proposals, content collaborations, and press requests — please include enough context for us to evaluate the fit.</li>
+  </ul>
+
+  <h2>What we can't help with</h2>
+  <p>MyFinCalc is an educational tool. We are <strong>not</strong> licensed financial advisors, accountants, or tax professionals, and we cannot answer personal finance questions specific to your situation. If you need personalised advice, please consult a qualified professional in your jurisdiction.</p>
+  <p>We also can't:</p>
+  <ul>
+    <li>Recommend specific stocks, funds, or investments to buy</li>
+    <li>Help with tax filing, IRS / IRD / ATO / HMRC / CRA disputes, or legal matters</li>
+    <li>Give advice on cryptocurrency trades, real estate purchases, or business decisions</li>
+    <li>Provide one-on-one financial coaching</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>When you email us, we only use the information you send to respond to your inquiry. We don't add you to a mailing list, share your email with third parties, or use it for marketing. See our <a href="privacy.html">privacy policy</a> for details.</p>
+
+</main>
+
+<footer>
+  <div>
+    <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+    <p class="footer-copy">© 2026 MyFinCalc.org</p>
+  </div>
+  <div class="footer-links">
+    <a href="index.html">Calculators</a>
+    <a href="blog/">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="disclaimer.html">Disclaimer</a>
+  </div>
+</footer>
+
+</body>
+</html>

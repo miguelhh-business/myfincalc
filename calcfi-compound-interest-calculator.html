@@ -66,6 +66,96 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 @media(max-width:700px){.main{grid-template-columns:1fr;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+
+<style>
+.content-section{max-width:760px;margin:0 auto;padding:32px 24px 40px;}
+.content-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin:32px 0 14px;color:var(--text-primary);}
+.content-section h2:first-child{margin-top:8px;}
+.content-section h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+.content-section p{margin-bottom:14px;color:var(--text-primary);line-height:1.7;}
+.content-section ul{margin:10px 0 16px 22px;}
+.content-section li{margin-bottom:6px;color:var(--text-primary);line-height:1.65;}
+.content-section strong{font-weight:600;}
+.content-section .example-box{background:var(--accent-light);border:1px solid #c8e0d0;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14px;line-height:1.7;}
+.content-section .example-box strong{color:var(--accent);}
+.content-section table.cs-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;}
+.content-section table.cs-table th{background:var(--bg-card);border:1px solid var(--border);padding:9px 12px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.content-section table.cs-table td{border:1px solid var(--border);padding:9px 12px;background:var(--bg-card);}
+.cs-faq-section{max-width:760px;margin:0 auto;padding:24px 24px 40px;}
+.cs-faq-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:18px;}
+.cs-faq-section h2 span{color:var(--accent);}
+.cs-faq-list{display:flex;flex-direction:column;gap:8px;}
+.cs-faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.cs-faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.cs-faq-item summary::-webkit-details-marker{display:none;}
+.cs-faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);transition:transform 0.2s;}
+.cs-faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.cs-faq-item[open] summary{color:var(--accent);}
+.cs-faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.cs-cta{max-width:760px;margin:0 auto;padding:8px 24px 56px;}
+.cs-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cs-cta-text{font-size:14px;color:var(--text-primary);line-height:1.55;}
+.cs-cta-text strong{font-family:var(--font-title);}
+.cs-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.cs-cta-btn:hover{background:var(--accent2);}
+@media(max-width:640px){.content-section,.cs-faq-section,.cs-cta{padding-left:20px;padding-right:20px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between simple and compound interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple interest is calculated only on your original principal. Compound interest is calculated on your principal plus all previously earned interest, so the balance grows exponentially over time. Almost all real-world investments and savings accounts use compound interest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often does interest compound?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common compounding frequencies are annually, monthly, and daily. The more frequently interest compounds, the slightly larger the final value will be. Most investment funds and savings accounts compound monthly or daily, but the difference between monthly and daily compounding is usually less than 0.1% per year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a realistic annual return to assume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a diversified global stock portfolio, the long-term historical average is around 7% per year after inflation, or about 9–10% in nominal terms. For bonds, it's closer to 2–4%. For cash savings, currently 4–5% in many countries. Use lower assumptions if you want a conservative projection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I start with a small amount or wait until I can invest more?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Almost always: start now. Time is the single biggest factor in compound growth. $100/month starting at age 25 beats $300/month starting at age 35 over a 40-year horizon. Small amounts compound just like large ones — they just take longer to feel meaningful."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator account for inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By default, no — the calculator shows nominal future values. To get a real (inflation-adjusted) figure, subtract roughly 2–3% from your assumed return rate. For example, use 4% instead of 7% to see what your investment is worth in today's purchasing power."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does compound interest apply to debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound interest works against you on credit card and loan balances. A $5,000 credit card debt at 22% APR, paying only minimums, can take over 20 years to pay off and cost more than $7,000 in interest. The same compounding maths that builds wealth also builds debt."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav>
@@ -88,8 +178,76 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </div>
 </main>
 <div class="disclaimer">⚠️ For educational purposes only. Not financial advice. Consult a qualified financial advisor.</div>
+
+<section class="content-section">
+  <h2>How compound interest works</h2>
+  <p>Compound interest is what happens when the interest you earn on an investment starts earning its own interest. It's the difference between simple growth (linear) and compounding growth (exponential). Albert Einstein reportedly called it "the eighth wonder of the world" — and the longer you give it, the more powerful it becomes.</p>
+  <p>The standard compound interest formula with regular contributions is:</p>
+  <p><strong>FV = P × (1 + r)<sup>n</sup> + PMT × [((1 + r)<sup>n</sup> − 1) / r]</strong></p>
+  <p>Where <strong>FV</strong> is your future value, <strong>P</strong> is your starting principal, <strong>r</strong> is the periodic interest rate (annual rate divided by compounding periods per year), <strong>n</strong> is the total number of periods, and <strong>PMT</strong> is your regular contribution per period.</p>
+
+  <h2>A worked example</h2>
+  <div class="example-box">
+    <strong>Sara invests $10,000 today and adds $500/month for 30 years at a 7% average annual return.</strong><br>
+    Total contributions: $10,000 + ($500 × 360 months) = $190,000<br>
+    Final portfolio value: <strong>$680,196</strong><br>
+    Interest earned: <strong>$490,196</strong> — more than 2.5× her own contributions.
+  </div>
+  <p>Notice how most of the final value comes from compounding, not from contributions. That's the magic. The catch: it requires time. Most of compounding's power happens in the final third of the investment period.</p>
+
+  <h2>The Rule of 72</h2>
+  <p>A handy mental shortcut: divide 72 by your annual rate of return to estimate how many years it takes for an investment to double. At 7%, money doubles roughly every 10.3 years. At 10%, every 7.2 years. At 4%, every 18 years. This works because of how exponential growth compresses time.</p>
+
+  <h2>Things to consider before relying on a 7% return</h2>
+  <ul>
+    <li><strong>Returns are averages, not guarantees.</strong> The 7% number is a long-term historical average for diversified equities. Actual annual returns swing wildly — some years +25%, others −20%.</li>
+    <li><strong>Inflation eats into nominal returns.</strong> A 7% nominal return with 3% inflation is really only 4% in real (purchasing power) terms.</li>
+    <li><strong>Fees matter more than people think.</strong> A 1% annual fee may sound small, but over 30 years it can reduce your final balance by 20–25% due to lost compounding.</li>
+    <li><strong>Taxes apply outside retirement accounts.</strong> Capital gains, dividends, and interest are usually taxed when realised, lowering effective returns.</li>
+    <li><strong>Sequence of returns risk.</strong> Two portfolios with the same average return can end up with very different values depending on when the good and bad years fall.</li>
+  </ul>
+</section>
+
+<section class="cs-faq-section">
+  <h2>Frequently asked <span>questions</span></h2>
+  <div class="cs-faq-list">
+    <details class="cs-faq-item">
+      <summary>What is the difference between simple and compound interest?</summary>
+      <div class="cs-faq-answer">Simple interest is calculated only on your original principal. Compound interest is calculated on your principal plus all previously earned interest, so the balance grows exponentially over time. Almost all real-world investments and savings accounts use compound interest.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How often does interest compound?</summary>
+      <div class="cs-faq-answer">Common compounding frequencies are annually, monthly, and daily. The more frequently interest compounds, the slightly larger the final value will be. Most investment funds and savings accounts compound monthly or daily, but the difference between monthly and daily compounding is usually less than 0.1% per year.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>What is a realistic annual return to assume?</summary>
+      <div class="cs-faq-answer">For a diversified global stock portfolio, the long-term historical average is around 7% per year after inflation, or about 9–10% in nominal terms. For bonds, it's closer to 2–4%. For cash savings, currently 4–5% in many countries. Use lower assumptions if you want a conservative projection.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I start with a small amount or wait until I can invest more?</summary>
+      <div class="cs-faq-answer">Almost always: start now. Time is the single biggest factor in compound growth. $100/month starting at age 25 beats $300/month starting at age 35 over a 40-year horizon. Small amounts compound just like large ones — they just take longer to feel meaningful.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Does the calculator account for inflation?</summary>
+      <div class="cs-faq-answer">By default, no — the calculator shows nominal future values. To get a real (inflation-adjusted) figure, subtract roughly 2–3% from your assumed return rate. For example, use 4% instead of 7% to see what your investment is worth in today's purchasing power.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How does compound interest apply to debt?</summary>
+      <div class="cs-faq-answer">Compound interest works against you on credit card and loan balances. A $5,000 credit card debt at 22% APR, paying only minimums, can take over 20 years to pay off and cost more than $7,000 in interest. The same compounding maths that builds wealth also builds debt.</div>
+    </details>
+  </div>
+</section>
+
+<div class="cs-cta">
+  <div class="cs-cta-card">
+    <div class="cs-cta-text"><strong>📖 Want the full deep-dive?</strong> Read our guide: Compound Interest Calculator — See How Your Money Grows.</div>
+    <a href="blog/compound-interest-calculator-how-money-grows.html" class="cs-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
 <footer>
   <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="index.html">Calculators</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div>
   <p class="footer-copy">© 2026 MyFinCalc.org</p>
 </footer>
 <script>

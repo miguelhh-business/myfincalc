@@ -66,6 +66,96 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 @media(max-width:700px){.main{grid-template-columns:1fr;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+
+<style>
+.content-section{max-width:760px;margin:0 auto;padding:32px 24px 40px;}
+.content-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin:32px 0 14px;color:var(--text-primary);}
+.content-section h2:first-child{margin-top:8px;}
+.content-section h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+.content-section p{margin-bottom:14px;color:var(--text-primary);line-height:1.7;}
+.content-section ul{margin:10px 0 16px 22px;}
+.content-section li{margin-bottom:6px;color:var(--text-primary);line-height:1.65;}
+.content-section strong{font-weight:600;}
+.content-section .example-box{background:var(--accent-light);border:1px solid #c8e0d0;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14px;line-height:1.7;}
+.content-section .example-box strong{color:var(--accent);}
+.content-section table.cs-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;}
+.content-section table.cs-table th{background:var(--bg-card);border:1px solid var(--border);padding:9px 12px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.content-section table.cs-table td{border:1px solid var(--border);padding:9px 12px;background:var(--bg-card);}
+.cs-faq-section{max-width:760px;margin:0 auto;padding:24px 24px 40px;}
+.cs-faq-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:18px;}
+.cs-faq-section h2 span{color:var(--accent);}
+.cs-faq-list{display:flex;flex-direction:column;gap:8px;}
+.cs-faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.cs-faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.cs-faq-item summary::-webkit-details-marker{display:none;}
+.cs-faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);transition:transform 0.2s;}
+.cs-faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.cs-faq-item[open] summary{color:var(--accent);}
+.cs-faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.cs-cta{max-width:760px;margin:0 auto;padding:8px 24px 56px;}
+.cs-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cs-cta-text{font-size:14px;color:var(--text-primary);line-height:1.55;}
+.cs-cta-text strong{font-family:var(--font-title);}
+.cs-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.cs-cta-btn:hover{background:var(--accent2);}
+@media(max-width:640px){.content-section,.cs-faq-section,.cs-cta{padding-left:20px;padding-right:20px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much do I need to retire comfortably?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common rule of thumb is 25× your expected annual retirement spending. If you want $50,000/year, target $1.25 million. If you want $80,000/year, target $2 million. This assumes you'll withdraw 4% per year and want the portfolio to last about 30 years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What return rate should I assume for retirement projections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For a balanced portfolio (60% stocks, 40% bonds), 5–6% nominal is a reasonable assumption. For a more aggressive equity-heavy portfolio, 7%. To project in 'today's dollars' (real terms), subtract about 2.5% for inflation: use 3–4% for balanced, 5% for aggressive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I include my home equity in retirement savings?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally no — unless you plan to downsize or release equity. Your primary residence doesn't generate retirement income while you're living in it. Treat it as a separate asset that may become liquid later, not part of your investable nest egg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does KiwiSaver, 401k, or super factor in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "These accounts grow tax-advantaged and form the backbone of most retirement plans. Add their projected balance to your overall retirement savings. The catch is access age — typically 60–67 — which matters if you want to retire earlier (you'd need a separate 'bridge' fund)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I'm starting late?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three levers: save more aggressively (catch-up contributions are allowed in most retirement schemes after age 50), work a few years longer, or plan for a more modest retirement lifestyle. Even starting at 50 with $0 saved, contributing $2,000/month at 7% gets you to ~$700k by 70."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I aim to leave money behind or run the portfolio to zero?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most calculators (including ours) plan for the portfolio to be largely depleted at the end of the retirement horizon. If you want a legacy, target a higher nest egg or use a lower withdrawal rate (3% instead of 4%). Leaving an inheritance is a personal choice, not a requirement."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav>
@@ -88,8 +178,84 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </div>
 </main>
 <div class="disclaimer">⚠️ For educational purposes only. Not financial advice. Consult a qualified financial advisor.</div>
+
+<section class="content-section">
+  <h2>How retirement savings calculations work</h2>
+  <p>A retirement savings calculator answers two related questions: <strong>(1)</strong> what monthly amount do I need to save to retire comfortably, and <strong>(2)</strong> how long will my savings last once I'm retired? Both rely on the same handful of inputs: your current savings, expected return rate, retirement age, life expectancy, and target retirement spending.</p>
+  <p>The standard approach uses two formulas. The first projects your savings forward using compound interest. The second models the drawdown phase — how the portfolio shrinks as you withdraw a yearly amount, adjusted for inflation, while remaining invested.</p>
+
+  <h2>The 4% rule (and its limitations)</h2>
+  <p>The most quoted retirement guideline is the <strong>4% rule</strong>: if you withdraw 4% of your portfolio in year one and adjust for inflation each year after, your money should last 30 years based on historical US market returns. So a $1M portfolio supports about $40,000/year in retirement spending.</p>
+  <p>It's a useful starting point but not a guarantee. The 4% rule was developed using US data; it can be more or less optimistic for other countries. Recent research suggests 3.5% is safer for early retirees expecting a 40+ year retirement, while 4.5–5% is reasonable for traditional 60–65 retirements.</p>
+
+  <h2>A worked example</h2>
+  <div class="example-box">
+    <strong>James is 35, has $50,000 saved, and wants to retire at 65 with $60,000/year of spending power.</strong><br>
+    Target nest egg using the 4% rule: $60,000 × 25 = <strong>$1.5 million</strong><br>
+    Required monthly contribution at 7% annual return: <strong>~$1,140/month</strong><br>
+    Total contributed over 30 years: $410,400<br>
+    Portfolio at 65: ~$1.5M (rest comes from compounding)
+  </div>
+
+  <h2>Government pensions: the safety net you should still account for</h2>
+  <p>Most readers will receive some form of government pension on top of their personal savings. These reduce the portfolio you need to build:</p>
+  <ul>
+    <li><strong>NZ Super:</strong> ~NZ$25,000/year per person from age 65, regardless of work history.</li>
+    <li><strong>Australian Age Pension:</strong> means-tested; up to ~AU$30,000/year per couple if eligible.</li>
+    <li><strong>UK State Pension:</strong> ~£12,000/year if you have 35 qualifying NI years.</li>
+    <li><strong>US Social Security:</strong> highly variable — average around US$22,000/year, max ~US$45,000/year at full retirement age.</li>
+    <li><strong>Canada CPP + OAS:</strong> combined ~CA$20,000–25,000/year for many retirees.</li>
+  </ul>
+
+  <h2>Common mistakes</h2>
+  <ul>
+    <li><strong>Forgetting inflation.</strong> $60,000/year today is not the same as $60,000/year in 30 years. A 2.5% inflation rate roughly doubles cost of living every 28 years.</li>
+    <li><strong>Underestimating healthcare costs.</strong> Especially in the US, this can be the largest retirement expense.</li>
+    <li><strong>Assuming you'll work less in your 60s.</strong> Many retirees do — but plan for the possibility you can't.</li>
+    <li><strong>Ignoring sequence-of-returns risk.</strong> A market crash in your first retirement years is far more damaging than one a decade in.</li>
+  </ul>
+</section>
+
+<section class="cs-faq-section">
+  <h2>Frequently asked <span>questions</span></h2>
+  <div class="cs-faq-list">
+    <details class="cs-faq-item">
+      <summary>How much do I need to retire comfortably?</summary>
+      <div class="cs-faq-answer">A common rule of thumb is 25× your expected annual retirement spending. If you want $50,000/year, target $1.25 million. If you want $80,000/year, target $2 million. This assumes you'll withdraw 4% per year and want the portfolio to last about 30 years.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>What return rate should I assume for retirement projections?</summary>
+      <div class="cs-faq-answer">For a balanced portfolio (60% stocks, 40% bonds), 5–6% nominal is a reasonable assumption. For a more aggressive equity-heavy portfolio, 7%. To project in 'today's dollars' (real terms), subtract about 2.5% for inflation: use 3–4% for balanced, 5% for aggressive.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I include my home equity in retirement savings?</summary>
+      <div class="cs-faq-answer">Generally no — unless you plan to downsize or release equity. Your primary residence doesn't generate retirement income while you're living in it. Treat it as a separate asset that may become liquid later, not part of your investable nest egg.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How does KiwiSaver, 401k, or super factor in?</summary>
+      <div class="cs-faq-answer">These accounts grow tax-advantaged and form the backbone of most retirement plans. Add their projected balance to your overall retirement savings. The catch is access age — typically 60–67 — which matters if you want to retire earlier (you'd need a separate 'bridge' fund).</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>What if I'm starting late?</summary>
+      <div class="cs-faq-answer">Three levers: save more aggressively (catch-up contributions are allowed in most retirement schemes after age 50), work a few years longer, or plan for a more modest retirement lifestyle. Even starting at 50 with $0 saved, contributing $2,000/month at 7% gets you to ~$700k by 70.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I aim to leave money behind or run the portfolio to zero?</summary>
+      <div class="cs-faq-answer">Most calculators (including ours) plan for the portfolio to be largely depleted at the end of the retirement horizon. If you want a legacy, target a higher nest egg or use a lower withdrawal rate (3% instead of 4%). Leaving an inheritance is a personal choice, not a requirement.</div>
+    </details>
+  </div>
+</section>
+
+<div class="cs-cta">
+  <div class="cs-cta-card">
+    <div class="cs-cta-text"><strong>📖 Country-by-country retirement guide:</strong> See realistic retirement costs and government pensions for NZ, AU, UK, US, and Canada.</div>
+    <a href="blog/how-much-to-retire-country-guide.html" class="cs-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
 <footer>
   <div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="index.html">Calculators</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div>
   <p class="footer-copy">© 2026 MyFinCalc.org</p>
 </footer>
 <script>

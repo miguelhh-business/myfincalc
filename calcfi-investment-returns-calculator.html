@@ -65,6 +65,96 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 @media(max-width:700px){.main{grid-template-columns:1fr;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+
+<style>
+.content-section{max-width:760px;margin:0 auto;padding:32px 24px 40px;}
+.content-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin:32px 0 14px;color:var(--text-primary);}
+.content-section h2:first-child{margin-top:8px;}
+.content-section h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+.content-section p{margin-bottom:14px;color:var(--text-primary);line-height:1.7;}
+.content-section ul{margin:10px 0 16px 22px;}
+.content-section li{margin-bottom:6px;color:var(--text-primary);line-height:1.65;}
+.content-section strong{font-weight:600;}
+.content-section .example-box{background:var(--accent-light);border:1px solid #c8e0d0;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14px;line-height:1.7;}
+.content-section .example-box strong{color:var(--accent);}
+.content-section table.cs-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;}
+.content-section table.cs-table th{background:var(--bg-card);border:1px solid var(--border);padding:9px 12px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.content-section table.cs-table td{border:1px solid var(--border);padding:9px 12px;background:var(--bg-card);}
+.cs-faq-section{max-width:760px;margin:0 auto;padding:24px 24px 40px;}
+.cs-faq-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:18px;}
+.cs-faq-section h2 span{color:var(--accent);}
+.cs-faq-list{display:flex;flex-direction:column;gap:8px;}
+.cs-faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.cs-faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.cs-faq-item summary::-webkit-details-marker{display:none;}
+.cs-faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);transition:transform 0.2s;}
+.cs-faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.cs-faq-item[open] summary{color:var(--accent);}
+.cs-faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.cs-cta{max-width:760px;margin:0 auto;padding:8px 24px 56px;}
+.cs-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cs-cta-text{font-size:14px;color:var(--text-primary);line-height:1.55;}
+.cs-cta-text strong{font-family:var(--font-title);}
+.cs-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.cs-cta-btn:hover{background:var(--accent2);}
+@media(max-width:640px){.content-section,.cs-faq-section,.cs-cta{padding-left:20px;padding-right:20px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between ROI and CAGR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ROI (return on investment) is the total percentage gain or loss across the entire holding period. CAGR (compound annual growth rate) annualises that return so you can compare investments held for different lengths of time. A 50% ROI over 2 years is a 22.5% CAGR; a 50% ROI over 10 years is a 4.1% CAGR — very different propositions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I include dividends in my return calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Total return includes both price appreciation and any dividends or interest received. To get the most accurate picture, assume dividends are reinvested (most fund return data already does this). For individual stocks, add dividends paid during the holding period to the final value before calculating return."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use nominal or real returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nominal returns are what your account statement shows. Real returns subtract inflation and represent what your purchasing power grew by. For long-term planning over decades, real returns are more honest. For short-term performance comparisons, nominal is fine."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my calculator show a different return than my brokerage app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most likely because your brokerage uses time-weighted return (which strips out the effect of contributions and withdrawals), while a basic calculator might use money-weighted return. They can differ noticeably if you've been adding to or withdrawing from the account over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What return should I expect from index funds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Historically, broad stock-market index funds have returned about 7% per year after inflation over very long periods. Over short periods (1–5 years), returns vary wildly — anywhere from −30% to +30% in a given year is normal. Don't expect 7% every year; expect 7% on average over decades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is this calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The maths is exact for the inputs you provide. The accuracy of the output depends entirely on the accuracy of your inputs — particularly the assumed return rate and time period. For past investments, use your actual final value. For future projections, use conservative estimates and be honest about uncertainty."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
@@ -87,7 +177,87 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </div>
 </main>
 <div class="disclaimer">⚠️ For educational purposes only. Not financial advice. Past performance does not guarantee future results.</div>
-<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+
+<section class="content-section">
+  <h2>How investment returns are measured</h2>
+  <p>"Return" sounds simple, but there are at least three meanings investors should keep separate: <strong>total return</strong>, <strong>annualised return (CAGR)</strong>, and <strong>real return</strong>. Each tells you something different.</p>
+  <ul>
+    <li><strong>Total return:</strong> the total percentage change between purchase and current value, including dividends and interest. Useful for headline performance, useless for comparing investments held for different lengths of time.</li>
+    <li><strong>Annualised return / CAGR:</strong> the equivalent compound annual growth rate. This is the standard way to compare investments across different holding periods. Formula: CAGR = (Final ÷ Initial)<sup>1/years</sup> − 1.</li>
+    <li><strong>Real return:</strong> annualised return minus inflation. A 7% nominal return at 3% inflation is a 4% real return — what your purchasing power actually grew by.</li>
+  </ul>
+
+  <h2>A worked example</h2>
+  <div class="example-box">
+    <strong>You bought a fund for $10,000. Five years later, with reinvested dividends, it's worth $14,693.</strong><br>
+    Total return: ($14,693 − $10,000) ÷ $10,000 = <strong>+46.9%</strong><br>
+    CAGR: (14,693 ÷ 10,000)<sup>1/5</sup> − 1 = <strong>~8.0% per year</strong><br>
+    Real return (assuming 2.5% avg inflation): <strong>~5.5% per year</strong>
+  </div>
+  <p>That same total return looks very different framed as 46.9% (impressive!), 8% per year (solid), or 5.5% real (closer to historical averages).</p>
+
+  <h2>What's a "good" return?</h2>
+  <p>It depends entirely on the asset class and time period. Some long-term historical benchmarks:</p>
+  <table class="cs-table">
+    <thead><tr><th>Asset class</th><th>Long-term nominal CAGR</th><th>Real CAGR</th></tr></thead>
+    <tbody>
+      <tr><td>US large-cap stocks (S&amp;P 500)</td><td>~10%</td><td>~7%</td></tr>
+      <tr><td>Global stocks (MSCI World)</td><td>~8%</td><td>~5%</td></tr>
+      <tr><td>Investment-grade bonds</td><td>~4–5%</td><td>~1–2%</td></tr>
+      <tr><td>Real estate (residential)</td><td>~5–6%</td><td>~2–3%</td></tr>
+      <tr><td>Cash / savings accounts</td><td>~2–4%</td><td>often negative</td></tr>
+    </tbody>
+  </table>
+  <p>These are averages over very long periods (30+ years). Any single 5- or 10-year stretch can look very different — equities have had decade-long flat periods historically.</p>
+
+  <h2>Things this calculator doesn't account for</h2>
+  <ul>
+    <li><strong>Taxes on gains.</strong> Capital gains, dividend tax, and FIF rules in some countries (NZ) materially reduce after-tax returns.</li>
+    <li><strong>Fees.</strong> A 1% management fee compounds against you over decades. Always check the expense ratio.</li>
+    <li><strong>Currency effects.</strong> If you invest internationally, exchange rate movements can add or subtract several percentage points per year.</li>
+    <li><strong>Behaviour.</strong> The biggest gap between expected and actual returns is investor behaviour — selling at lows, buying at highs.</li>
+  </ul>
+</section>
+
+<section class="cs-faq-section">
+  <h2>Frequently asked <span>questions</span></h2>
+  <div class="cs-faq-list">
+    <details class="cs-faq-item">
+      <summary>What's the difference between ROI and CAGR?</summary>
+      <div class="cs-faq-answer">ROI (return on investment) is the total percentage gain or loss across the entire holding period. CAGR (compound annual growth rate) annualises that return so you can compare investments held for different lengths of time. A 50% ROI over 2 years is a 22.5% CAGR; a 50% ROI over 10 years is a 4.1% CAGR — very different propositions.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How do I include dividends in my return calculation?</summary>
+      <div class="cs-faq-answer">Total return includes both price appreciation and any dividends or interest received. To get the most accurate picture, assume dividends are reinvested (most fund return data already does this). For individual stocks, add dividends paid during the holding period to the final value before calculating return.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I use nominal or real returns?</summary>
+      <div class="cs-faq-answer">Nominal returns are what your account statement shows. Real returns subtract inflation and represent what your purchasing power grew by. For long-term planning over decades, real returns are more honest. For short-term performance comparisons, nominal is fine.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Why does my calculator show a different return than my brokerage app?</summary>
+      <div class="cs-faq-answer">Most likely because your brokerage uses time-weighted return (which strips out the effect of contributions and withdrawals), while a basic calculator might use money-weighted return. They can differ noticeably if you've been adding to or withdrawing from the account over time.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>What return should I expect from index funds?</summary>
+      <div class="cs-faq-answer">Historically, broad stock-market index funds have returned about 7% per year after inflation over very long periods. Over short periods (1–5 years), returns vary wildly — anywhere from −30% to +30% in a given year is normal. Don't expect 7% every year; expect 7% on average over decades.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How accurate is this calculator?</summary>
+      <div class="cs-faq-answer">The maths is exact for the inputs you provide. The accuracy of the output depends entirely on the accuracy of your inputs — particularly the assumed return rate and time period. For past investments, use your actual final value. For future projections, use conservative estimates and be honest about uncertainty.</div>
+    </details>
+  </div>
+</section>
+
+<div class="cs-cta">
+  <div class="cs-cta-card">
+    <div class="cs-cta-text"><strong>📖 Want to model future growth?</strong> Read our compound interest deep-dive — formula, examples, and the Rule of 72.</div>
+    <a href="blog/compound-interest-calculator-how-money-grows.html" class="cs-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="index.html">Calculators</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
 <script>
 function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
 

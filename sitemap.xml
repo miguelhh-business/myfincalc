@@ -77,6 +77,33 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Trust pages -->
+  <url>
+    <loc>https://myfincalc.org/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://myfincalc.org/contact.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://myfincalc.org/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://myfincalc.org/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://myfincalc.org/disclaimer.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Blog Articles -->
   <url>
     <loc>https://myfincalc.org/blog/salary-after-tax-calculator-how-much-take-home.html</loc>

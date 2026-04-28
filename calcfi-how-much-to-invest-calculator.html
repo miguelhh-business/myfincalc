@@ -67,6 +67,96 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 @media(max-width:700px){.main{grid-template-columns:1fr;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+
+<style>
+.content-section{max-width:760px;margin:0 auto;padding:32px 24px 40px;}
+.content-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin:32px 0 14px;color:var(--text-primary);}
+.content-section h2:first-child{margin-top:8px;}
+.content-section h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+.content-section p{margin-bottom:14px;color:var(--text-primary);line-height:1.7;}
+.content-section ul{margin:10px 0 16px 22px;}
+.content-section li{margin-bottom:6px;color:var(--text-primary);line-height:1.65;}
+.content-section strong{font-weight:600;}
+.content-section .example-box{background:var(--accent-light);border:1px solid #c8e0d0;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14px;line-height:1.7;}
+.content-section .example-box strong{color:var(--accent);}
+.content-section table.cs-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;}
+.content-section table.cs-table th{background:var(--bg-card);border:1px solid var(--border);padding:9px 12px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.content-section table.cs-table td{border:1px solid var(--border);padding:9px 12px;background:var(--bg-card);}
+.cs-faq-section{max-width:760px;margin:0 auto;padding:24px 24px 40px;}
+.cs-faq-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:18px;}
+.cs-faq-section h2 span{color:var(--accent);}
+.cs-faq-list{display:flex;flex-direction:column;gap:8px;}
+.cs-faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.cs-faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.cs-faq-item summary::-webkit-details-marker{display:none;}
+.cs-faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);transition:transform 0.2s;}
+.cs-faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.cs-faq-item[open] summary{color:var(--accent);}
+.cs-faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.cs-cta{max-width:760px;margin:0 auto;padding:8px 24px 56px;}
+.cs-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cs-cta-text{font-size:14px;color:var(--text-primary);line-height:1.55;}
+.cs-cta-text strong{font-family:var(--font-title);}
+.cs-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.cs-cta-btn:hover{background:var(--accent2);}
+@media(max-width:640px){.content-section,.cs-faq-section,.cs-cta{padding-left:20px;padding-right:20px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much of my income should I invest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 50/30/20 rule suggests 20% of after-tax income toward financial goals (savings + investments + extra debt payments). For retirement specifically, financial planners often recommend 10–15% of gross income. If you're starting late, push to 20–25% if possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I invest a lump sum or spread it out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mathematically, lump-sum investing wins about 67% of the time historically, because markets trend up. But spreading a lump sum over 6–12 months (dollar-cost averaging) can ease emotional risk if you're nervous about timing. For ongoing monthly contributions, you're already dollar-cost averaging by definition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I can't afford to invest right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two priorities first: (1) build a starter emergency fund of $1,000–2,000 in cash; (2) pay down any debt above ~8% APR. After those, even $50/month invested in an index fund builds the habit. As your income grows, increase the percentage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it better to invest in retirement accounts or a regular brokerage account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally, max out tax-advantaged accounts first: KiwiSaver, 401k/IRA, super, ISA, RRSP/TFSA, depending on country. Employer match is free money. Tax advantages compound significantly over decades. Use a regular brokerage account for amounts beyond the contribution limits or for shorter time horizons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I invest more during market downturns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mathematically yes — buying when prices are lower means owning more shares for the same dollars. But behaviourally, downturns are when most people stop investing or panic-sell. The simplest strategy: keep your monthly contribution constant regardless of market conditions. Increase only if you have surplus and the conviction to stick with it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do fees affect what I should invest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fees compound against you over decades. A 1% annual fee can reduce your final balance by 20–25% over 30 years. Choose low-cost index funds (under 0.3% expense ratio) where possible. Avoid actively managed funds with 1–2% fees unless they have a long, verifiable record of beating the index after fees — most don't."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
@@ -90,7 +180,86 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </div>
 </main>
 <div class="disclaimer">⚠️ For educational purposes only. Not financial advice. Consult a qualified financial advisor.</div>
-<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+
+<section class="content-section">
+  <h2>How "how much to invest" calculations work</h2>
+  <p>This calculator works backwards from your future goal. You provide three things: <strong>(1)</strong> the amount you want at the end, <strong>(2)</strong> when you want it by, and <strong>(3)</strong> the rate of return you expect. The calculator solves for the monthly contribution needed to bridge the gap.</p>
+  <p>Mathematically, it's the future value of an annuity formula rearranged. The result is sensitive to all three inputs, but most sensitive to the time horizon — small changes in years can dramatically change the required monthly amount.</p>
+
+  <h2>The 50/30/20 budget rule</h2>
+  <p>If you don't know what you should be investing each month, start with the <strong>50/30/20 rule</strong>: 50% of after-tax income on needs (rent, food, transport), 30% on wants (entertainment, dining, hobbies), 20% on financial goals (saving, investing, debt repayment).</p>
+  <p>The 20% bucket is what you have available to invest. For someone earning NZ$70,000/year after tax (~$4,800/month take-home), that's about $960/month. You don't have to hit 20% from day one — even 5–10% gets you started.</p>
+
+  <h2>A worked example</h2>
+  <div class="example-box">
+    <strong>You want $1,000,000 in 25 years for retirement, expecting 7% annual returns. Currently $0 saved.</strong><br>
+    Required monthly contribution: <strong>~$1,250/month</strong><br>
+    Total contributed: $375,000<br>
+    Investment growth: $625,000 (62.5% of final value comes from compounding)
+  </div>
+  <p>Now compare what happens if you start 5 years later (20-year horizon, same goal): the required monthly jumps to <strong>~$1,920/month</strong> — 53% more, just for waiting 5 years.</p>
+
+  <h2>Investing vs. paying off debt</h2>
+  <p>Before you commit to a monthly investment amount, consider the alternative: paying down high-interest debt. The simple decision rule:</p>
+  <ul>
+    <li><strong>Debt above 7–8% APR:</strong> pay this off before investing (excluding any employer-matched retirement contributions). The guaranteed return from eliminating, say, a 22% credit card beats any expected investment return.</li>
+    <li><strong>Debt below 5% APR:</strong> normal repayment plus investing simultaneously is reasonable. Long-term equity returns historically beat 5%.</li>
+    <li><strong>Debt between 5–7%:</strong> a personal call. Mathematically marginal; emotionally, paying off debt provides peace of mind that's hard to quantify.</li>
+  </ul>
+
+  <h2>Invest more or invest longer?</h2>
+  <p>Both work, but they're not equivalent. Investing more has a roughly linear effect — double the contribution, roughly double the final value (over the same period). Investing longer has an exponential effect because of compounding. Reaching the same goal:</p>
+  <table class="cs-table">
+    <thead><tr><th>Goal</th><th>Time</th><th>Monthly required (at 7%)</th></tr></thead>
+    <tbody>
+      <tr><td>$500,000</td><td>15 years</td><td>$1,580</td></tr>
+      <tr><td>$500,000</td><td>20 years</td><td>$960</td></tr>
+      <tr><td>$500,000</td><td>25 years</td><td>$610</td></tr>
+      <tr><td>$500,000</td><td>30 years</td><td>$405</td></tr>
+    </tbody>
+  </table>
+  <p>The takeaway: time is the cheapest form of contribution. If you can start today with a smaller amount rather than waiting until you can afford "the right amount," start now.</p>
+</section>
+
+<section class="cs-faq-section">
+  <h2>Frequently asked <span>questions</span></h2>
+  <div class="cs-faq-list">
+    <details class="cs-faq-item">
+      <summary>How much of my income should I invest?</summary>
+      <div class="cs-faq-answer">The 50/30/20 rule suggests 20% of after-tax income toward financial goals (savings + investments + extra debt payments). For retirement specifically, financial planners often recommend 10–15% of gross income. If you're starting late, push to 20–25% if possible.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I invest a lump sum or spread it out?</summary>
+      <div class="cs-faq-answer">Mathematically, lump-sum investing wins about 67% of the time historically, because markets trend up. But spreading a lump sum over 6–12 months (dollar-cost averaging) can ease emotional risk if you're nervous about timing. For ongoing monthly contributions, you're already dollar-cost averaging by definition.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>What if I can't afford to invest right now?</summary>
+      <div class="cs-faq-answer">Two priorities first: (1) build a starter emergency fund of $1,000–2,000 in cash; (2) pay down any debt above ~8% APR. After those, even $50/month invested in an index fund builds the habit. As your income grows, increase the percentage.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Is it better to invest in retirement accounts or a regular brokerage account?</summary>
+      <div class="cs-faq-answer">Generally, max out tax-advantaged accounts first: KiwiSaver, 401k/IRA, super, ISA, RRSP/TFSA, depending on country. Employer match is free money. Tax advantages compound significantly over decades. Use a regular brokerage account for amounts beyond the contribution limits or for shorter time horizons.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I invest more during market downturns?</summary>
+      <div class="cs-faq-answer">Mathematically yes — buying when prices are lower means owning more shares for the same dollars. But behaviourally, downturns are when most people stop investing or panic-sell. The simplest strategy: keep your monthly contribution constant regardless of market conditions. Increase only if you have surplus and the conviction to stick with it.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How do fees affect what I should invest?</summary>
+      <div class="cs-faq-answer">Fees compound against you over decades. A 1% annual fee can reduce your final balance by 20–25% over 30 years. Choose low-cost index funds (under 0.3% expense ratio) where possible. Avoid actively managed funds with 1–2% fees unless they have a long, verifiable record of beating the index after fees — most don't.</div>
+    </details>
+  </div>
+</section>
+
+<div class="cs-cta">
+  <div class="cs-cta-card">
+    <div class="cs-cta-text"><strong>📖 The complete monthly investing guide:</strong> Goal tables, the 50/30/20 rule, and how to balance investing with debt.</div>
+    <a href="blog/how-much-to-invest-each-month.html" class="cs-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="index.html">Calculators</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
 <script>
 function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
 

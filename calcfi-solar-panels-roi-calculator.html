@@ -69,6 +69,96 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 @media(max-width:700px){.main{grid-template-columns:1fr;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+
+<style>
+.content-section{max-width:760px;margin:0 auto;padding:32px 24px 40px;}
+.content-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin:32px 0 14px;color:var(--text-primary);}
+.content-section h2:first-child{margin-top:8px;}
+.content-section h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+.content-section p{margin-bottom:14px;color:var(--text-primary);line-height:1.7;}
+.content-section ul{margin:10px 0 16px 22px;}
+.content-section li{margin-bottom:6px;color:var(--text-primary);line-height:1.65;}
+.content-section strong{font-weight:600;}
+.content-section .example-box{background:var(--accent-light);border:1px solid #c8e0d0;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14px;line-height:1.7;}
+.content-section .example-box strong{color:var(--accent);}
+.content-section table.cs-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;}
+.content-section table.cs-table th{background:var(--bg-card);border:1px solid var(--border);padding:9px 12px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.content-section table.cs-table td{border:1px solid var(--border);padding:9px 12px;background:var(--bg-card);}
+.cs-faq-section{max-width:760px;margin:0 auto;padding:24px 24px 40px;}
+.cs-faq-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:18px;}
+.cs-faq-section h2 span{color:var(--accent);}
+.cs-faq-list{display:flex;flex-direction:column;gap:8px;}
+.cs-faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.cs-faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.cs-faq-item summary::-webkit-details-marker{display:none;}
+.cs-faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);transition:transform 0.2s;}
+.cs-faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.cs-faq-item[open] summary{color:var(--accent);}
+.cs-faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.cs-cta{max-width:760px;margin:0 auto;padding:8px 24px 56px;}
+.cs-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cs-cta-text{font-size:14px;color:var(--text-primary);line-height:1.55;}
+.cs-cta-text strong{font-family:var(--font-title);}
+.cs-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.cs-cta-btn:hover{background:var(--accent2);}
+@media(max-width:640px){.content-section,.cs-faq-section,.cs-cta{padding-left:20px;padding-right:20px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long do solar panels last?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quality panels carry a 25-year performance warranty, typically guaranteeing 80%+ of original output at year 25. In practice, panels often produce usefully for 30+ years, with output dropping by about 0.5% per year. Inverters have a shorter life (10–15 years) and will need replacing once during the panels' lifetime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are solar panels worth it without subsidies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In countries with high electricity rates (NZ, parts of AU, UK, parts of EU and US), yes — payback can still happen in 6–9 years even without rebates. In low-rate regions, subsidies often make the difference between 'worth it' and 'meh.' Run the numbers for your specific power rate before deciding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy or lease solar panels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buying outright produces the best long-term return but requires upfront capital. Leasing (PPAs in the US) means smaller savings each month but no upfront cost. In most analyses, buying wins financially over the 25-year life. Leasing only makes sense if you can't access financing and your local lease deal is genuinely competitive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need a battery to make solar worthwhile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The financial case for grid-tied solar without batteries is usually stronger because you avoid the battery cost and complexity. Add a battery only if you have significant evening usage, time-of-use pricing makes peak-rate avoidance valuable, or you specifically want grid-outage resilience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does solar affect home value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Studies in the US, AU, and UK show owned solar systems typically add value roughly equal to or slightly above remaining lifetime savings. Leased systems often complicate sales because the lease must be transferred or paid off. A paid-off owned system is a clear positive."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the catch with solar panels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The main 'catches': (1) production and savings depend heavily on your roof — get a proper site survey, not just an online estimate; (2) buyback rates for surplus exported power are usually much lower than retail rates, so calculations assuming 100% self-use are optimistic; (3) installer quality varies wildly — get multiple quotes and check references."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
@@ -94,7 +184,91 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </div>
 </main>
 <div class="disclaimer">⚠️ Estimates only. Actual production depends on roof orientation, shading, weather, and local conditions.</div>
-<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+
+<section class="content-section">
+  <h2>How solar panel ROI is calculated</h2>
+  <p>Solar panel return on investment is fundamentally a payback-period question: <strong>how many years of saved electricity bills does it take to recover the upfront installation cost?</strong> After payback, you keep saving for the remaining 20–25 years of the panels' life.</p>
+  <p>The calculation has four moving parts: installation cost (after rebates), annual electricity production (kWh), your local electricity rate ($/kWh), and how that rate changes over time. Annual savings = production × rate. Payback = net cost ÷ annual savings, roughly.</p>
+
+  <h2>A worked example</h2>
+  <div class="example-box">
+    <strong>NZ household installs a 6 kW system for NZ$15,000 (no rebate available in NZ currently). Average 4.5 sun-hours/day yields ~9,800 kWh/year. Power costs $0.32/kWh and rises ~3% per year.</strong><br>
+    Year 1 savings: 9,800 × $0.32 = <strong>$3,136</strong><br>
+    Simple payback: $15,000 ÷ $3,136 = <strong>~4.8 years</strong><br>
+    25-year lifetime savings (with 3%/yr rate increases, 0.5%/yr panel degradation): <strong>~$108,000</strong>
+  </div>
+  <p>This is a strong ROI by most investment standards — equivalent to a tax-free 18–20% annual return. But it depends heavily on your local power rates, sunshine hours, and incentives.</p>
+
+  <h2>Country-by-country quick view</h2>
+  <table class="cs-table">
+    <thead><tr><th>Country</th><th>Typical 6 kW cost</th><th>Power rate</th><th>Typical payback</th></tr></thead>
+    <tbody>
+      <tr><td>New Zealand</td><td>NZ$13–18k</td><td>$0.28–0.34/kWh</td><td>5–7 yrs</td></tr>
+      <tr><td>Australia</td><td>AU$5–9k (after rebate)</td><td>$0.25–0.40/kWh</td><td>3–5 yrs</td></tr>
+      <tr><td>USA</td><td>US$15–25k (before tax credit)</td><td>$0.10–0.40/kWh</td><td>6–12 yrs</td></tr>
+      <tr><td>UK</td><td>£7–12k</td><td>£0.27–0.34/kWh</td><td>8–12 yrs</td></tr>
+    </tbody>
+  </table>
+  <p>The 30% federal tax credit (US Inflation Reduction Act) and Australian STC scheme materially shorten payback in those countries. NZ has no current national rebate, but some councils offer interest-free loans.</p>
+
+  <h2>Variables this calculator doesn't capture</h2>
+  <ul>
+    <li><strong>Roof orientation and shade.</strong> A north-facing roof (in NZ/AU; south-facing in US/UK) without shade produces 10–25% more than the average estimate.</li>
+    <li><strong>Battery storage.</strong> Adds NZ$10–15k but lets you use solar power at night. Typically extends payback by 4–7 years on its own — only worth it if you have time-of-use pricing or want grid resilience.</li>
+    <li><strong>Inverter replacement.</strong> Most systems need a new inverter around year 12–15 — budget NZ$2–4k for the replacement.</li>
+    <li><strong>Buyback rates.</strong> What you're paid for surplus power exported to the grid varies wildly by country and retailer. In NZ, buyback rates are typically 8–17 cents/kWh — much less than the retail rate you save.</li>
+    <li><strong>Self-consumption ratio.</strong> Most households consume only 30–50% of solar production directly. The rest is exported at the lower buyback rate. This calculator's results assume you can use most production.</li>
+  </ul>
+
+  <h2>When solar makes financial sense</h2>
+  <ul>
+    <li>You own your home and plan to stay 5+ years</li>
+    <li>Your roof is suitable (good orientation, minimal shade, structurally sound)</li>
+    <li>Your daily electricity usage profile aligns with sunny hours (working from home helps)</li>
+    <li>Your local power rates are above ~$0.20/kWh</li>
+    <li>Available rebates, tax credits, or interest-free loans bring net cost down</li>
+  </ul>
+</section>
+
+<section class="cs-faq-section">
+  <h2>Frequently asked <span>questions</span></h2>
+  <div class="cs-faq-list">
+    <details class="cs-faq-item">
+      <summary>How long do solar panels last?</summary>
+      <div class="cs-faq-answer">Quality panels carry a 25-year performance warranty, typically guaranteeing 80%+ of original output at year 25. In practice, panels often produce usefully for 30+ years, with output dropping by about 0.5% per year. Inverters have a shorter life (10–15 years) and will need replacing once during the panels' lifetime.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Are solar panels worth it without subsidies?</summary>
+      <div class="cs-faq-answer">In countries with high electricity rates (NZ, parts of AU, UK, parts of EU and US), yes — payback can still happen in 6–9 years even without rebates. In low-rate regions, subsidies often make the difference between 'worth it' and 'meh.' Run the numbers for your specific power rate before deciding.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I buy or lease solar panels?</summary>
+      <div class="cs-faq-answer">Buying outright produces the best long-term return but requires upfront capital. Leasing (PPAs in the US) means smaller savings each month but no upfront cost. In most analyses, buying wins financially over the 25-year life. Leasing only makes sense if you can't access financing and your local lease deal is genuinely competitive.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Do I need a battery to make solar worthwhile?</summary>
+      <div class="cs-faq-answer">No. The financial case for grid-tied solar without batteries is usually stronger because you avoid the battery cost and complexity. Add a battery only if you have significant evening usage, time-of-use pricing makes peak-rate avoidance valuable, or you specifically want grid-outage resilience.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How does solar affect home value?</summary>
+      <div class="cs-faq-answer">Studies in the US, AU, and UK show owned solar systems typically add value roughly equal to or slightly above remaining lifetime savings. Leased systems often complicate sales because the lease must be transferred or paid off. A paid-off owned system is a clear positive.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>What's the catch with solar panels?</summary>
+      <div class="cs-faq-answer">The main 'catches': (1) production and savings depend heavily on your roof — get a proper site survey, not just an online estimate; (2) buyback rates for surplus exported power are usually much lower than retail rates, so calculations assuming 100% self-use are optimistic; (3) installer quality varies wildly — get multiple quotes and check references.</div>
+    </details>
+  </div>
+</section>
+
+<div class="cs-cta">
+  <div class="cs-cta-card">
+    <div class="cs-cta-text"><strong>📖 The full solar guide:</strong> Real payback periods, current 2026 rebates by country, and what installers won't tell you.</div>
+    <a href="blog/solar-panels-roi-worth-it.html" class="cs-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="index.html">Calculators</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
 <script>
 function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
 

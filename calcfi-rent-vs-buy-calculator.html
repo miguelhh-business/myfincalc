@@ -73,6 +73,96 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 @media(max-width:700px){.main{grid-template-columns:1fr;}}
 </style>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4489592211912119" crossorigin="anonymous"></script>
+
+<style>
+.content-section{max-width:760px;margin:0 auto;padding:32px 24px 40px;}
+.content-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin:32px 0 14px;color:var(--text-primary);}
+.content-section h2:first-child{margin-top:8px;}
+.content-section h3{font-family:var(--font-title);font-size:17px;font-weight:600;margin:20px 0 10px;color:var(--text-primary);}
+.content-section p{margin-bottom:14px;color:var(--text-primary);line-height:1.7;}
+.content-section ul{margin:10px 0 16px 22px;}
+.content-section li{margin-bottom:6px;color:var(--text-primary);line-height:1.65;}
+.content-section strong{font-weight:600;}
+.content-section .example-box{background:var(--accent-light);border:1px solid #c8e0d0;border-radius:12px;padding:18px 22px;margin:18px 0;font-size:14px;line-height:1.7;}
+.content-section .example-box strong{color:var(--accent);}
+.content-section table.cs-table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14px;}
+.content-section table.cs-table th{background:var(--bg-card);border:1px solid var(--border);padding:9px 12px;text-align:left;font-family:var(--font-title);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);}
+.content-section table.cs-table td{border:1px solid var(--border);padding:9px 12px;background:var(--bg-card);}
+.cs-faq-section{max-width:760px;margin:0 auto;padding:24px 24px 40px;}
+.cs-faq-section h2{font-family:var(--font-title);font-size:26px;font-weight:700;letter-spacing:-0.5px;margin-bottom:18px;}
+.cs-faq-section h2 span{color:var(--accent);}
+.cs-faq-list{display:flex;flex-direction:column;gap:8px;}
+.cs-faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.cs-faq-item summary{padding:14px 18px;font-family:var(--font-title);font-size:14px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;}
+.cs-faq-item summary::-webkit-details-marker{display:none;}
+.cs-faq-item summary::after{content:'+';font-size:18px;color:var(--text-muted);transition:transform 0.2s;}
+.cs-faq-item[open] summary::after{transform:rotate(45deg);color:var(--accent);}
+.cs-faq-item[open] summary{color:var(--accent);}
+.cs-faq-answer{padding:0 18px 14px;font-size:14px;color:var(--text-secondary);line-height:1.7;}
+.cs-cta{max-width:760px;margin:0 auto;padding:8px 24px 56px;}
+.cs-cta-card{background:var(--accent-light);border:1px solid var(--accent);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cs-cta-text{font-size:14px;color:var(--text-primary);line-height:1.55;}
+.cs-cta-text strong{font-family:var(--font-title);}
+.cs-cta-btn{background:var(--accent);color:#fff;font-size:13px;font-weight:700;padding:10px 20px;border-radius:100px;text-decoration:none;white-space:nowrap;font-family:var(--font-title);}
+.cs-cta-btn:hover{background:var(--accent2);}
+@media(max-width:640px){.content-section,.cs-faq-section,.cs-cta{padding-left:20px;padding-right:20px;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it always better to buy than rent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Renting wins financially for time horizons under 5–7 years in most markets, particularly when you account for transaction costs and the opportunity cost of the deposit. Buying tends to win over 10+ year horizons in most reasonable scenarios. Beyond finance, life circumstances, career flexibility, and personal preferences all matter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do I need to stay in a home for buying to make sense?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typically 5–7 years minimum to recover transaction costs (2–4% to buy, 3–6% to sell). In high-cost areas with weak appreciation, the break-even can stretch to 8–10 years. The longer you stay, the more buying tends to win — both because transaction costs amortise and because rent typically rises while a fixed-rate mortgage doesn't."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I include house price appreciation in my calculations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but conservatively. Long-term, real (after-inflation) house price growth has been roughly 1–2% per year in most developed markets — not the dramatic appreciation seen in specific cities over short windows. Don't assume the recent past will continue. If your calculation only works with 5%+ annual appreciation, it's a fragile case."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about the 'building equity' argument for buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's real but commonly overstated. In the early years of a 30-year mortgage, only 15–25% of each payment goes to principal — the rest is interest. So a 'building equity' framing masks how much of those payments are essentially the cost of borrowing, not wealth creation. Equity build accelerates after year 10–15."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the deposit better used for a house or invested?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mathematically, in many markets, investing a $160k deposit in a diversified equity portfolio at 6–7% can outperform the leveraged real estate return — once you account for all the carrying costs of ownership. But this requires you to actually invest it consistently, which most renters don't. The 'forced savings' aspect of a mortgage is a real behavioural advantage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I account for property prices in a hot market?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Be cautious. Price-to-rent ratios above 25 historically signal markets where renting is financially superior. Above 30, strongly so. Don't assume the recent appreciation will continue — markets that have run up dramatically often consolidate or correct. Run the calculation with conservative assumptions and avoid the recency bias of 'prices only go up.'"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <nav><a href="index.html" class="nav-logo">My<span class="fi">Fin</span>Calc</a><a href="index.html" class="nav-back">← All calculators</a></nav>
@@ -105,7 +195,92 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   </div>
 </main>
 <div class="disclaimer">⚠️ Simplified estimate. Does not include tax benefits, insurance variations, or local regulations. Not financial advice.</div>
-<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
+
+<section class="content-section">
+  <h2>How rent vs buy calculations work</h2>
+  <p>A rent vs buy calculator compares the total cost of renting versus the total cost of owning <strong>over the same time horizon</strong>, accounting for opportunity cost of capital. The mistake most amateur comparisons make is comparing "rent payment" to "mortgage payment" — that's an incomplete picture.</p>
+  <p>The real cost of owning includes: mortgage interest, property taxes/rates, insurance, maintenance (~1% of property value/year), body corporate or HOA fees, opportunity cost of the deposit (what it could have earned invested), and transaction costs on entry and exit. The real cost of renting is just rent + renter's insurance, but the deposit you didn't spend can be invested instead.</p>
+
+  <h2>The buy-side variables most people miss</h2>
+  <ul>
+    <li><strong>Maintenance:</strong> the long-term average is 1–2% of property value per year. A $800,000 home costs $8,000–16,000/year to maintain on average — sometimes near zero, sometimes a $40,000 roof replacement.</li>
+    <li><strong>Property rates / council rates:</strong> in NZ, typically $2,500–4,500/year. In AU, council rates plus land tax in some states. In the US, property tax can be 1–3% of value annually.</li>
+    <li><strong>Body corporate / HOA fees:</strong> for apartments and townhouses, can run $3,000–10,000/year.</li>
+    <li><strong>Insurance:</strong> $1,500–3,000/year for buildings + contents.</li>
+    <li><strong>Transaction costs:</strong> typically 2–4% of price to buy (legal, inspections, conveyancing) and 3–6% to sell (agent commissions). On a $800k property, that's $40k–80k in round-trip costs alone.</li>
+    <li><strong>Mortgage interest in early years:</strong> in years 1–10 of a 30-year mortgage, the vast majority of each payment goes to interest, not principal. You're "renting money from the bank" before you build meaningful equity.</li>
+  </ul>
+
+  <h2>A worked example</h2>
+  <div class="example-box">
+    <strong>Auckland: $800,000 home with 20% deposit ($160,000), 6.5% mortgage, 30-year term, vs renting equivalent for $750/week ($39,000/year).</strong><br><br>
+    <strong>Buy (5 years):</strong> Mortgage payments ~$232k (interest ~$200k of that), rates $15k, insurance $10k, maintenance $40k, transaction costs $50k. Total cost: ~$347k. Equity built: ~$72k. Net cost: <strong>~$275k</strong> over 5 years.<br><br>
+    <strong>Rent (5 years):</strong> Rent $200k, plus $160k deposit invested at 6% returns ~$54k. Net cost: <strong>~$146k</strong>.<br><br>
+    Difference at 5 years: renting is ~$129k cheaper. Break-even on this scenario is typically 7–9 years, depending on house price growth.
+  </div>
+  <p>The big variable is assumed house price growth. If Auckland appreciates 4%/year, buying breaks even faster. If it appreciates 0–2%, renting wins for longer. The honest answer: nobody knows future house price growth.</p>
+
+  <h2>When buying tends to win</h2>
+  <ul>
+    <li>Time horizon of 7+ years (transaction costs and slow equity build dominate shorter periods)</li>
+    <li>Stable life situation — career, relationship, location confidence</li>
+    <li>Strong rental market (high rents relative to prices makes ownership economically competitive)</li>
+    <li>Below-average mortgage rates relative to long-run history</li>
+    <li>You'd otherwise overspend on lifestyle inflation rather than investing the deposit</li>
+  </ul>
+
+  <h2>When renting tends to win</h2>
+  <ul>
+    <li>Time horizon under 5 years</li>
+    <li>Job or family situation likely to change</li>
+    <li>Property prices high relative to rents in your area (price-to-rent ratio above 25)</li>
+    <li>You can and will reliably invest the equivalent of the deposit + maintenance differential</li>
+    <li>Career flexibility worth more than ownership stability</li>
+  </ul>
+
+  <h2>The non-financial side</h2>
+  <p>Pure financial calculators miss real factors that often matter more than the numbers: stability for kids and schooling, freedom to renovate, security of tenure, the discipline of "forced savings" that mortgage payments create, the cost of moving every few years as a tenant. Run the financial comparison, but don't pretend it's the whole picture.</p>
+</section>
+
+<section class="cs-faq-section">
+  <h2>Frequently asked <span>questions</span></h2>
+  <div class="cs-faq-list">
+    <details class="cs-faq-item">
+      <summary>Is it always better to buy than rent?</summary>
+      <div class="cs-faq-answer">No. Renting wins financially for time horizons under 5–7 years in most markets, particularly when you account for transaction costs and the opportunity cost of the deposit. Buying tends to win over 10+ year horizons in most reasonable scenarios. Beyond finance, life circumstances, career flexibility, and personal preferences all matter.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How long do I need to stay in a home for buying to make sense?</summary>
+      <div class="cs-faq-answer">Typically 5–7 years minimum to recover transaction costs (2–4% to buy, 3–6% to sell). In high-cost areas with weak appreciation, the break-even can stretch to 8–10 years. The longer you stay, the more buying tends to win — both because transaction costs amortise and because rent typically rises while a fixed-rate mortgage doesn't.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Should I include house price appreciation in my calculations?</summary>
+      <div class="cs-faq-answer">Yes, but conservatively. Long-term, real (after-inflation) house price growth has been roughly 1–2% per year in most developed markets — not the dramatic appreciation seen in specific cities over short windows. Don't assume the recent past will continue. If your calculation only works with 5%+ annual appreciation, it's a fragile case.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>What about the 'building equity' argument for buying?</summary>
+      <div class="cs-faq-answer">It's real but commonly overstated. In the early years of a 30-year mortgage, only 15–25% of each payment goes to principal — the rest is interest. So a 'building equity' framing masks how much of those payments are essentially the cost of borrowing, not wealth creation. Equity build accelerates after year 10–15.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>Is the deposit better used for a house or invested?</summary>
+      <div class="cs-faq-answer">Mathematically, in many markets, investing a $160k deposit in a diversified equity portfolio at 6–7% can outperform the leveraged real estate return — once you account for all the carrying costs of ownership. But this requires you to actually invest it consistently, which most renters don't. The 'forced savings' aspect of a mortgage is a real behavioural advantage.</div>
+    </details>
+    <details class="cs-faq-item">
+      <summary>How do I account for property prices in a hot market?</summary>
+      <div class="cs-faq-answer">Be cautious. Price-to-rent ratios above 25 historically signal markets where renting is financially superior. Above 30, strongly so. Don't assume the recent appreciation will continue — markets that have run up dramatically often consolidate or correct. Run the calculation with conservative assumptions and avoid the recency bias of 'prices only go up.'</div>
+    </details>
+  </div>
+</section>
+
+<div class="cs-cta">
+  <div class="cs-cta-card">
+    <div class="cs-cta-text"><strong>📖 The honest comparison:</strong> Variables most calculators miss, break-even analysis, and country-specific examples.</div>
+    <a href="blog/rent-vs-buy-calculator-comparison.html" class="cs-cta-btn">Read the guide →</a>
+  </div>
+</div>
+
+<footer><div class="footer-logo">My<span class="fi">Fin</span>Calc</div>
+  <div class="footer-links"><a href="index.html">Calculators</a><a href="blog/">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="disclaimer.html">Disclaimer</a></div><p class="footer-copy">© 2026 MyFinCalc.org</p></footer>
 <script>
 function fmt(n){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);}
 
